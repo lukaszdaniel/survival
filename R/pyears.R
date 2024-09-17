@@ -12,7 +12,7 @@ pyears <- function(formula, data,
     # then evaluate it in the proper frame
     indx <- match(c("formula", "data", "weights", "subset", "na.action"),
                       names(Call), nomatch=0) 
-    if (indx[1] ==0) stop("A formula argument is required")
+    if (indx[1] ==0) stop(gettextf("'%s' argument is required", "formula"))
     tform <- Call[c(1,indx)]  # only keep the arguments we wanted
     tform[[1L]] <- quote(stats::model.frame)  # change the function called
 
@@ -27,7 +27,7 @@ pyears <- function(formula, data,
         if (!missing(rmap)) {
             rcall <- substitute(rmap)
             if (!is.call(rcall) || rcall[[1]] != as.name('list'))
-                stop ("Invalid rcall argument")
+                stop("Invalid rcall argument")
             }
         else rcall <- NULL   # A ratetable, but no rcall argument
 
@@ -70,9 +70,9 @@ pyears <- function(formula, data,
     mf <- eval(tform, parent.frame())
 
     Y <- model.extract(mf, 'response')
-    if (is.null(Y)) stop ("Follow-up time must appear in the formula")
+    if (is.null(Y)) stop("Follow-up time must appear in the formula")
     if (!is.Surv(Y)){
-        if (any(Y <0)) stop ("Negative follow up time")
+        if (any(Y <0)) stop("Negative follow up time")
         Y <- as.matrix(Y)
         if (ncol(Y) >2) stop("Y has too many columns")
         }
@@ -82,9 +82,10 @@ pyears <- function(formula, data,
             if (any(Y[,1] <0)) stop("Negative survival time")
             nzero <- sum(Y[,1]==0 & Y[,2] ==1)
             if (nzero >0) 
-                warning(paste(nzero, 
-                         "observations with an event and 0 follow-up time,",
-                       "any rate calculations are statistically questionable"))
+                warning(sprintf(ngettext(nzero,
+                         "%d observation with an event and 0 follow-up time, any rate calculations are statistically questionable",
+                         "%d observations with an event and 0 follow-up time, any rate calculations are statistically questionable",
+                          domain = "R-survival"), nzero), domain = NA)
             }
         else if (stype != 'counting')
             stop("Only right-censored and counting process survival types are supported")

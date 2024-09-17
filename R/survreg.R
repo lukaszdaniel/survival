@@ -35,7 +35,7 @@ survreg <- function(formula, data, weights, subset, na.action,
     indx <- match(c("formula", "data", "weights", "subset", "na.action",
                     "cluster"),
                   names(Call), nomatch=0) 
-    if (indx[1] ==0) stop("A formula argument is required")
+    if (indx[1] ==0) stop(gettextf("'%s' argument is required", "formula"))
     temp <- Call[c(1,indx)]  # only keep the arguments we wanted
     temp[[1L]] <- quote(stats::model.frame)   # change the function called
 
@@ -50,7 +50,7 @@ survreg <- function(formula, data, weights, subset, na.action,
     if (!inherits(Y, "Surv")) stop("Response must be a survival object")
     type <- attr(Y, "type")
     if (type== 'counting') 
-        stop ("start-stop type Surv objects are not supported")
+        stop("start-stop type Surv objects are not supported")
     if (type=="mright" || type=="mcounting") 
         stop("multi-state survival is not supported")
    
@@ -104,7 +104,7 @@ survreg <- function(formula, data, weights, subset, na.action,
         #   first use match.arg, e.g. turn 'exp' into 'exponential'
         dist <- match.arg(dist, names(survreg.distributions))
 	dlist <- survreg.distributions[[dist]]
-	if (is.null(dlist)) stop(paste(dist, ": distribution not found"))
+	if (is.null(dlist)) stop(gettextf("%s distribution not found", sQuote(dist)))
 	}
     else if (is.list(dist)) dlist <- dist
     else stop("Invalid distribution object")
@@ -152,8 +152,8 @@ survreg <- function(formula, data, weights, subset, na.action,
 	}
 
     if (!is.null(dlist$scale)) {
-        if (!missing(scale)) warning(paste(dlist$name, 
-                           "has a fixed scale, user specified value ignored"))
+        if (!missing(scale)) warning(gettextf("%s has a fixed scale, user specified value ignored",
+                           dlist$name))
         scale <- dlist$scale
         }
 
@@ -164,8 +164,7 @@ survreg <- function(formula, data, weights, subset, na.action,
     # check for parameters
     ptemp <- dlist$parms
     if (is.null(ptemp)) {
-        if (!is.null(parms)) stop(paste(dlist$name, 
-                              "distribution has no optional parameters"))
+        if (!is.null(parms)) stop(gettextf("%s distribution has no optional parameters", sQuote(dlist$name)))
         }
     else {
         if (!is.numeric(ptemp)) 
@@ -209,7 +208,7 @@ survreg <- function(formula, data, weights, subset, na.action,
 	pterms <- pterms[-temp]
 	temp <- match((names(pterms))[pterms], attr(Terms, 'term.labels'))
 	ord <- attr(Terms, 'order')[temp]
-	if (any(ord>1)) stop ('Penalty terms cannot be in an interaction')
+	if (any(ord>1)) stop("Penalty terms cannot be in an interaction")
 
         
         assign <- attrassign(X, newTerms)

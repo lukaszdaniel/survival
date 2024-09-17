@@ -152,8 +152,7 @@ coxph <- function(formula, data, weights, subset, na.action,
     multi <- FALSE
     if (type=="mright" || type == "mcounting") multi <- TRUE
     else if (type!='right' && type!='counting')
-	stop(paste("Cox model doesn't support \"", type,
-			  "\" survival data", sep=''))
+	stop(gettextf("Cox model doesn't support \"%s\" survival data", type))
     data.n <- nrow(Y)   #remember this before any time transforms
 
     if (!multi && multiform)
@@ -1009,7 +1008,7 @@ if (any(pterms)) {
     # 
     # Check the order of any penalty terms
     ord <- attr(Terms, "order")[match(pname, attr(Terms, 'term.labels'))]
-    if (any(ord>1)) stop ('Penalty terms cannot be in an interaction')
+    if (any(ord>1)) stop("Penalty terms cannot be in an interaction")
     pcols <- assign[match(pname, names(assign))] 
     
     fit <- coxpenal.fit(X, Y, istrat, offset, init=init,

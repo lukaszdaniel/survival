@@ -1,7 +1,7 @@
 # The first section of this is identical to anova.coxph
 anova.coxph.penal <- function (object, ...,  test = 'Chisq') {
     if (!inherits(object, "coxph"))
-        stop ("argument must be a cox model")
+        stop("argument must be a cox model")
 
     # All the ... args need to be coxph or coxme fits.  If any of them
     #  have a name attached, e.g., 'charlie=T' we assume a priori
@@ -12,9 +12,8 @@ anova.coxph.penal <- function (object, ...,  test = 'Chisq') {
 	           rep(FALSE, length(dotargs))
              else (names(dotargs) != "")
     if (any(named)) 
-        warning(paste("The following arguments to anova.coxph(..)", 
-            "are invalid and dropped:", paste(deparse(dotargs[named]), 
-                collapse = ", ")))
+        warning(gettextf("The following arguments to anova.coxph(..) are invalid and dropped: %s",
+            paste(deparse(dotargs[named]), collapse = ", ")))
     dotargs <- dotargs[!named]
 
     # frailties don't work, due to mutability.  

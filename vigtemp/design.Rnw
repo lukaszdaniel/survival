@@ -343,7 +343,7 @@ Call <- match.call()
 indx <- match(c("formula", "data", "weights", "subset", "na.action",
                 "cluster", "id", "istate"),
                   names(Call), nomatch=0) 
-if (indx[1] ==0) stop("A formula argument is required")
+if (indx[1] ==0) stop(gettextf("'%s' argument is required", "formula"))
 temp <- Call[c(1,indx)]  # only keep the arguments we wanted
 temp[[1]] <- quote(stats::model.frame)  # change the function called
 mf <- eval(temp, parent.frame())
@@ -2211,7 +2211,7 @@ I don't know what they would mean if they were \ldots.   %'
             return(list(fixed=x))   # The simple case, no random terms
 
         if (!is.null(temp1$random) && !is.null(temp2$random))
-                stop ("The interaction of two random terms is not defined")
+                stop("The interaction of two random terms is not defined")
 @ 
 Create the new ``fixed'' term.  In the case of \code{(1|group):sex}, there is no
 fixed term in the result.  

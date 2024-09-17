@@ -1,7 +1,7 @@
 # The anova function for a coxph object
 anova.coxph <- function (object, ...,  test = 'Chisq') {
     if (!inherits(object, "coxph"))
-        stop ("argument must be a cox model")
+        stop("argument must be a cox model")
 
     # All the ... args need to be coxph or coxme fits.  If any of them
     #  have a name attached, e.g., 'charlie=T' we assume a priori
@@ -12,9 +12,8 @@ anova.coxph <- function (object, ...,  test = 'Chisq') {
 	           rep(FALSE, length(dotargs))
              else (names(dotargs) != "")
     if (any(named)) 
-        warning(paste("The following arguments to anova.coxph(..)", 
-            "are invalid and dropped:", paste(deparse(dotargs[named]), 
-                collapse = ", ")))
+        warning(gettextf("the following arguments passed to 'anova.coxph()' are invalid and dropped: %s",
+            paste(deparse(dotargs[named]), collapse = ", ")))
     dotargs <- dotargs[!named]
     
     single <- (inherits(object, "coxph") || inherits(object, "coxme"))

@@ -90,8 +90,8 @@ parse_rightside <- function(rhs) {
             ff <- rownames(attr(optterms, "factors"))
             index <- match(ff, c("common", "shared", "init"))
             if (any(is.na(index)))
-                stop("option not recognized in a covariates formula: ",
-                     paste(ff[is.na(index)], collapse=", "))
+                stop(gettextf("option not recognized in a covariates formula: %s",
+                     paste(ff[is.na(index)], collapse=", ")))
             common <- any(index==1)
             shared  <- any(index==2)
             if (any(index==3)) {
@@ -111,7 +111,7 @@ termmatch <- function(f1, f2) {
     # look for f1 in f2, each the factors attribute of a terms object
     if (length(f1)==0) return(NULL)   # a formula with only ~1
     irow <- match(rownames(f1), rownames(f2))
-    if (any(is.na(irow))) stop ("termmatch failure 1") 
+    if (any(is.na(irow))) stop("termmatch failure 1") 
     hashfun <- function(j) sum(ifelse(j==0, 0, 2^(seq(along.with=j))))
     hash1 <- apply(f1, 2, hashfun)
     hash2 <- apply(f2[irow,,drop=FALSE], 2, hashfun)
@@ -161,7 +161,7 @@ parsecovar2 <- function(covar1, statedata, dformula, Terms, transitions,states) 
             state1 <- state2 <- NULL
             for (x in lhs) {
                 # x is one term
-                if (!is.list(x) || is.null(x$left)) stop("term found without a ':' ", x)
+                if (!is.list(x) || is.null(x$left)) stop(gettextf("term found without a ':' %s", x))
                 # left of the colon
                 if (!is.list(x$left) && length(x$left) ==1 && x$left==0) 
                     temp1 <- 1:nrow(statedata)
@@ -176,16 +176,16 @@ parsecovar2 <- function(covar1, statedata, dformula, Terms, transitions,states) 
                         stop("state variable with no list of values: ",x$left$stateid)
                     else {
                         if (any(k= is.na(match(x$left$stateid, names(statedata)))))
-                            stop(x$left$stateid[k], ": state variable not found")
+                            stop(gettextf("%s: state variable not found", x$left$stateid[k]))
                         zz <- statedata[[x$left$stateid]]
                         if (any(k= is.na(match(x$left$value, zz))))
-                            stop(x$left$value[k], ": state value not found")
+                            stop(gettextf("%s: state value not found", x$left$value[k]))
                         temp1 <- which(zz %in% x$left$value)
                     }
                 }
                 else {
                     k <- match(x$left, statedata$state)
-                    if (any(is.na(k))) stop(x$left[is.na(k)], ": state not found")
+                    if (any(is.na(k))) stop(gettextf("%s: state not found", x$left[is.na(k)]))
                     temp1 <- which(statedata$state %in% x$left)
                 }
                 
@@ -203,16 +203,16 @@ parsecovar2 <- function(covar1, statedata, dformula, Terms, transitions,states) 
                         stop("state variable with no list of values: ",x$right$stateid)
                     else {
                         if (any(k= is.na(match(x$right$stateid, names(statedata)))))
-                            stop(x$right$stateid[k], ": state variable not found")
+                            stop(gettextf("%s: state variable not found", x$right$stateid[k]))
                         zz <- statedata[[x$right$stateid]]
                         if (any(k= is.na(match(x$right$value, zz))))
-                            stop(x$right$value[k], ": state value not found")
+                            stop(gettextf("%s: state value not found", x$right$value[k]))
                         temp2 <- which(zz %in% x$right$value)
                     }
                 }
                 else {
                     k <- match(x$right, statedata$state)
-                    if (any(is.na(k))) stop(x$right, ": state not found")
+                    if (any(is.na(k))) stop(gettextf("%s: state not found", x$right[k]))
                     temp2 <- which(statedata$state %in% x$right)
                 }
 

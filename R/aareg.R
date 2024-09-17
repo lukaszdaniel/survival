@@ -44,7 +44,7 @@ aareg <- function(formula, data, weights, subset, na.action,
     indx <- match(c("formula", "data", "weights", "subset", "na.action",
                     "cluster"),
                   names(Call), nomatch=0) 
-    if (indx[1] ==0) stop("A formula argument is required")
+    if (indx[1] ==0) stop(gettextf("'%s' argument is required", "formula"))
     temp <- Call[c(1,indx)]  # only keep the arguments we wanted
     temp[[1L]] <- quote(stats::model.frame)   # change the function called
 
@@ -102,9 +102,8 @@ aareg <- function(formula, data, weights, subset, na.action,
 
     type <- attr(Y, "type")
     if (type!='right' && type!='counting')
-	stop(paste("Aalen model doesn't support \"", type,
-			  "\" survival data", sep=''))
-   
+	stop(gettextf("Aalen model doesn't support \"%s\" survival data", type))
+
     # Get the pieces that I need from the coxdetail routine
     #  1. It expects a "counting process" type of Y
     if (ncol(Y)==2) {
@@ -388,7 +387,7 @@ aareg <- function(formula, data, weights, subset, na.action,
     }
 
 "[.aareg" <- function(x, ..., drop=FALSE) {
-    if (!inherits(x, 'aareg')) stop ("Must be an aareg object")
+    if (!inherits(x, 'aareg')) stop("Must be an aareg object")
     i <- ..1
     if (is.matrix(x$coefficient)) {
 	x$coefficient <- x$coefficient[,i, drop=drop]
