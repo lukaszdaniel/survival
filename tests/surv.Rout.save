@@ -26,14 +26,14 @@ Type 'q()' to quit R.
 > aeq <- function(x,y) all.equal(as.vector(x), as.vector(y))
 > temp <- Surv(c(1, 10, 20, 30), c(2, NA, 0, 40), c(1,1,1,1))
 Warning message:
-In Surv(c(1, 10, 20, 30), c(2, NA, 0, 40), c(1, 1, 1, 1)) :
+In 'Surv(c(1, 10, 20, 30), c(2, NA, 0, 40), c(1, 1, 1, 1))':
   Stop time must be > start time, NA created
 > aeq(temp, c(1,10,NA,30,  2,NA,0,40, 1,1,1,1))
 [1] TRUE
 > 
 > temp <- Surv(c(1, 10, 20, 30), c(2, NA, 0, 40), type='interval2')
 Warning message:
-In Surv(c(1, 10, 20, 30), c(2, NA, 0, 40), type = "interval2") :
+In 'Surv(c(1, 10, 20, 30), c(2, NA, 0, 40), type = "interval2")':
   Invalid interval: start > stop, NA created
 > aeq(temp, c(1,10,20,30,  2,1,1,40, 3,0,NA,3))
 [1] TRUE
@@ -45,12 +45,12 @@ In Surv(c(1, 10, 20, 30), c(2, NA, 0, 40), type = "interval2") :
 > 
 > temp1 <- Surv(c(1,10,NA, 30, 30), c(1,NA,10,20, 40), type='interval2')
 Warning message:
-In Surv(c(1, 10, NA, 30, 30), c(1, NA, 10, 20, 40), type = "interval2") :
+In 'Surv(c(1, 10, NA, 30, 30), c(1, NA, 10, 20, 40), type = "interval2")':
   Invalid interval: start > stop, NA created
 > temp2 <- Surv(c(1,10,10,30,30), c(9, NA, 5, 20,40), c(1, 0, 2,3,3),
 +               type='interval')
 Warning message:
-In Surv(c(1, 10, 10, 30, 30), c(9, NA, 5, 20, 40), c(1, 0, 2, 3,  :
+In 'Surv(c(1, 10, 10, 30, 30), c(9, NA, 5, 20, 40), c(1, 0, 2, 3, ':
   Invalid interval: start > stop, NA created
 > aeq(temp1, temp2)
 [1] TRUE

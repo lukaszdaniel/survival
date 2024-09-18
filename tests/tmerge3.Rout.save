@@ -41,7 +41,7 @@ Type 'q()' to quit R.
 > b2 <- tmerge(base, events, id = id, got_flu = cumevent(time, got_flu),
 +                has_flu = tdc(time, has_flu))
 Warning message:
-In tmerge(base, events, id = id, got_flu = cumevent(time, got_flu),  :
+In 'tmerge(base, events, id = id, got_flu = cumevent(time, got_flu), ':
   replacement of variable 'has_flu'
 > 
 > all.equal(b2$got_flu, c(0,0,1,0,0,0,3,0))

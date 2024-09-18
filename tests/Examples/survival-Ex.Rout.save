@@ -1314,7 +1314,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 > event <- with(pbcseq, ifelse(last,  status, 0))
 > 
 > fit1 <- coxph(Surv(time1, time2, event) ~ age + sex + log(bili), pbcseq)
-Warning in Surv(time1, time2, event) :
+Warning in 'Surv(time1, time2, event)':
   Invalid status value, converted to NA
 > 
 > 

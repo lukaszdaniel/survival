@@ -287,7 +287,7 @@ Degrees of freedom for terms=  0.3  0.5 19.7
 Likelihood ratio test=61.2  on 20.5 df, p=6e-06
 n= 76, number of events= 58 
 Warning message:
-In coxpenal.fit(X, Y, istrat, offset, init = init, control, weights = weights,  :
+In 'coxpenal.fit(X, Y, istrat, offset, init = init, control, weights = weights, ':
   Inner loop failed to coverge for iterations 4
 > 
 > coxph(Surv(time, status) ~ age + sex + frailty(id, dist='t', caic=F), kidney)

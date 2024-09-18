@@ -363,7 +363,7 @@ Type 'q()' to quit R.
 > # at time=118, and it will have one fewer obs than the data
 > p1 <- pseudo(lfit1, times=c(100, 200))
 Warning message:
-In pseudo(lfit1, times = c(100, 200)) :
+In 'pseudo(lfit1, times = c(100, 200))':
   requested time points are beyond the end of one or more curves
 > aeq(dim(p1), c(nrow(lung)-1, 2))
 [1] TRUE
@@ -373,7 +373,7 @@ In pseudo(lfit1, times = c(100, 200)) :
 > lfit2 <- survfit(Surv(time, status) ~ ph.ecog, lung, na.action= na.exclude)
 > p2 <- pseudo(lfit2, time=c(100, 200))
 Warning message:
-In pseudo(lfit2, time = c(100, 200)) :
+In 'pseudo(lfit2, time = c(100, 200))':
   requested time points are beyond the end of one or more curves
 > aeq(dim(p2), c(nrow(lung), 2))
 [1] TRUE

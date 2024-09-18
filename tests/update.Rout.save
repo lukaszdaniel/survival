@@ -33,7 +33,7 @@ Type 'q()' to quit R.
 > # Gives a spurious warning message
 > test2 <- update(fit1, . ~ age + sex + cluster(inst), lung)
 Warning message:
-In coxph(formula = Surv(time, status) ~ age + sex + cluster(inst),  :
+In 'coxph(formula = Surv(time, status) ~ age + sex + cluster(inst), ':
   cluster appears both in a formula and as an argument, formula term ignored
 > all.equal(test2, fit3)
 [1] TRUE

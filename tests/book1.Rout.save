@@ -119,7 +119,7 @@ Type 'q()' to quit R.
 > # This next gives an ignorable warning message
 > fit2 <- coxph(Surv(time, status) ~x, test1, method='breslow', iter=2)
 Warning message:
-In coxph.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+In 'coxph.fit(X, Y, istrat, offset, init, control, weights = weights, ':
   Ran out of iterations and did not converge
 > aeq(round(fit2$coefficients, 6), 1.472724)
 [1] TRUE
