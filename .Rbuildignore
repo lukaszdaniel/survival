@@ -28,4 +28,5 @@ R/plot.survexp.R.notdone
 ToDo
 todo
 xconfig
-
+R/residuals.survfitcox.R
+R/survnew.R
