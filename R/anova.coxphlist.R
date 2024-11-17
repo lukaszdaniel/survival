@@ -51,8 +51,7 @@ anova.coxphlist <- function (object, test =  'Chisq' ,...) {
     variables <- lapply(object, tfun)
     dimnames(table) <- list(1:nmodels, 
 			    c("loglik", "Chisq", "Df"))
-    title <- paste("Analysis of Deviance Table\n Cox model: response is ",
-		   responses[1]) 
+    title <- paste("Analysis of Deviance Table\n Cox model: response is ", responses[1]) 
     topnote <- paste(" Model ", format(1:nmodels), ": ", variables, 
 		     sep = "", collapse = "\n")
     if (!is.null(test)) {
