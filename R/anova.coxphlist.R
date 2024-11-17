@@ -14,17 +14,24 @@ anova.coxphlist <- function (object, test =  'Chisq' ,...) {
         stop("all models must have the same ties option")
 
     responses <- as.character(unlist(lapply(object, 
-				     function(x) deparse(formula(x)[[2]]))))
+				     function(x) deparse1(formula(x)[[2]]))))
     sameresp <- (responses == responses[1])
     if (!all(sameresp)) {
         object <- object[sameresp]
 	warning(gettextf("Models with response %s removed because response differs from model 1",
-            deparse(responses[!sameresp])))
+            deparse1(responses[!sameresp])))
     }
 
     ns <- sapply(object, function(x) length(x$residuals))
     if (any(ns != ns[1])) 
         stop("models were not all fit to the same size of dataset")
+
+    # verify that all of them used the same strata, if present
+    stemp <- lapply(object, function(x) 
+        untangle.specials(x$terms, "strata")[["vars"]])
+    fail <- (any(sapply(stemp, length) > 0) &&
+             any(sapply(stemp, function(x) !identical(x, stemp[[1]]))))
+    if (fail) stop("models do not have the same strata")
 
     nmodels <- length(object)
     if (nmodels == 1) # only one model remains
