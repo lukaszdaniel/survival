@@ -9,9 +9,6 @@ coxph <- function(formula, data, weights, subset, na.action,
     ties <- match.arg(ties)
     Call <- match.call()
     if (missing(formula)) stop("a formula argument is required")
-    # Protection from the survival::Surv crowd
-    formula <- removeDoubleColonSurv(formula)
-    Call$formula <- formula
     
     ## We want to pass any ... args to coxph.control, but not pass things
     ##  like "dats=mydata" where someone just made a typo.  The use of ...
@@ -24,10 +21,21 @@ coxph <- function(formula, data, weights, subset, na.action,
             stop(gettextf("Argument %s not matched", 
                           names(extraArgs)[indx==0L]), domain = "R-survival")
     }
+    
+    # Gather any leftover arguments into a coxph.control call
+    # If there is a control argument, force a call to coxph.control to both
+    #  fill it out with all the elements and do sanity checks
     if (missing(control)) control <- coxph.control(...) 
+    else if (is.list(control)) control <- do.call(coxph.control, control)
+    else stop("control argument must be a list")
+
+    # Protect internal calls in the formula from survival:: users
+    if (is.list(formula)) formula[[1]] <- removeDoubleColonSurv(formula[[1]])
+    else formula <- removeDoubleColonSurv(formula)
+    Call$formula <- formula  # save the nicer version
 
     # Move any cluster() term out of the formula, and make it an argument
-     #  instead.  This makes everything easier.  But, I can only do that with
+    #  instead.  This makes everything easier.  But, I can only do that with
     #  a local copy, doing otherwise messes up future use of update() on
     #  the model object for a user stuck in "+ cluster()" mode.
     ss <- "cluster"
@@ -100,20 +108,6 @@ coxph <- function(formula, data, weights, subset, na.action,
     tform$formula <- if(missing(data)) terms(formula, special) else
                                       terms(formula, special, data=data)
 
-    # Make "tt" and "strata" be local to the formula, without invoking any
-    #  outside functions. We do this by inserting another environment on
-    #  the front of the search path.
-    # For tt, this was done out of concern that users might have created
-    #  a dummy variable of that name.  For strata, this is
-    #  part of my defense against use of survival::strata.  Putting a local
-    #  copy first on the path allows for users who don't want to load the
-    #  survival namespace. (I think that is crazy, but the tidy universe has
-    #  a set of them.)
-    coxenv <- new.env(parent= environment(formula))
-    assign("tt", function(x) x, envir=coxenv)
-    assign("strata", survival::strata, envir= coxenv)
-    environment(tform$formula) <- coxenv
-
     # okay, now evaluate the formula
     mf <- eval(tform, parent.frame())
     Terms <- terms(mf)
@@ -168,7 +162,8 @@ coxph <- function(formula, data, weights, subset, na.action,
     # the code was never designed for multiple fraily terms, but of course
     #  someone tried it
     if (length(attr(Terms, "specials")$frailty) >1)
-            stop("multiple frailty terms is not supported")
+            stop("multiple frailty terms are not supported")
+
     if (control$timefix) Y <- aeqSurv(Y)
     if (length(attr(Terms, 'variables')) > 2) { # a ~1 formula has length 2
         ytemp <- innerterms(formula[1:2])
