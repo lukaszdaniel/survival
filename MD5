@@ -1,7 +1,7 @@
-a491bd0ddf29ef853a5d45c2721cb206 *inst/po/pl/LC_MESSAGES/R-survival.mo
+7d184ca7d35ad817d0196973a500d318 *inst/po/pl/LC_MESSAGES/R-survival.mo
 f3a88658ab80add5c4c3419b81c23127 *inst/po/pl/LC_MESSAGES/survival.mo
-e9757ab86d83ba48ef7e133a291f064a *inst/po/en@quot/LC_MESSAGES/R-survival.mo
-6d67340ecc26f2a1e3bd76de31a969d3 *inst/po/en@quot/LC_MESSAGES/survival.mo
+5eea11a9edf6ef5abd62b4a03e1a8436 *inst/po/en@quot/LC_MESSAGES/R-survival.mo
+a42715753c2701f8ad42d84804fb939a *inst/po/en@quot/LC_MESSAGES/survival.mo
 9963b11b3f8186ceea370f48ea10a1a8 *inst/NEWS.Rd
 ba01ac7a9482cc481afa2bcfd8126e99 *inst/CITATION
 3e8ebae349953a3b7a665eecce562802 *inst/COPYRIGHTS
@@ -12,7 +12,7 @@ ca3443c3259490eaf58e4c929f8866f2 *src/coxdetail.c
 74f6ac54c5dc76cda6575cd88724e98f *src/zph1.c
 6e8542d47b6bcde29e24b06681e4c347 *src/survreg6.c
 9798a0ba153878beab2e6190e9508b53 *src/agsurv4.c
-a2514af23522cb6777af6cfc88de650b *src/survproto.h
+69fe2ce92a822fac86cb55af35c0ddfc *src/survproto.h
 8bc09fde600d2d47b97e09914fa236ff *src/pyears2.c
 b260409c3c125bca18e75539ed9563b8 *src/cdecomp.c
 d9ee5e75ea894b8f6526ecd7e0917e63 *src/coxsafe.c
@@ -43,7 +43,7 @@ ae76bf6f6a997b3855c4274a87fa3872 *src/coxcount1.c
 6a5de3098ea717defac73b46aaf36006 *src/doloop.c
 0c35a2c5a350a24b06e240d563f6d787 *src/coxph_wtest.c
 05c679b1acf802c5631aa3b004b81cc0 *src/agscore3.c
-439c29e6677448002855eb1ae6b1b798 *src/cholesky2.c
+cfc5e0e2f2797b5032a83f0b0cdbdd7b *src/cholesky2.c
 da673e910cfb74ed0b353630657233e3 *src/survConcordance.c
 6bfcaa8a3e8532e7314125c971371186 *src/coxmart.c
 6289e7d8522b764a745322487a9c5d6b *src/twoclust.c
@@ -58,7 +58,7 @@ cc6dae05b1699b68a1de76acb0096a65 *src/coxmart2.c
 38d3263e720c0005d36d6a1c4f44339a *src/concordance5.c
 8f8a8584efa43c5fa05a75c55ac590e7 *src/collapse.c
 b55447c3dbace7a78025931c85fbbce0 *src/survreg7.c
-8ba28faa262d0f05db90819037da87d4 *src/tmerge.c
+ae40deadb32d5a7a215726b4be7e757c *src/tmerge.c
 df6456928917615422ca47973c220306 *src/survfitresid.c
 b564d5e9da10fb68f22397f39822f9df *src/agmart.c
 1f287cced7b7527881c56b5e3f7c5a70 *src/survsplit.c
@@ -438,12 +438,13 @@ c325ed2c438a97ba987d576114f09193 *tests/dropspecial.Rout.save
 bcee0332ea4069d156be595524baf0c8 *tests/book7.Rout.save
 d779646bbd15e7dca38c657ef9377154 *tests/difftest.R
 40daba122be0c002e101c3d9b603668e *.Rinstignore
-6a3467b460e78135686eb5ee677cedaf *po/survival.pot
-8eec683fe5a5147b6ae018ccf1551c64 *po/R-pl.po
+9c4916bec600af48d7be505fdeb77b06 *po/survival.pot
+f229f433eba755090e76cdcba1d1d6b2 *po/R-pl.po
 631498a5b419bf51ef70acf394617e32 *po/pl.po
-da7a29eb2982a9464cf4eb6249c0516e *po/R-survival.pot
+26676803aca224f49fd25619416055e0 *po/R-survival.pot
 5e57de462543ad48eb92bace94cd9e28 *.hgignore
 449968b133b2dc99ad10885061cd7f69 *README.md
+b383170649ab37e116da2a217a009ae0 *.vscode/settings.json
 324b91c11ff6860331c36b4043c4590f *R/survfit.matrix.R
 d05f2087d34561297f314ecaa8742792 *R/quantile.survfit.R
 65be75cf2e1fcee6287f5eaac44859dd *R/survfit0.R

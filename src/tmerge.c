@@ -14,7 +14,7 @@
 
 /* First routine, for cumtdc, return a cumulative sum */
 SEXP tmerge(SEXP id2,  SEXP time1x, SEXP newx2,
-            SEXP nid2, SEXP ntime2, SEXP x2,  SEXP indx2) {
+            SEXP nid2, SEXP ntime2, SEXP x2) {
     int i, k;
     int n1, n2, oldid;
     int hasone =0;

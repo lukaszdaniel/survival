@@ -57,7 +57,7 @@ void agsurv5(int  *n2,     int  *nvar2,  int  *dd, double *x1,
              double *sum1, double *sum2, double *xbar) ;
 SEXP cdecomp(SEXP R2, SEXP time2);
 
-void chinv2  (double **matrix, int n);
+void chinv2(double **matrix, int n);
 int cholesky2(double **matrix, int n, double toler);
 void chsolve2(double **matrix, int n, double *y);
 void chinv3(double **matrix , int n, int m, double *fdiag);
@@ -171,7 +171,7 @@ SEXP gchol_solve(SEXP x2, SEXP y2, SEXP flag2);
 SEXP gchol_inv(SEXP matrix, SEXP flag2);
 
 void init_doloop(int min, int max);
-int doloop      (int nloops, int *index);
+int doloop(int nloops, int *index);
 
 SEXP multicheck(SEXP time12,  SEXP time22, SEXP status2, SEXP id2, 
 		SEXP istate2, SEXP sort2);
@@ -269,8 +269,8 @@ void survpenal(int whichcase, int nfrail,    int  nvar2,    double **hmat,
 
 SEXP survsplit(SEXP tstart2,  SEXP tstop2,  SEXP cut2);
 
-SEXP tmerge (SEXP id2,  SEXP time1x, SEXP newx2,
-	     SEXP nid2, SEXP ntime2, SEXP x2,  SEXP indx2); 
+SEXP tmerge(SEXP id2,  SEXP time1x, SEXP newx2,
+	     SEXP nid2, SEXP ntime2, SEXP x2); 
 SEXP tmerge2(SEXP id2,  SEXP time1x, SEXP nid2, SEXP ntime2);
 SEXP tmerge3(SEXP id2, SEXP miss2);
 SEXP twoclust(SEXP id2, SEXP cluster2, SEXP idord2);
