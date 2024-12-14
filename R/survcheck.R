@@ -2,8 +2,13 @@ survcheck <- function(formula, data, subset, na.action,  id, istate,
                       istate0="(s0)", timefix=TRUE, ...) {
     Call <- match.call()
     if (missing(formula)) stop("a formula argument is required")
-    formula <- removeDoubleColonSurv(formula)  # protection from survival::Surv
-    Call$formula <- formula
+
+    # make Surv(), strata() resolve to the survival namespace
+    newform <- removeDoubleColonSurv(formula)
+    if (!is.null(newform)) {
+        formula <- newform$formula
+        if (newform$newcall) Call$formula <- formula
+    }
 
     indx <- match(c("formula", "data", "id", "istate", "subset", "na.action"),
                   names(Call), nomatch=0) 
