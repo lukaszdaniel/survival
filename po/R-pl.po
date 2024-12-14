@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: survival\n"
-"POT-Creation-Date: 2024-09-13 18:50\n"
+"POT-Creation-Date: 2024-12-14 12:08\n"
 "PO-Revision-Date: 2024-09-13 18:51+0200\n"
 "Last-Translator: Łukasz Daniel <lukasz.daniel@gmail.com>\n"
 "Language-Team: Łukasz Daniel <lukasz.daniel@gmail.com>\n"
@@ -770,7 +770,7 @@ msgstr "'method = fixed', ale brak argumentu 'theta'"
 msgid "Missing density function in the definition of the distribution"
 msgstr ""
 
-#. R/anova.coxphlist.R: gettextf("Models with response %s removed because response differs from model 1",     deparse(responses[!sameresp]))
+#. R/anova.coxphlist.R: gettextf("Models with response %s removed because response differs from model 1",     deparse1(responses[!sameresp]))
 #. R/anova.coxphms.R: gettextf("Models with response %s removed because response differs from model 1",     deparse(responses[!sameresp]))
 #: R/anova.coxphlist.R:0 R/anova.coxphms.R:0
 msgid "Models with response %s removed because response differs from model 1"
@@ -1207,11 +1207,6 @@ msgstr "poniższe argumenty przekazane do 'anova.coxph()' są niepoprawne i zost
 msgid "The graphical argument 'type' is not allowed"
 msgstr "argument graficzny 'type' nie jest dozwolony"
 
-#. R/coxph.control.R: stop("The inf.warn setting must be >0")
-#: R/coxph.control.R:0
-msgid "The inf.warn setting must be >0"
-msgstr "Ustawienie 'inf.warn' musi być > 0"
-
 #. R/survfit.coxph.R: stop("The newdata argument must be present when individual=TRUE")
 #. R/survfit.coxphms.R: stop("The newdata argument must be present when individual=TRUE")
 #. R/survnew.R: stop("The newdata argument must be present when individual=TRUE")
@@ -1244,6 +1239,12 @@ msgstr "ta funkcja nie obsługuje członów interakcji"
 #: R/aareg.R:0
 msgid "The threshold 'nmin' is too high, no model can be fit"
 msgstr "Próg 'nmin' jest zbyt wysoki, żaden model nie może zostać dopasowany"
+
+#. R/coxph.control.R: stop("The toler.inf setting must be >0")
+#: R/coxph.control.R:0
+#, fuzzy
+msgid "The toler.inf setting must be >0"
+msgstr "Ustawienie 'inf.warn' musi być > 0"
 
 #. R/coxph.R: stop("The tt argument must contain a function or list of functions")
 #. R/model.matrix.coxph.R: stop("The tt argument must contain a function or list of functions")
@@ -1490,15 +1491,17 @@ msgid "a fit argument is required"
 msgstr "argument '%s' jest wymagany"
 
 #. R/aareg.R: stop("a formula argument is required")
+#. R/concordance.R: stop("a formula argument is required")
 #. R/coxph.R: stop("a formula argument is required")
 #. R/model.frame.survfit.R: stop("a formula argument is required")
 #. R/rttright.R: stop("a formula argument is required")
 #. R/rttright.R: stop("a formula argument is required")
 #. R/survcheck.R: stop("a formula argument is required")
+#. R/survdiff.R: stop("a formula argument is required")
 #. R/survfit.R: stop("a formula argument is required")
 #. R/survreg.R: stop("a formula argument is required")
-#: R/aareg.R:0 R/coxph.R:0 R/model.frame.survfit.R:0 R/rttright.R:0
-#: R/survcheck.R:0 R/survfit.R:0 R/survreg.R:0
+#: R/aareg.R:0 R/concordance.R:0 R/coxph.R:0 R/model.frame.survfit.R:0
+#: R/rttright.R:0 R/survcheck.R:0 R/survdiff.R:0 R/survfit.R:0 R/survreg.R:0
 #, fuzzy
 msgid "a formula argument is required"
 msgstr "Argument 'formula' jest wymagany"
@@ -2013,6 +2016,12 @@ msgstr ""
 msgid "continuous variables require the levels argument"
 msgstr ""
 
+#. R/coxph.R: stop("control argument must be a list")
+#: R/coxph.R:0
+#, fuzzy
+msgid "control argument must be a list"
+msgstr "argument '%s' musi być listą"
+
 #. R/survfit.coxph.R: stop("ctype must be 1 or 2")
 #. R/survfit.coxphms.R: stop("ctype must be 1 or 2")
 #. R/survfitAJ.R: stop("ctype must be 1 or 2")
@@ -2190,6 +2199,12 @@ msgstr "argument '%s' musi mieć wartość TRUE lub FALSE"
 #, fuzzy
 msgid "episode must be a character string"
 msgstr "argument '%s' musi być tekstem"
+
+#. R/coxph.control.R: stop("eps must be > 0")
+#: R/coxph.control.R:0
+#, fuzzy
+msgid "eps must be > 0"
+msgstr "argument '%s' musi być liczbą >= 0"
 
 #. R/residuals.survfit.R: stop("error in residuals.survfit, non-matching states")
 #. R/residuals.survfitcox.R: stop("error in residuals.survfit, non-matching states")
@@ -2647,6 +2662,12 @@ msgstr "niepoprawna wartość dla theta"
 msgid "invalid value for conf.int"
 msgstr "niepoprawna wartość dla argumentu 'conf.int'"
 
+#. R/coxph.control.R: stop("invalid value for outer.max")
+#: R/coxph.control.R:0
+#, fuzzy
+msgid "invalid value for outer.max"
+msgstr "niepoprawna wartość dla tolerancji"
+
 #. R/Surv2.R: stop("invalid value for repeated option")
 #: R/Surv2.R:0
 #, fuzzy
@@ -2662,6 +2683,12 @@ msgstr "Niepoprawna wartość w opcji 'rmean'"
 #, fuzzy
 msgid "invalid value for timefix option"
 msgstr "Niepoprawna wartość w opcji 'rmean'"
+
+#. R/coxph.control.R: stop("invalid value for toler.chol")
+#: R/coxph.control.R:0
+#, fuzzy
+msgid "invalid value for toler.chol"
+msgstr "niepoprawna wartość dla tolerancji"
 
 #. R/aeqSurv.R: stop("invalid value for tolerance")
 #: R/aeqSurv.R:0
@@ -2843,6 +2870,12 @@ msgstr "brak ciągłej zmiennej do modyfikacji"
 msgid "models do not have the same response vector"
 msgstr "wszystkie elementy muszą mieć tę samą listę stanów"
 
+#. R/anova.coxphlist.R: stop("models do not have the same strata")
+#: R/anova.coxphlist.R:0
+#, fuzzy
+msgid "models do not have the same strata"
+msgstr "modele nie mają tego samego rozmiaru zbioru danych"
+
 #. R/anova.coxphms.R: stop("models must be in increasing order of complexity")
 #: R/anova.coxphms.R:0
 #, fuzzy
@@ -2875,12 +2908,6 @@ msgstr ""
 #: R/survfitAJ.R:0
 #, fuzzy
 msgid "multi-state computation doesn't support \"%s\" survival data"
-msgstr "model Aalena nie wspiera danych przeżycia \"%s\""
-
-#. R/coxph.R: stop("multi-state coxph does not support strata*covariate interactions")
-#: R/coxph.R:0
-#, fuzzy
-msgid "multi-state coxph does not support strata*covariate interactions"
 msgstr "model Aalena nie wspiera danych przeżycia \"%s\""
 
 #. R/yates.R: stop("multi-state coxph not yet supported")
@@ -2933,6 +2960,12 @@ msgstr "zgrubna wariancja wraz ze ścisłym modelem nie jest wspierana"
 #: R/yates.R:0
 msgid "multicolumn levels matrix requires column names"
 msgstr ""
+
+#. R/coxph.R: stop("multiple frailty terms are not supported")
+#: R/coxph.R:0
+#, fuzzy
+msgid "multiple frailty terms are not supported"
+msgstr "zgrubna wariancja wraz ze ścisłym modelem nie jest wspierana"
 
 #. R/concordance.R: stop("multiple state survival is not supported")
 #: R/concordance.R:0
@@ -4207,6 +4240,10 @@ msgstr[0] "nierozpoznana opcja: %s"
 msgstr[1] "nierozpoznane opcje: %s"
 msgstr[2] "nierozpoznane opcje: %s"
 
+#, fuzzy
+#~ msgid "multi-state coxph does not support strata*covariate interactions"
+#~ msgstr "model Aalena nie wspiera danych przeżycia \"%s\""
+
 #~ msgid "%d out of %d unique event times used"
 #~ msgstr "użyto %d z liczby %d unikalnych zdarzeń czasowych"
 
@@ -4807,9 +4844,6 @@ msgstr[2] "nierozpoznane opcje: %s"
 
 #~ msgid "models do not have the same number of events"
 #~ msgstr "modele nie mają tej samej liczby zdarzeń"
-
-#~ msgid "models do not have the same size of dataset"
-#~ msgstr "modele nie mają tego samego rozmiaru zbioru danych"
 
 #~ msgid "'%s' and '%s' arguments have different lengths"
 #~ msgstr "argumenty '%s' oraz '%s' mają różną długość"

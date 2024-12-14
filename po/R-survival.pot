@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: survival 3.7-2\n"
-"POT-Creation-Date: 2024-09-13 18:50\n"
+"Project-Id-Version: survival 3.8-1\n"
+"POT-Creation-Date: 2024-12-14 12:08\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -994,7 +994,7 @@ msgstr ""
 
 #: R/anova.coxphlist.R: 0
 #: R/anova.coxphms.R: 0
-#. R/anova.coxphlist.R: gettextf("Models with response %s removed because response differs from model 1",     deparse(responses[!sameresp]))
+#. R/anova.coxphlist.R: gettextf("Models with response %s removed because response differs from model 1",     deparse1(responses[!sameresp]))
 #. R/anova.coxphms.R: gettextf("Models with response %s removed because response differs from model 1",     deparse(responses[!sameresp]))
 
 msgid "Models with response %s removed because response differs from model 1"
@@ -1562,13 +1562,6 @@ msgid "The graphical argument 'type' is not allowed"
 msgstr ""
 
 
-#: R/coxph.control.R: 0
-#. R/coxph.control.R: stop("The inf.warn setting must be >0")
-
-msgid "The inf.warn setting must be >0"
-msgstr ""
-
-
 #: R/survfit.coxph.R: 0
 #: R/survfit.coxphms.R: 0
 #: R/survnew.R: 0
@@ -1609,6 +1602,13 @@ msgstr ""
 #. R/aareg.R: stop("The threshold 'nmin' is too high, no model can be fit")
 
 msgid "The threshold 'nmin' is too high, no model can be fit"
+msgstr ""
+
+
+#: R/coxph.control.R: 0
+#. R/coxph.control.R: stop("The toler.inf setting must be >0")
+
+msgid "The toler.inf setting must be >0"
 msgstr ""
 
 
@@ -1927,19 +1927,23 @@ msgstr ""
 
 
 #: R/aareg.R: 0
+#: R/concordance.R: 0
 #: R/coxph.R: 0
 #: R/model.frame.survfit.R: 0
 #: R/rttright.R: 0
 #: R/rttright.R: 0
 #: R/survcheck.R: 0
+#: R/survdiff.R: 0
 #: R/survfit.R: 0
 #: R/survreg.R: 0
 #. R/aareg.R: stop("a formula argument is required")
+#. R/concordance.R: stop("a formula argument is required")
 #. R/coxph.R: stop("a formula argument is required")
 #. R/model.frame.survfit.R: stop("a formula argument is required")
 #. R/rttright.R: stop("a formula argument is required")
 #. R/rttright.R: stop("a formula argument is required")
 #. R/survcheck.R: stop("a formula argument is required")
+#. R/survdiff.R: stop("a formula argument is required")
 #. R/survfit.R: stop("a formula argument is required")
 #. R/survreg.R: stop("a formula argument is required")
 
@@ -2597,6 +2601,13 @@ msgid "continuous variables require the levels argument"
 msgstr ""
 
 
+#: R/coxph.R: 0
+#. R/coxph.R: stop("control argument must be a list")
+
+msgid "control argument must be a list"
+msgstr ""
+
+
 #: R/survfit.coxph.R: 0
 #: R/survfit.coxphms.R: 0
 #: R/survfitAJ.R: 0
@@ -2824,6 +2835,13 @@ msgstr ""
 #. R/survSplit.R: stop("episode must be a character string")
 
 msgid "episode must be a character string"
+msgstr ""
+
+
+#: R/coxph.control.R: 0
+#. R/coxph.control.R: stop("eps must be > 0")
+
+msgid "eps must be > 0"
 msgstr ""
 
 
@@ -3403,6 +3421,13 @@ msgid "invalid value for conf.int"
 msgstr ""
 
 
+#: R/coxph.control.R: 0
+#. R/coxph.control.R: stop("invalid value for outer.max")
+
+msgid "invalid value for outer.max"
+msgstr ""
+
+
 #: R/Surv2.R: 0
 #. R/Surv2.R: stop("invalid value for repeated option")
 
@@ -3422,6 +3447,13 @@ msgstr ""
 #. R/survfit.R: stop("invalid value for timefix option")
 
 msgid "invalid value for timefix option"
+msgstr ""
+
+
+#: R/coxph.control.R: 0
+#. R/coxph.control.R: stop("invalid value for toler.chol")
+
+msgid "invalid value for toler.chol"
 msgstr ""
 
 
@@ -3648,6 +3680,13 @@ msgid "models do not have the same response vector"
 msgstr ""
 
 
+#: R/anova.coxphlist.R: 0
+#. R/anova.coxphlist.R: stop("models do not have the same strata")
+
+msgid "models do not have the same strata"
+msgstr ""
+
+
 #: R/anova.coxphms.R: 0
 #. R/anova.coxphms.R: stop("models must be in increasing order of complexity")
 
@@ -3687,13 +3726,6 @@ msgstr ""
 #. R/survfitAJ.R: gettextf("multi-state computation doesn't support \"%s\" survival data",     type)
 
 msgid "multi-state computation doesn't support \"%s\" survival data"
-msgstr ""
-
-
-#: R/coxph.R: 0
-#. R/coxph.R: stop("multi-state coxph does not support strata*covariate interactions")
-
-msgid "multi-state coxph does not support strata*covariate interactions"
 msgstr ""
 
 
@@ -3759,6 +3791,13 @@ msgstr ""
 #. R/yates.R: stop("multicolumn levels matrix requires column names")
 
 msgid "multicolumn levels matrix requires column names"
+msgstr ""
+
+
+#: R/coxph.R: 0
+#. R/coxph.R: stop("multiple frailty terms are not supported")
+
+msgid "multiple frailty terms are not supported"
 msgstr ""
 
 
