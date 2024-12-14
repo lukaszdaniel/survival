@@ -58,7 +58,7 @@ cc6dae05b1699b68a1de76acb0096a65 *src/coxmart2.c
 38d3263e720c0005d36d6a1c4f44339a *src/concordance5.c
 8f8a8584efa43c5fa05a75c55ac590e7 *src/collapse.c
 b55447c3dbace7a78025931c85fbbce0 *src/survreg7.c
-ae40deadb32d5a7a215726b4be7e757c *src/tmerge.c
+f62680fac10a6f77ff051b649971ef09 *src/tmerge.c
 df6456928917615422ca47973c220306 *src/survfitresid.c
 b564d5e9da10fb68f22397f39822f9df *src/agmart.c
 1f287cced7b7527881c56b5e3f7c5a70 *src/survsplit.c

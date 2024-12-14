@@ -2,109 +2,126 @@
 ** Fill in a new time-dependent variable
 ** 
 **  id: subject id in the baseline datata set (integer)
-**  time1: start time for each interval in the baseline data
-**  nid, ntime: the id and time point for the new covariate
-**  x:  value of the new covariate
+**  baseline_time: start time for each interval in the baseline data
+**  new_id, new_time: the id and time point for the new covariate
+**  new_covariate_values:  value of the new covariate
 **  indx:  starting point for matching in the baseline
 **
 **  Both data sets are in order of time within id
 */
+#include <R_ext/Boolean.h>
 #include "survS.h"
 #include "survproto.h"
 
 /* First routine, for cumtdc, return a cumulative sum */
-SEXP tmerge(SEXP id2,  SEXP time1x, SEXP newx2,
+SEXP tmerge(SEXP id2, SEXP time1x, SEXP newx2,
             SEXP nid2, SEXP ntime2, SEXP x2) {
-    int i, k;
-    int n1, n2, oldid;
-    int hasone =0;
+    int k; // current index
+    int n_baseline, n_new, last_subject_id;
+    bool has_cumulative_sum = false;
 
-    int *id, *nid;
-    double *time1, 
-	   *ntime, *x;
-    double csum =0;
-    double *newx;
-    SEXP newx3;
+    int *baseline_id, *new_id;
+    double *baseline_time, *new_time, *new_covariate_values;
+    double cumulative_sum = 0;
+    double *updated_covariate_values;
+    SEXP updated_covariates;
 
-    n1 = LENGTH(id2);  /* baseline data set */
-    n2 = LENGTH(nid2); /* new data set */
+    // Get lengths of baseline and new data sets
+    n_baseline = LENGTH(id2);  /* baseline data set */
+    n_new = LENGTH(nid2); /* new data set */
 
-    id	= INTEGER(id2);
-    nid = INTEGER(nid2);
-    time1 = REAL(time1x);
-    ntime = REAL(ntime2);
-    x     = REAL(x2);
+    // Get pointers to the actual data in the input vectors
+    baseline_id = INTEGER(id2);
+    new_id = INTEGER(nid2);
+    baseline_time = REAL(time1x);
+    new_time = REAL(ntime2);
+    new_covariate_values = REAL(x2);
 
-    PROTECT(newx3 = duplicate(newx2));
-    newx = REAL(newx3);
+    // Duplicate the baseline covariate values to protect input
+    PROTECT(updated_covariates = duplicate(newx2));
+    updated_covariate_values = REAL(updated_covariates);
 
     /*
     ** i= index of baseline subject, k= index of addition row
-    **  oldid = prior id, id's for baseline are integers starting with 1
-    ** hasone: 0 if nothing has yet been accumlated for this subject, 1
+    **  last_subject_id = prior id, id's for baseline are integers starting with 1
+    ** has_cumulative_sum: 0 if nothing has yet been accumlated for this subject, 1
     **  it it has
     */
-    oldid = -1;  /* nobody */
-    k =0;
-    for (i=0; i<n1; i++) {
-	if (id[i] != oldid) {
-	    csum = 0;  
-	    oldid = id[i];
-	    hasone =0;
+    last_subject_id = -1; // Initialize to an invalid ID
+    k = 0; // Index for traversing the new data
+
+    // Main loop over the baseline data
+    for (int i = 0; i < n_baseline; i++) {
+	// Reset cumulative sum when we encounter a new subject
+	if (baseline_id[i] != last_subject_id) {
+	    cumulative_sum = 0;
+	    last_subject_id = baseline_id[i];
+	    has_cumulative_sum = false;
 	}
-	for (; k<n2 && nid[k] < id[i]; k++);  
-	for (; k<n2 && (nid[k] == id[i]) && ntime[k] <= time1[i]; k++) {
-	    csum += x[k];
-	    hasone = 1;
+
+	// Move forward in the new data until the new ID is >= current baseline ID
+	while (k < n_new && (new_id[k] < baseline_id[i]))
+	{
+	    k++;
 	}
-	
-	if (hasone ==1) {
-	    if (ISNA(newx[i])) newx[i] = csum;  /* an NA is replaced */
-	    else  newx[i] = newx[i] + csum;     /* otherwise incremented */
+
+	// Accumulate values while new ID matches and new time is <= baseline time
+	while (k < n_new && (new_id[k] == baseline_id[i]) && (new_time[k] <= baseline_time[i])) {
+	    cumulative_sum += new_covariate_values[k];
+	    has_cumulative_sum = true;
+	    k++;
+	}
+
+	// If we have accumulated values, update the baseline covariate
+	if (has_cumulative_sum) {
+	    if (ISNA(updated_covariate_values[i])) updated_covariate_values[i] = cumulative_sum; // Replace NA with cumulative sum
+	    else updated_covariate_values[i] += cumulative_sum; // Add cumulative sum to existing value
 	}
     }
-    
+
     UNPROTECT(1);
-    return(newx3);
-    }
+    return updated_covariates;
+}
 
 /*
 ** Part 2 of the code, used for tdc
-**  for each row of the master data (id, time1), return the row of
-**  the new data (nid, ntime2) that will provide the new data.
+**  for each row of the baseline data (id, time1), return the row of
+**  the new data (new_id, ntime2) that will provide the new data.
 ** Based on a last-value-carried forward rule, if the master for an id
 **  had time intervals of (0,5), (5,10), (15,20) and the new data had time values
 **  of  -1, 5, 11, 12, the return index would be 1, 2, and 4.  Covariates take
 **  effect at the start of an interval.  Notice that obs 3 is never used.
 */
-	    
-SEXP tmerge2(SEXP id2,  SEXP time1x, SEXP nid2, SEXP ntime2) {
-    int i, k;
-    int n1, n2;
 
-    int *id, *nid;
-    double *time1, 
-	   *ntime;
-    SEXP index2;
-    int  *index;
+SEXP tmerge2(SEXP id2, SEXP time1x, SEXP nid2, SEXP ntime2) {
+    int k; // current index
+    int n_baseline, n_new;
 
-    n1 = LENGTH(id2);  /* baseline data set */
-    n2 = LENGTH(nid2); /* new data set */
+    int *baseline_id, *new_id;
+    double *baseline_time, *new_time;
+    SEXP result_indices;
+    int *index;
 
-    id	= INTEGER(id2);
-    nid = INTEGER(nid2);
-    time1 = REAL(time1x);
-    ntime = REAL(ntime2);
+    // Get the lengths of the baseline and new data sets
+    n_baseline = LENGTH(id2);  /* baseline data set */
+    n_new = LENGTH(nid2); /* new data set */
 
-    PROTECT(index2 = allocVector(INTSXP, n1));
-    index = INTEGER(index2);
+    // Get pointers to the actual data in the input vectors
+    baseline_id = INTEGER(id2);
+    new_id = INTEGER(nid2);
+    baseline_time = REAL(time1x);
+    new_time = REAL(ntime2);
+
+    // Allocate memory for the result indices (to store the index from new data for each baseline entry)
+    PROTECT(result_indices = allocVector(INTSXP, n_baseline));
+    index = INTEGER(result_indices);
 
     /*
-    ** Every subject in the new data (nid, ntime) will be found in the baseline
+    ** Every subject in the new data (new_id, new_time) will be found in the baseline
     ** data set (id, time1) -- if not the parent routine has already tossed
     ** them, but not every obs in id will have a representative in the new.
-    ** For those we return 0, otherwise the max k such that nid[k]== id[i]
-    ** and ntime[k] <= time1[i]
+    ** For those we return 0, otherwise the max k such that new_id[k]== id[i]
+    ** and new_time[k] <= baseline_time[i]
     **
     ** For each element in (id, time1):
     **   set index to 0
@@ -112,19 +129,39 @@ SEXP tmerge2(SEXP id2,  SEXP time1x, SEXP nid2, SEXP ntime2) {
     **   while (id matches and newtime <= oldtime), set pointer
     **        to this row
     */
-    k=0;  /* index for newid */
-    for (i=0; i< n1; i++) {
-	index[i] =0;  /* default, assume we won't find a match */
-	for (; k< n2 && (nid[k] < id[i]); k++);
-	for (; k< n2 && (nid[k] == id[i]) && (ntime[k] <= time1[i]); k++) {
-	    index[i] = k+1;
+    /*
+    ** Iterate over the baseline data (ids, time1), and for each entry:
+    **   - Initialize the index to 0 (default when no match is found).
+    **   - Traverse the new data to find the largest k such that:
+    **     new_id[k] == baseline_id[i] and new_time[k] <= baseline_time[i].
+    **   - Set the result index to k+1 (since R indices are 1-based).
+    */
+    k = 0; // Index for traversing the new data
+
+    // Main loop over the baseline data
+    for (int i = 0; i < n_baseline; i++) {
+	index[i] = 0; // Default to 0, meaning no match
+
+	// Move forward in the new data until the new ID is >= current baseline ID
+	while (k < n_new && (new_id[k] < baseline_id[i]))
+	{
+	    k++;
 	}
+
+	// Continue traversing while new ID matches and new time is <= baseline time
+        while (k < n_new && (new_id[k] == baseline_id[i]) && (new_time[k] <= baseline_time[i]))
+        {
+	    index[i] = k + 1; // Set index to k+1 (R's 1-based indexing)
+	    k++;
+        }
+
+	// Only decrement k if it is greater than 0, to avoid going negative
 	if (k > 0) k--;  /* the next obs might need the same k */
     }
 
     UNPROTECT(1);
-    return(index2);
-    }
+    return result_indices;
+}
 
 
 /*
@@ -136,44 +173,45 @@ SEXP tmerge2(SEXP id2,  SEXP time1x, SEXP nid2, SEXP ntime2) {
 **  0 if there is no good replacement, e.g., the first time point for a
 **  subject is missing.  
 ** Id is an integer.
-*/	    
- SEXP tmerge3(SEXP id2, SEXP miss2) {
-    int i, k;
+*/
+SEXP tmerge3(SEXP id2, SEXP miss2) {
+    int k; // current index
     int n;
-    int oldid;
+    int last_subject_id;
 
-    int *id, *miss;
-    SEXP index2;
-    int  *index;
+    int *baseline_id, *missing;
+    SEXP result_indices;
+    int *index;
 
-    n = LENGTH(id2);  /* baseline data set */
-    id	= INTEGER(id2);
-    miss = INTEGER(miss2);  /* actually logical, but they pass as integer*/
+    n = LENGTH(id2); // Number of entries in the baseline dataset
+    baseline_id = INTEGER(id2);
+    missing = INTEGER(miss2);  /* actually logical, but they pass as integer*/
 
-    PROTECT(index2 = allocVector(INTSXP, n));
-    index = INTEGER(index2);
+    // Allocate memory for the result indices (to store the index from new data for each baseline entry)
+    PROTECT(result_indices = allocVector(INTSXP, n));
+    index = INTEGER(result_indices);
 
     /*
-    ** The input is sorted by time within id.
-    **   Simply keep track of the last non-missing row we see, resetting that
-    **   constant to 0 each time a new identifier arises.
+    ** The input is sorted by time within each ID.
+    ** We keep track of the last non-missing index seen for each subject ID.
+    ** When encountering a new ID, we reset the last valid index.
     */
-    oldid = -1;   /* not anybody */
-    k =0;         /* the row of interest */
-    for (i=0; i<n; i++) {
-	if (id[i] != oldid) {
-	    k = 0;
-	    oldid = id[i];
+    last_subject_id = -1; // Initialize to an invalid ID
+    k = 0; // Last non-missing index
+
+    // Main loop over the baseline data
+    for (int i = 0; i < n; i++) {
+	if (baseline_id[i] != last_subject_id) {
+	    k = 0; // Reset for a new ID
+	    last_subject_id = baseline_id[i];
 	}
-	if (miss[i] ==1) index[i] =k;
+	if (missing[i] == 1) index[i] = k; // Use last valid index if missing
 	else {
-	    index[i] =i +1;
-	    k = i +1;      /* parent routine indices start at 1 */
-	}	
+	    index[i] = i + 1; // Store current index (1-based)
+	    k = i + 1; // Update last valid index
+	}
     }
 
     UNPROTECT(1);
-    return(index2);
-    }
-
-     
+    return result_indices;
+}
