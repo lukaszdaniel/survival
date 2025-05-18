@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: survival 3.8-1\n"
-"POT-Creation-Date: 2024-12-14 12:08\n"
+"Project-Id-Version: survival 3.8-4\n"
+"POT-Creation-Date: 2025-05-18 13:38\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2034,6 +2034,13 @@ msgid "a variable appears on both the left and right sides of the formula"
 msgstr ""
 
 
+#: R/survSplit.R: 0
+#. R/survSplit.R: stop("added must be a character string")
+
+msgid "added must be a character string"
+msgstr ""
+
+
 #: R/aeqSurv.R: 0
 #. R/aeqSurv.R: stop("aeqSurv exception, an interval has effective length 0")
 
@@ -2638,15 +2645,6 @@ msgstr ""
 #. R/plot.survfit.R: stop("cumprob contains an invalid numeric")
 
 msgid "cumprob contains an invalid numeric"
-msgstr ""
-
-
-#: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("cumprob not available for multiple states + mulitple groups")
-#. R/plot.survfit.R: stop("cumprob not available for multiple states + mulitple groups")
-#. R/plot.survfit.R: stop("cumprob not available for multiple states + mulitple groups")
-
-msgid "cumprob not available for multiple states + mulitple groups"
 msgstr ""
 
 
@@ -3461,6 +3459,13 @@ msgstr ""
 #. R/aeqSurv.R: stop("invalid value for tolerance")
 
 msgid "invalid value for tolerance"
+msgstr ""
+
+
+#: R/xtras.R: 0
+#. R/xtras.R: stop("invalid variable type")
+
+msgid "invalid variable type"
 msgstr ""
 
 
@@ -4832,6 +4837,13 @@ msgid "the reverse argument must be TRUE/FALSE"
 msgstr ""
 
 
+#: R/coxph.R: 0
+#. R/coxph.R: warning("the robust variance is not defined for a penalized model, option ignored")
+
+msgid "the robust variance is not defined for a penalized model, option ignored"
+msgstr ""
+
+
 #: R/parsecovar.R: 0
 #. R/parsecovar.R: stop("the statedata data set must contain a variable 'state'")
 
@@ -5055,6 +5067,13 @@ msgid "type terms not yet supported"
 msgstr ""
 
 
+#: R/Surv.R: 0
+#. R/Surv.R: warning("type= 'mstate' is depricated, use a factor variable as status")
+
+msgid "type= 'mstate' is depricated, use a factor variable as status"
+msgstr ""
+
+
 #: R/cox.zph.R: 0
 #. R/cox.zph.R: stop("unexpected assign component")
 
@@ -5249,6 +5268,13 @@ msgstr ""
 #. R/survfitAJ.R: stop("wrong length for p0")
 
 msgid "wrong length for p0"
+msgstr ""
+
+
+#: R/xtras.R: 0
+#. R/xtras.R: stop("wrong length for x or id")
+
+msgid "wrong length for x or id"
 msgstr ""
 
 

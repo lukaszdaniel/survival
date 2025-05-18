@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: survival\n"
-"POT-Creation-Date: 2024-12-14 12:08\n"
+"POT-Creation-Date: 2025-05-18 13:38\n"
 "PO-Revision-Date: 2024-09-13 18:51+0200\n"
 "Last-Translator: Łukasz Daniel <lukasz.daniel@gmail.com>\n"
 "Language-Team: Łukasz Daniel <lukasz.daniel@gmail.com>\n"
@@ -1570,6 +1570,12 @@ msgstr "Argument 'formula' jest wymagany"
 msgid "a variable appears on both the left and right sides of the formula"
 msgstr ""
 
+#. R/survSplit.R: stop("added must be a character string")
+#: R/survSplit.R:0
+#, fuzzy
+msgid "added must be a character string"
+msgstr "argument '%s' musi być tekstem"
+
 #. R/aeqSurv.R: stop("aeqSurv exception, an interval has effective length 0")
 #: R/aeqSurv.R:0
 msgid "aeqSurv exception, an interval has effective length 0"
@@ -2047,14 +2053,6 @@ msgstr "argument 'object' nie jest listą"
 #: R/plot.survfit.R:0
 msgid "cumprob contains an invalid numeric"
 msgstr ""
-
-#. R/plot.survfit.R: stop("cumprob not available for multiple states + mulitple groups")
-#. R/plot.survfit.R: stop("cumprob not available for multiple states + mulitple groups")
-#. R/plot.survfit.R: stop("cumprob not available for multiple states + mulitple groups")
-#: R/plot.survfit.R:0
-#, fuzzy
-msgid "cumprob not available for multiple states + mulitple groups"
-msgstr "Predykcje nie są dostępne dla rzadkich modeli"
 
 #. R/tmerge.R: stop("cumtdc initial value must be numeric")
 #: R/tmerge.R:0
@@ -2694,6 +2692,12 @@ msgstr "niepoprawna wartość dla tolerancji"
 #: R/aeqSurv.R:0
 msgid "invalid value for tolerance"
 msgstr "niepoprawna wartość dla tolerancji"
+
+#. R/xtras.R: stop("invalid variable type")
+#: R/xtras.R:0
+#, fuzzy
+msgid "invalid variable type"
+msgstr "utworzono niepoprawny czas przeżycia"
 
 #. R/timeline.R: stop("istate option duplicates an existing variable")
 #: R/timeline.R:0
@@ -3777,6 +3781,11 @@ msgstr "y musi być obiektem klasy \"surv\""
 msgid "the reverse argument must be TRUE/FALSE"
 msgstr "argument '%s' musi mieć wartość TRUE lub FALSE"
 
+#. R/coxph.R: warning("the robust variance is not defined for a penalized model, option ignored")
+#: R/coxph.R:0
+msgid "the robust variance is not defined for a penalized model, option ignored"
+msgstr ""
+
 #. R/parsecovar.R: stop("the statedata data set must contain a variable 'state'")
 #: R/parsecovar.R:0
 msgid "the statedata data set must contain a variable 'state'"
@@ -3954,6 +3963,11 @@ msgstr "zgrubna wariancja wraz ze ścisłym modelem nie jest wspierana"
 msgid "type terms not yet supported"
 msgstr "człony typu jeszcze nie są wspierane"
 
+#. R/Surv.R: warning("type= 'mstate' is depricated, use a factor variable as status")
+#: R/Surv.R:0
+msgid "type= 'mstate' is depricated, use a factor variable as status"
+msgstr ""
+
 #. R/cox.zph.R: stop("unexpected assign component")
 #: R/cox.zph.R:0
 msgid "unexpected assign component"
@@ -4103,6 +4117,12 @@ msgstr "niepoprawna długość czynnika"
 msgid "wrong length for p0"
 msgstr "niepoprawna długość czynnika"
 
+#. R/xtras.R: stop("wrong length for x or id")
+#: R/xtras.R:0
+#, fuzzy
+msgid "wrong length for x or id"
+msgstr "niepoprawna długość czynnika"
+
 #. R/survfit.matrix.R: stop("wrong number of rows for p0")
 #: R/survfit.matrix.R:0
 msgid "wrong number of rows for p0"
@@ -4239,6 +4259,10 @@ msgid_plural "unrecognized options: %s"
 msgstr[0] "nierozpoznana opcja: %s"
 msgstr[1] "nierozpoznane opcje: %s"
 msgstr[2] "nierozpoznane opcje: %s"
+
+#, fuzzy
+#~ msgid "cumprob not available for multiple states + mulitple groups"
+#~ msgstr "Predykcje nie są dostępne dla rzadkich modeli"
 
 #, fuzzy
 #~ msgid "multi-state coxph does not support strata*covariate interactions"

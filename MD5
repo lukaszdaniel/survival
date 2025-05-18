@@ -1,7 +1,7 @@
 7d184ca7d35ad817d0196973a500d318 *inst/po/pl/LC_MESSAGES/R-survival.mo
 f3a88658ab80add5c4c3419b81c23127 *inst/po/pl/LC_MESSAGES/survival.mo
-5eea11a9edf6ef5abd62b4a03e1a8436 *inst/po/en@quot/LC_MESSAGES/R-survival.mo
-a42715753c2701f8ad42d84804fb939a *inst/po/en@quot/LC_MESSAGES/survival.mo
+e4dc07e00f32f00cb785d6e234ec69ea *inst/po/en@quot/LC_MESSAGES/R-survival.mo
+31b2da0a3384972fb3ff7399389fdafb *inst/po/en@quot/LC_MESSAGES/survival.mo
 9b33a263e2bc9636cfb9847dbac8079f *inst/NEWS.Rd
 ba01ac7a9482cc481afa2bcfd8126e99 *inst/CITATION
 3e8ebae349953a3b7a665eecce562802 *inst/COPYRIGHTS
@@ -440,10 +440,10 @@ c325ed2c438a97ba987d576114f09193 *tests/dropspecial.Rout.save
 bcee0332ea4069d156be595524baf0c8 *tests/book7.Rout.save
 d779646bbd15e7dca38c657ef9377154 *tests/difftest.R
 40daba122be0c002e101c3d9b603668e *.Rinstignore
-9c4916bec600af48d7be505fdeb77b06 *po/survival.pot
-f229f433eba755090e76cdcba1d1d6b2 *po/R-pl.po
+bdabc1e571ecbfaaf09016f05b220ba4 *po/survival.pot
+804f4bf229a3e59ea087e8c88018420e *po/R-pl.po
 631498a5b419bf51ef70acf394617e32 *po/pl.po
-26676803aca224f49fd25619416055e0 *po/R-survival.pot
+23aa599fa9ea68ee3e785b3eb1ff1002 *po/R-survival.pot
 5e57de462543ad48eb92bace94cd9e28 *.hgignore
 449968b133b2dc99ad10885061cd7f69 *README.md
 b383170649ab37e116da2a217a009ae0 *.vscode/settings.json
