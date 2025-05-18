@@ -2,7 +2,22 @@
 \title{NEWS file for the survival package}
 \section{Changes in version 3.8-4}{
   \itemize{
-    \item Add the "added" option to survSplit
+    \item The rmean option for print.survfit for a single and multi
+    state model were not in harmony with start.time was present. The
+    former added start.time to the result, the second not.  Make them
+    agree (don't add it).
+    \item Fix error in stacker (called by coxph) that only arose if
+    there were shared strata that differ in both starting and ending
+    state.  A rare case, but it arises with curves for TD covariates.
+    \item Add the lvcf and nostutter functions, both useful when
+    creating certain multistate data sets.
+    \item Depricate the type="mstate" option of Surv; a factor variable
+    is the better option.
+    \item Add code to ignore the robust option to coxph for a penalized
+    model; this combination makes no sense and does not appear in any
+    examples. However, to my dismay I have just discovered that in the
+    prior code this does not outright fail as it should, and produces
+    *something* that is returned as a purported variance.
 }}
 \section{Changes in version 3.8-2}{
   \itemize{

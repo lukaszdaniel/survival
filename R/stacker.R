@@ -46,6 +46,14 @@ stacker <- function(cmap, smap, istate, X, Y, strata, states, dropzero=TRUE) {
     #  of those columns have the same starting state, it makes me nervous
     #  (statistically), but forge onward and sort the issues out in the
     #  fits.
+    # Dec 2024: change to once per stratum.  The issue was multiple
+    #  transitions like 1:4 and 2:5 in the same stratum, which led to the
+    #  same row of data twice in one stratum; which is not valid.
+    # May 2025: revert to the 2021 code, in conjunction with the "Multi-state
+    #  models and absolute risk" vignette, which forced a re-thinking of
+    #  the process.  We need an actual use case of A:B and A:C with the
+    #  same strata to work all this out, and don't have one yet.
+
     # Pass 1 to find the total data set size
     nblock <- ncol(cmap)
     n.perblock <- integer(nblock)

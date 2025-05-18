@@ -446,6 +446,8 @@ coxph <- function(formula, data, weights, subset, na.action,
     X <- X[, !xdrop, drop=FALSE]
     attr(X, "assign") <- Xatt$assign[!xdrop]
     attr(X, "contrasts") <- Xatt$contrasts
+
+    Xmeans <- colMeans(X) # do this before expanding a multistate model
     offset <- model.offset(mf)
     if (is.null(offset) || all(offset==0)) {
         offset <- rep(0., nrow(mf))
@@ -551,6 +553,10 @@ coxph <- function(formula, data, weights, subset, na.action,
     if (any(pterms)) {
         pattr <- lapply(mf[pterms], attributes)
         pname <- names(pterms)[pterms]
+        if (robust) {
+            warning("the robust variance is not defined for a penalized model, option ignored")
+            robust <- FALSE
+        }
         # 
         # Check the order of any penalty terms
         ord <- attr(Terms, "order")[match(pname, attr(Terms, 'term.labels'))]
