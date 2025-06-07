@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: survival 3.8-4\n"
-"POT-Creation-Date: 2025-05-18 13:38\n"
+"POT-Creation-Date: 2025-06-05 16:22\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
@@ -68,7 +68,6 @@ msgstr ""
 
 #: R/tmerge.R: 0
 #. R/tmerge.R: gettextf("'%s' argument is not the same length as id", argname[ii])
-#. R/tmerge.R: gettextf("'%s' argument is not the same length as id", argname[ii])
 
 msgid "'%s' argument is not the same length as id"
 msgstr ""
@@ -119,7 +118,6 @@ msgstr ""
 
 
 #: R/concordance.R: 0
-#. R/concordance.R: gettext("'%s' timewt option not supported for (time1, time2) data",     timewt)
 #. R/concordance.R: gettext("'%s' timewt option not supported for (time1, time2) data",     timewt)
 
 msgid "'%s' timewt option not supported for (time1, time2) data"
@@ -242,8 +240,6 @@ msgstr ""
 
 #: R/coxph.wtest.R: 0
 #. R/coxph.wtest.R: stop("Argument lengths do not match")
-#. R/coxph.wtest.R: stop("Argument lengths do not match")
-#. R/coxph.wtest.R: stop("Argument lengths do not match")
 
 msgid "Argument lengths do not match"
 msgstr ""
@@ -306,10 +302,8 @@ msgstr ""
 
 #: R/frailty.gamma.R: 0
 #: R/frailty.gaussian.R: 0
-#: R/frailty.gaussian.R: 0
 #: R/frailty.t.R: 0
 #. R/frailty.gamma.R: stop("Cannot give both a df and theta argument")
-#. R/frailty.gaussian.R: stop("Cannot give both a df and theta argument")
 #. R/frailty.gaussian.R: stop("Cannot give both a df and theta argument")
 #. R/frailty.t.R: stop("Cannot give both a df and theta argument")
 
@@ -408,7 +402,6 @@ msgstr ""
 
 #: R/survdiff.fit.R: 0
 #. R/survdiff.fit.R: stop("Data length mismatch")
-#. R/survdiff.fit.R: stop("Data length mismatch")
 
 msgid "Data length mismatch"
 msgstr ""
@@ -452,8 +445,6 @@ msgstr ""
 
 
 #: R/dsurvreg.R: 0
-#. R/dsurvreg.R: stop("Distribution not found")
-#. R/dsurvreg.R: stop("Distribution not found")
 #. R/dsurvreg.R: stop("Distribution not found")
 
 msgid "Distribution not found"
@@ -584,8 +575,6 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("Invalid 'fun' argument")
-#. R/plot.survfit.R: stop("Invalid 'fun' argument")
-#. R/plot.survfit.R: stop("Invalid 'fun' argument")
 
 msgid "Invalid 'fun' argument"
 msgstr ""
@@ -627,7 +616,6 @@ msgstr ""
 
 #: R/survreg.R: 0
 #. R/survreg.R: stop("Invalid distribution object")
-#. R/survreg.R: stop("Invalid distribution object")
 
 msgid "Invalid distribution object"
 msgstr ""
@@ -644,18 +632,12 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("Invalid function argument")
-#. R/plot.survfit.R: stop("Invalid function argument")
-#. R/plot.survfit.R: stop("Invalid function argument")
-#. R/plot.survfit.R: stop("Invalid function argument")
-#. R/plot.survfit.R: stop("Invalid function argument")
-#. R/plot.survfit.R: stop("Invalid function argument")
 
 msgid "Invalid function argument"
 msgstr ""
 
 
 #: R/Surv.R: 0
-#. R/Surv.R: warning("Invalid interval: start > stop, NA created")
 #. R/Surv.R: warning("Invalid interval: start > stop, NA created")
 
 msgid "Invalid interval: start > stop, NA created"
@@ -680,13 +662,7 @@ msgstr ""
 
 #: R/Surv.R: 0
 #: R/Surv2.R: 0
-#: R/Surv2.R: 0
-#: R/Surv2.R: 0
 #. R/Surv.R: stop("Invalid operation on a survival time")
-#. R/Surv.R: stop("Invalid operation on a survival time")
-#. R/Surv.R: stop("Invalid operation on a survival time")
-#. R/Surv2.R: stop("Invalid operation on a survival time")
-#. R/Surv2.R: stop("Invalid operation on a survival time")
 #. R/Surv2.R: stop("Invalid operation on a survival time")
 
 msgid "Invalid operation on a survival time"
@@ -772,14 +748,12 @@ msgstr ""
 
 #: R/Surv.R: 0
 #. R/Surv.R: warning("Invalid status value, converted to NA")
-#. R/Surv.R: warning("Invalid status value, converted to NA")
 
 msgid "Invalid status value, converted to NA"
 msgstr ""
 
 
 #: R/Surv.R: 0
-#. R/Surv.R: stop("Invalid status value, must be logical or numeric")
 #. R/Surv.R: stop("Invalid status value, must be logical or numeric")
 
 msgid "Invalid status value, must be logical or numeric"
@@ -1199,7 +1173,6 @@ msgstr ""
 
 
 #: R/neardate.R: 0
-#. R/neardate.R: stop("No valid entries in data set 2")
 #. R/neardate.R: stop("No valid entries in data set 2")
 
 msgid "No valid entries in data set 2"
@@ -1690,7 +1663,6 @@ msgstr ""
 
 #: R/Surv.R: 0
 #. R/Surv.R: stop("Time and status are different lengths")
-#. R/Surv.R: stop("Time and status are different lengths")
 
 msgid "Time and status are different lengths"
 msgstr ""
@@ -1699,8 +1671,6 @@ msgstr ""
 #: R/Surv.R: 0
 #: R/Surv2.R: 0
 #. R/Surv.R: stop("Time variable is not numeric")
-#. R/Surv.R: stop("Time variable is not numeric")
-#. R/Surv.R: stop("Time variable is not numeric")
 #. R/Surv2.R: stop("Time variable is not numeric")
 
 msgid "Time variable is not numeric"
@@ -1708,7 +1678,6 @@ msgstr ""
 
 
 #: R/Surv.R: 0
-#. R/Surv.R: stop("Time2 must be numeric")
 #. R/Surv.R: stop("Time2 must be numeric")
 
 msgid "Time2 must be numeric"
@@ -1745,10 +1714,7 @@ msgstr ""
 
 #: R/print.survfit.R: 0
 #: R/survfitms.R: 0
-#: R/survfitms.R: 0
 #. R/print.survfit.R: stop("Truncation point for the mean is < smallest survival")
-#. R/print.survfit.R: stop("Truncation point for the mean is < smallest survival")
-#. R/survfitms.R: stop("Truncation point for the mean is < smallest survival")
 #. R/survfitms.R: stop("Truncation point for the mean is < smallest survival")
 
 msgid "Truncation point for the mean is < smallest survival"
@@ -1757,10 +1723,7 @@ msgstr ""
 
 #: R/summary.survfit.R: 0
 #: R/summary.survfitms.R: 0
-#: R/summary.survfitms.R: 0
 #. R/summary.survfit.R: stop("Truncation point for the mean time in state is < smallest survival")
-#. R/summary.survfit.R: stop("Truncation point for the mean time in state is < smallest survival")
-#. R/summary.survfitms.R: stop("Truncation point for the mean time in state is < smallest survival")
 #. R/summary.survfitms.R: stop("Truncation point for the mean time in state is < smallest survival")
 
 msgid "Truncation point for the mean time in state is < smallest survival"
@@ -1784,8 +1747,6 @@ msgstr ""
 
 
 #: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("Unrecognized function argument")
-#. R/plot.survfit.R: stop("Unrecognized function argument")
 #. R/plot.survfit.R: stop("Unrecognized function argument")
 
 msgid "Unrecognized function argument"
@@ -1819,13 +1780,11 @@ msgstr ""
 
 #: R/agexact.fit.R: 0
 #: R/agreg.fit.R: 0
-#: R/agreg.fit.R: 0
 #: R/coxexact.fit.R: 0
 #: R/coxpenal.fit.R: 0
 #: R/coxph.fit.R: 0
 #: R/survpenal.fit.R: 0
 #. R/agexact.fit.R: stop("Wrong length for inital values")
-#. R/agreg.fit.R: stop("Wrong length for inital values")
 #. R/agreg.fit.R: stop("Wrong length for inital values")
 #. R/coxexact.fit.R: stop("Wrong length for inital values")
 #. R/coxpenal.fit.R: stop("Wrong length for inital values")
@@ -1853,7 +1812,6 @@ msgstr ""
 
 
 #: R/Surv.R: 0
-#. R/Surv.R: stop("Wrong number of args for this type of survival data")
 #. R/Surv.R: stop("Wrong number of args for this type of survival data")
 
 msgid "Wrong number of args for this type of survival data"
@@ -1920,7 +1878,6 @@ msgstr ""
 
 #: R/yates.R: 0
 #. R/yates.R: stop("a fit argument is required")
-#. R/yates.R: stop("a fit argument is required")
 
 msgid "a fit argument is required"
 msgstr ""
@@ -1931,7 +1888,6 @@ msgstr ""
 #: R/coxph.R: 0
 #: R/model.frame.survfit.R: 0
 #: R/rttright.R: 0
-#: R/rttright.R: 0
 #: R/survcheck.R: 0
 #: R/survdiff.R: 0
 #: R/survfit.R: 0
@@ -1940,7 +1896,6 @@ msgstr ""
 #. R/concordance.R: stop("a formula argument is required")
 #. R/coxph.R: stop("a formula argument is required")
 #. R/model.frame.survfit.R: stop("a formula argument is required")
-#. R/rttright.R: stop("a formula argument is required")
 #. R/rttright.R: stop("a formula argument is required")
 #. R/survcheck.R: stop("a formula argument is required")
 #. R/survdiff.R: stop("a formula argument is required")
@@ -2113,10 +2068,7 @@ msgstr ""
 
 #: R/Surv.R: 0
 #: R/Surv2.R: 0
-#: R/Surv2.R: 0
 #. R/Surv.R: stop("all elements must have the same list of states")
-#. R/Surv.R: stop("all elements must have the same list of states")
-#. R/Surv2.R: stop("all elements must have the same list of states")
 #. R/Surv2.R: stop("all elements must have the same list of states")
 
 msgid "all elements must have the same list of states"
@@ -2231,7 +2183,6 @@ msgstr ""
 
 #: R/anova.coxph.penal.R: 0
 #. R/anova.coxph.penal.R: stop("anova command does not handle frailty terms")
-#. R/anova.coxph.penal.R: stop("anova command does not handle frailty terms")
 
 msgid "anova command does not handle frailty terms"
 msgstr ""
@@ -2259,8 +2210,6 @@ msgstr ""
 
 
 #: R/concordance.R: 0
-#. R/concordance.R: stop(temp, " argument is not an appropriate fit object")
-#. R/concordance.R: stop(temp, " argument is not an appropriate fit object")
 #. R/concordance.R: stop(temp, " argument is not an appropriate fit object")
 
 msgid "argument is not an appropriate fit object"
@@ -2319,7 +2268,6 @@ msgstr ""
 
 
 #: R/aggregate.survfit.R: 0
-#. R/aggregate.survfit.R: stop("arguments must have the same length")
 #. R/aggregate.survfit.R: stop("arguments must have the same length")
 
 msgid "arguments must have the same length"
@@ -2527,7 +2475,6 @@ msgstr ""
 #: R/residuals.survfit.R: 0
 #: R/residuals.survfitcox.R: 0
 #. R/residuals.survfit.R: stop("collapse must be TRUE/FALSE")
-#. R/residuals.survfit.R: stop("collapse must be TRUE/FALSE")
 #. R/residuals.survfitcox.R: stop("collapse must be TRUE/FALSE")
 
 msgid "collapse must be TRUE/FALSE"
@@ -2564,16 +2511,12 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("conf.times must be numeric")
-#. R/plot.survfit.R: stop("conf.times must be numeric")
-#. R/plot.survfit.R: stop("conf.times must be numeric")
 
 msgid "conf.times must be numeric"
 msgstr ""
 
 
 #: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("confidence intervals not available when cumprob=TRUE")
-#. R/plot.survfit.R: stop("confidence intervals not available when cumprob=TRUE")
 #. R/plot.survfit.R: stop("confidence intervals not available when cumprob=TRUE")
 
 msgid "confidence intervals not available when cumprob=TRUE"
@@ -2632,16 +2575,12 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("cumhaz argument is not integer")
-#. R/plot.survfit.R: stop("cumhaz argument is not integer")
-#. R/plot.survfit.R: stop("cumhaz argument is not integer")
 
 msgid "cumhaz argument is not integer"
 msgstr ""
 
 
 #: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("cumprob contains an invalid numeric")
-#. R/plot.survfit.R: stop("cumprob contains an invalid numeric")
 #. R/plot.survfit.R: stop("cumprob contains an invalid numeric")
 
 msgid "cumprob contains an invalid numeric"
@@ -2809,7 +2748,6 @@ msgstr ""
 
 #: R/survSplit.R: 0
 #. R/survSplit.R: stop("either a formula or the end and event arguments are required")
-#. R/survSplit.R: stop("either a formula or the end and event arguments are required")
 
 msgid "either a formula or the end and event arguments are required"
 msgstr ""
@@ -2881,8 +2819,6 @@ msgstr ""
 
 
 #: R/tmerge.R: 0
-#. R/tmerge.R: gettextf("event variable %s no longer matches it's original class",     ename)
-#. R/tmerge.R: gettextf("event variable %s no longer matches it's original class",     ename)
 #. R/tmerge.R: gettextf("event variable %s no longer matches it's original class",     ename)
 
 msgid "event variable %s no longer matches it's original class"
@@ -3067,7 +3003,6 @@ msgstr ""
 
 #: R/timeline.R: 0
 #. R/timeline.R: stop("id must be a simple variable name")
-#. R/timeline.R: stop("id must be a simple variable name")
 
 msgid "id must be a simple variable name"
 msgstr ""
@@ -3177,9 +3112,7 @@ msgstr ""
 
 #: R/survfit.R: 0
 #: R/survfitms.R: 0
-#: R/survfitms.R: 0
 #. R/survfit.R: stop("incorrect number of dimensions")
-#. R/survfitms.R: stop("incorrect number of dimensions")
 #. R/survfitms.R: stop("incorrect number of dimensions")
 
 msgid "incorrect number of dimensions"
@@ -3239,7 +3172,6 @@ msgstr ""
 
 #: R/survexpm.R: 0
 #. R/survexpm.R: stop("input is not a transition matrix")
-#. R/survexpm.R: stop("input is not a transition matrix")
 
 msgid "input is not a transition matrix"
 msgstr ""
@@ -3267,7 +3199,6 @@ msgstr ""
 
 
 #: R/survfit.matrix.R: 0
-#. R/survfit.matrix.R: stop("input must be a square matrix survival curves")
 #. R/survfit.matrix.R: stop("input must be a square matrix survival curves")
 
 msgid "input must be a square matrix survival curves"
@@ -3412,8 +3343,6 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("invalid value for conf.int")
-#. R/plot.survfit.R: stop("invalid value for conf.int")
-#. R/plot.survfit.R: stop("invalid value for conf.int")
 
 msgid "invalid value for conf.int"
 msgstr ""
@@ -3529,7 +3458,6 @@ msgstr ""
 
 #: R/concordance.R: 0
 #. R/concordance.R: stop("left hand side of the formula must be a numeric vector,\n survival object, or an orderable factor")
-#. R/concordance.R: stop("left hand side of the formula must be a numeric vector,\n survival object, or an orderable factor")
 
 msgid "left hand side of the formula must be a numeric vector,\n survival object, or an orderable factor"
 msgstr ""
@@ -3628,27 +3556,12 @@ msgstr ""
 
 #: R/Surv.R: 0
 #. R/Surv.R: stop("method not defined for a Surv object")
-#. R/Surv.R: stop("method not defined for a Surv object")
-#. R/Surv.R: stop("method not defined for a Surv object")
-#. R/Surv.R: stop("method not defined for a Surv object")
-#. R/Surv.R: stop("method not defined for a Surv object")
-#. R/Surv.R: stop("method not defined for a Surv object")
-#. R/Surv.R: stop("method not defined for a Surv object")
-#. R/Surv.R: stop("method not defined for a Surv object")
 
 msgid "method not defined for a Surv object"
 msgstr ""
 
 
 #: R/Surv2.R: 0
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
-#. R/Surv2.R: stop("method not defined for a Surv2 object")
 #. R/Surv2.R: stop("method not defined for a Surv2 object")
 
 msgid "method not defined for a Surv2 object"
@@ -3942,7 +3855,6 @@ msgstr ""
 
 #: R/parsecovar.R: 0
 #. R/parsecovar.R: stop("non-integer state number")
-#. R/parsecovar.R: stop("non-integer state number")
 
 msgid "non-integer state number"
 msgstr ""
@@ -4024,7 +3936,6 @@ msgstr ""
 
 #: R/survexpm.R: 0
 #. R/survexpm.R: stop("not yet filled in")
-#. R/survexpm.R: stop("not yet filled in")
 
 msgid "not yet filled in"
 msgstr ""
@@ -4039,8 +3950,6 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("numeric cumhaz argument only applies to multi-state")
-#. R/plot.survfit.R: stop("numeric cumhaz argument only applies to multi-state")
-#. R/plot.survfit.R: stop("numeric cumhaz argument only applies to multi-state")
 
 msgid "numeric cumhaz argument only applies to multi-state"
 msgstr ""
@@ -4048,14 +3957,12 @@ msgstr ""
 
 #: R/parsecovar.R: 0
 #. R/parsecovar.R: stop("numeric state is out of range")
-#. R/parsecovar.R: stop("numeric state is out of range")
 
 msgid "numeric state is out of range"
 msgstr ""
 
 
 #: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("object does not have standard errors, CI not possible")
 #. R/plot.survfit.R: stop("object does not have standard errors, CI not possible")
 
 msgid "object does not have standard errors, CI not possible"
@@ -4205,8 +4112,6 @@ msgstr ""
 
 #: R/print.pyears.R: 0
 #. R/print.pyears.R: stop("programming length error, notify package author")
-#. R/print.pyears.R: stop("programming length error, notify package author")
-#. R/print.pyears.R: stop("programming length error, notify package author")
 
 msgid "programming length error, notify package author"
 msgstr ""
@@ -4234,7 +4139,6 @@ msgstr ""
 
 
 #: R/quantile.survfit.R: 0
-#. R/quantile.survfit.R: stop("quantiles are not a well defined quantity for multi-state models")
 #. R/quantile.survfit.R: stop("quantiles are not a well defined quantity for multi-state models")
 
 msgid "quantiles are not a well defined quantity for multi-state models"
@@ -4309,10 +4213,8 @@ msgstr ""
 #: R/brier.R: 0
 #: R/rttright.R: 0
 #: R/timeline.R: 0
-#: R/timeline.R: 0
 #. R/brier.R: stop("response must be a Surv object")
 #. R/rttright.R: stop("response must be a Surv object")
-#. R/timeline.R: stop("response must be a Surv object")
 #. R/timeline.R: stop("response must be a Surv object")
 
 msgid "response must be a Surv object"
@@ -4392,14 +4294,12 @@ msgstr ""
 
 #: R/tmerge.R: 0
 #. R/tmerge.R: stop("setting the range, and data1 has id values not in data2")
-#. R/tmerge.R: stop("setting the range, and data1 has id values not in data2")
 
 msgid "setting the range, and data1 has id values not in data2"
 msgstr ""
 
 
 #: R/tmerge.R: 0
-#. R/tmerge.R: stop("setting the range, and data2 has id values not in data1")
 #. R/tmerge.R: stop("setting the range, and data2 has id values not in data1")
 
 msgid "setting the range, and data2 has id values not in data1"
@@ -4576,8 +4476,6 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("subscript out of range")
-#. R/plot.survfit.R: stop("subscript out of range")
-#. R/plot.survfit.R: stop("subscript out of range")
 
 msgid "subscript out of range"
 msgstr ""
@@ -4622,8 +4520,6 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("survfit object does not contain a cumulative hazard")
-#. R/plot.survfit.R: stop("survfit object does not contain a cumulative hazard")
-#. R/plot.survfit.R: stop("survfit object does not contain a cumulative hazard")
 
 msgid "survfit object does not contain a cumulative hazard"
 msgstr ""
@@ -4659,8 +4555,6 @@ msgstr ""
 
 #: R/plot.survfit.R: 0
 #. R/plot.survfit.R: stop("survfitms object with no states dimension")
-#. R/plot.survfit.R: stop("survfitms object with no states dimension")
-#. R/plot.survfit.R: stop("survfitms object with no states dimension")
 
 msgid "survfitms object with no states dimension"
 msgstr ""
@@ -4688,7 +4582,6 @@ msgstr ""
 
 
 #: R/tmerge.R: 0
-#. R/tmerge.R: stop("tdc update does not match prior variable type: ", argname[ii])
 #. R/tmerge.R: stop("tdc update does not match prior variable type: ", argname[ii])
 
 msgid "tdc update does not match prior variable type:"
@@ -4761,7 +4654,6 @@ msgstr ""
 
 
 #: R/yates.R: 0
-#. R/yates.R: stop("the fit does not have a terms structure")
 #. R/yates.R: stop("the fit does not have a terms structure")
 
 msgid "the fit does not have a terms structure"
@@ -4853,7 +4745,6 @@ msgstr ""
 
 #: R/survSplit.R: 0
 #. R/survSplit.R: stop("the suggested id name is already present")
-#. R/survSplit.R: stop("the suggested id name is already present")
 
 msgid "the suggested id name is already present"
 msgstr ""
@@ -4911,7 +4802,6 @@ msgstr ""
 
 
 #: R/Surv.R: 0
-#. R/Surv.R: stop("time and time2 are different lengths")
 #. R/Surv.R: stop("time and time2 are different lengths")
 
 msgid "time and time2 are different lengths"
@@ -4997,8 +4887,6 @@ msgstr ""
 
 
 #: R/tmerge.R: 0
-#. R/tmerge.R: stop("tstart must be < tstop")
-#. R/tmerge.R: stop("tstart must be < tstop")
 #. R/tmerge.R: stop("tstart must be < tstop")
 
 msgid "tstart must be < tstop"
@@ -5191,12 +5079,10 @@ msgstr ""
 
 #: R/brier.R: 0
 #: R/coxph.R: 0
-#: R/coxph.R: 0
 #: R/model.matrix.coxph.R: 0
 #: R/rttright.R: 0
 #: R/survfit.R: 0
 #. R/brier.R: stop("weights must be finite")
-#. R/coxph.R: stop("weights must be finite")
 #. R/coxph.R: stop("weights must be finite")
 #. R/model.matrix.coxph.R: stop("weights must be finite")
 #. R/rttright.R: stop("weights must be finite")
@@ -5257,7 +5143,6 @@ msgstr ""
 
 
 #: R/survcheck.R: 0
-#. R/survcheck.R: stop("wrong length for istate")
 #. R/survcheck.R: stop("wrong length for istate")
 
 msgid "wrong length for istate"
