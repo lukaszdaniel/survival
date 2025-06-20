@@ -1,7 +1,7 @@
 survcheck <- function(formula, data, subset, na.action,  id, istate, 
                       istate0="(s0)", timefix=TRUE, ...) {
     Call <- match.call()
-    if (missing(formula)) stop("a formula argument is required")
+    if (missing(formula)) stop(gettextf("'%s' argument is required", "formula"))
     # make Surv(), strata() resolve to the survival namespace
     newform <- removeDoubleColonSurv(formula)
     if (!is.null(newform)) {
@@ -63,10 +63,10 @@ survcheck <- function(formula, data, subset, na.action,  id, istate,
         stop("response must be right censored")
     n <- nrow(Y)
     if (!is.logical(timefix) || length(timefix) > 1)
-        stop("invalid value for timefix option")
+        stop(gettextf("invalid '%s' value", "timefix"))
     if (timefix) Y <- aeqSurv(Y)
     
-    if (is.null(id)) stop("an id argument is required")
+    if (is.null(id)) stop(gettextf("'%s' argument is required", "id"))
     else if (length(id) !=n) stop("wrong length for id")
      
     if (!is.null(istate) && length(istate) !=n) stop("wrong length for istate")

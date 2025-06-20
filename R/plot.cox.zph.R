@@ -11,7 +11,7 @@ plot.cox.zph <- function(x, resid=TRUE, se=TRUE, df=4, nsmo=40,
     lmat <- ns(temp, df=df, intercept=TRUE)
     pmat <- lmat[1:nsmo,]       # for prediction
     xmat <- lmat[-(1:nsmo),]
-    if (!is.logical(hr)) stop("hr parameter must be TRUE/FALSE")
+    if (!is.logical(hr)) stop(gettextf("'%s' argument must be TRUE or FALSE", "hr"))
 
     if (missing(ylab)) {
         if (hr)  ylab <- paste("HR(t) for", dimnames(yy)[[2]])

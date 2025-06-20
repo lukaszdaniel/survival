@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: survival 3.8-4\n"
-"POT-Creation-Date: 2025-06-05 16:22\n"
+"POT-Creation-Date: 2025-06-20 21:09\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,24 +75,83 @@ msgstr ""
 
 #: R/aareg.R: 0
 #: R/clogit.R: 0
+#: R/concordance.R: 0
+#: R/coxph.R: 0
 #: R/finegray.R: 0
+#: R/model.frame.survfit.R: 0
+#: R/neardate.R: 0
 #: R/pyears.R: 0
+#: R/residuals.survfit.R: 0
+#: R/residuals.survfitcox.R: 0
+#: R/rttright.R: 0
 #: R/surv2data.R: 0
+#: R/survcheck.R: 0
 #: R/survcondense.R: 0
+#: R/survdiff.R: 0
 #: R/survexp.R: 0
+#: R/survfit.R: 0
 #: R/survobrien.R: 0
 #: R/survreg.R: 0
+#: R/tmerge.R: 0
+#: R/yates.R: 0
 #. R/aareg.R: gettextf("'%s' argument is required", "formula")
 #. R/clogit.R: gettextf("'%s' argument is required", "formula")
+#. R/concordance.R: gettextf("'%s' argument is required", "formula")
+#. R/coxph.R: gettextf("'%s' argument is required", "formula")
 #. R/finegray.R: gettextf("'%s' argument is required", "formula")
+#. R/model.frame.survfit.R: gettextf("'%s' argument is required", "formula")
+#. R/neardate.R: gettextf("'%s' argument is required", "id1")
+#. R/neardate.R: gettextf("'%s' argument is required", "id2")
+#. R/neardate.R: gettextf("'%s' argument is required", "y1")
+#. R/neardate.R: gettextf("'%s' argument is required", "y2")
 #. R/pyears.R: gettextf("'%s' argument is required", "formula")
+#. R/residuals.survfit.R: gettextf("'%s' argument is required", "times")
+#. R/residuals.survfitcox.R: gettextf("'%s' argument is required", "times")
+#. R/rttright.R: gettextf("'%s' argument is required", "formula")
 #. R/surv2data.R: gettextf("'%s' argument is required", "formula")
+#. R/survcheck.R: gettextf("'%s' argument is required", "formula")
+#. R/survcheck.R: gettextf("'%s' argument is required", "id")
 #. R/survcondense.R: gettextf("'%s' argument is required", "formula")
+#. R/survdiff.R: gettextf("'%s' argument is required", "formula")
 #. R/survexp.R: gettextf("'%s' argument is required", "formula")
+#. R/survfit.R: gettextf("'%s' argument is required", "formula")
 #. R/survobrien.R: gettextf("'%s' argument is required", "formula")
 #. R/survreg.R: gettextf("'%s' argument is required", "formula")
+#. R/tmerge.R: gettextf("'%s' argument is required", "id")
+#. R/yates.R: gettextf("'%s' argument is required", "fit")
+#. R/yates.R: gettextf("'%s' argument is required", "term")
 
 msgid "'%s' argument is required"
+msgstr ""
+
+
+#: R/concordance.R: 0
+#: R/coxph.R: 0
+#: R/coxph.control.R: 0
+#: R/plot.cox.zph.R: 0
+#: R/residuals.survfit.R: 0
+#: R/residuals.survfitcox.R: 0
+#: R/summary.survfit.R: 0
+#: R/survfit.R: 0
+#: R/survfitKM.R: 0
+#: R/tmerge.R: 0
+#. R/concordance.R: gettextf("'%s' argument must be TRUE or FALSE", "reverse")
+#. R/coxph.R: gettextf("'%s' argument must be TRUE or FALSE", "robust")
+#. R/coxph.control.R: gettextf("'%s' argument must be TRUE or FALSE", "timefix")
+#. R/plot.cox.zph.R: gettextf("'%s' argument must be TRUE or FALSE", "hr")
+#. R/residuals.survfit.R: gettextf("'%s' argument must be TRUE or FALSE", "collapse")
+#. R/residuals.survfit.R: gettextf("'%s' argument must be TRUE or FALSE", "weighted")
+#. R/residuals.survfit.R: gettextf("'%s' argument must be TRUE or FALSE", "data.frame")
+#. R/residuals.survfitcox.R: gettextf("'%s' argument must be TRUE or FALSE", "collapse")
+#. R/residuals.survfitcox.R: gettextf("'%s' argument must be TRUE or FALSE", "weighted")
+#. R/residuals.survfitcox.R: gettextf("'%s' argument must be TRUE or FALSE", "data.frame")
+#. R/summary.survfit.R: gettextf("'%s' argument must be TRUE or FALSE", "dosum")
+#. R/survfit.R: gettextf("'%s' argument must be TRUE or FALSE", "time0")
+#. R/survfitKM.R: gettextf("'%s' argument must be TRUE or FALSE", "entry")
+#. R/survfitKM.R: gettextf("'%s' argument must be TRUE or FALSE", "robust")
+#. R/tmerge.R: gettextf("'%s' argument must be TRUE or FALSE", "na.rm")
+
+msgid "'%s' argument must be TRUE or FALSE"
 msgstr ""
 
 
@@ -100,6 +159,32 @@ msgstr ""
 #. R/match.ratetable.R: gettextf("'%s' argument needed by the ratetable was not found in the data",     dimid[is.na(ord)])
 
 msgid "'%s' argument needed by the ratetable was not found in the data"
+msgstr ""
+
+
+#: R/survSplit.R: 0
+#. R/survSplit.R: gettextf("'%s' must be a character string", "episode")
+#. R/survSplit.R: gettextf("'%s' must be a character string", "added")
+
+msgid "'%s' must be a character string"
+msgstr ""
+
+
+#: R/Surv.R: 0
+#: R/brier.R: 0
+#: R/concordance.R: 0
+#: R/plot.survfit.R: 0
+#: R/rttright.R: 0
+#: R/survfit.R: 0
+#. R/Surv.R: gettextf("'%s' must be numeric", "time2")
+#. R/brier.R: gettextf("'%s' must be numeric", "weights")
+#. R/concordance.R: gettextf("'%s' must be numeric", "ymin")
+#. R/concordance.R: gettextf("'%s' must be numeric", "ymax")
+#. R/plot.survfit.R: gettextf("'%s' must be numeric", "weights")
+#. R/rttright.R: gettextf("'%s' must be numeric", "weights")
+#. R/survfit.R: gettextf("'%s' must be numeric", "weights")
+
+msgid "'%s' must be numeric"
 msgstr ""
 
 
@@ -138,10 +223,24 @@ msgid "'event' must be a variable name in the data set"
 msgstr ""
 
 
+#: R/survexpm.R: 0
+#. R/survexpm.R: stop("'expmderiv'' function called with 1x1 matrix")
+
+msgid "'expmderiv'' function called with 1x1 matrix"
+msgstr ""
+
+
 #: R/coxph.R: 0
 #. R/coxph.R: stop("'model=TRUE' not supported for models with tt terms")
 
 msgid "'model=TRUE' not supported for models with tt terms"
+msgstr ""
+
+
+#: R/pspline.R: 0
+#. R/pspline.R: gettextf("'nterm' too small for df=%s", df)
+
+msgid "'nterm' too small for df=%s"
 msgstr ""
 
 
@@ -573,13 +672,6 @@ msgid "Interaction terms are not valid for this function"
 msgstr ""
 
 
-#: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("Invalid 'fun' argument")
-
-msgid "Invalid 'fun' argument"
-msgstr ""
-
-
 #: R/survpenal.fit.R: 0
 #: R/survreg.fit.R: 0
 #. R/survpenal.fit.R: stop("Invalid X matrix ")
@@ -840,20 +932,6 @@ msgid "Invalid value for rmean option"
 msgstr ""
 
 
-#: R/pspline.R: 0
-#. R/pspline.R: stop("Invalid value for theta")
-
-msgid "Invalid value for theta"
-msgstr ""
-
-
-#: R/pspline.R: 0
-#. R/pspline.R: stop("Invalid values for Boundary.knots")
-
-msgid "Invalid values for Boundary.knots"
-msgstr ""
-
-
 #: R/plot.cox.zph.R: 0
 #. R/plot.cox.zph.R: stop("Invalid variable requested")
 
@@ -1017,13 +1095,6 @@ msgstr ""
 #. R/print.aareg.R: stop("Must be an addreg object")
 
 msgid "Must be an addreg object"
-msgstr ""
-
-
-#: R/Surv.R: 0
-#. R/Surv.R: stop("Must have a time argument")
-
-msgid "Must have a time argument"
 msgstr ""
 
 
@@ -1677,13 +1748,6 @@ msgid "Time variable is not numeric"
 msgstr ""
 
 
-#: R/Surv.R: 0
-#. R/Surv.R: stop("Time2 must be numeric")
-
-msgid "Time2 must be numeric"
-msgstr ""
-
-
 #: R/survexp.R: 0
 #. R/survexp.R: stop("Times must be in increasing order")
 
@@ -1839,13 +1903,6 @@ msgid "[.survfit called on non-survfit object"
 msgstr ""
 
 
-#: R/pspline.R: 0
-#. R/pspline.R: stop("`nterm' too small for df=", df)
-
-msgid "`nterm' too small for df="
-msgstr ""
-
-
 #: R/cch.R: 0
 #. R/cch.R: warning("`robust' not implemented for stratified analysis.")
 
@@ -1873,36 +1930,6 @@ msgstr ""
 #. R/survSplit.R: stop("a data frame is required")
 
 msgid "a data frame is required"
-msgstr ""
-
-
-#: R/yates.R: 0
-#. R/yates.R: stop("a fit argument is required")
-
-msgid "a fit argument is required"
-msgstr ""
-
-
-#: R/aareg.R: 0
-#: R/concordance.R: 0
-#: R/coxph.R: 0
-#: R/model.frame.survfit.R: 0
-#: R/rttright.R: 0
-#: R/survcheck.R: 0
-#: R/survdiff.R: 0
-#: R/survfit.R: 0
-#: R/survreg.R: 0
-#. R/aareg.R: stop("a formula argument is required")
-#. R/concordance.R: stop("a formula argument is required")
-#. R/coxph.R: stop("a formula argument is required")
-#. R/model.frame.survfit.R: stop("a formula argument is required")
-#. R/rttright.R: stop("a formula argument is required")
-#. R/survcheck.R: stop("a formula argument is required")
-#. R/survdiff.R: stop("a formula argument is required")
-#. R/survfit.R: stop("a formula argument is required")
-#. R/survreg.R: stop("a formula argument is required")
-
-msgid "a formula argument is required"
 msgstr ""
 
 
@@ -1975,24 +2002,10 @@ msgid "a subject has overlapping time intervals"
 msgstr ""
 
 
-#: R/yates.R: 0
-#. R/yates.R: stop("a term argument is required")
-
-msgid "a term argument is required"
-msgstr ""
-
-
 #: R/coxph.R: 0
 #. R/coxph.R: warning("a variable appears on both the left and right sides of the formula")
 
 msgid "a variable appears on both the left and right sides of the formula"
-msgstr ""
-
-
-#: R/survSplit.R: 0
-#. R/survSplit.R: stop("added must be a character string")
-
-msgid "added must be a character string"
 msgstr ""
 
 
@@ -2144,13 +2157,6 @@ msgid "an element of the formula list is not a formula"
 msgstr ""
 
 
-#: R/survcheck.R: 0
-#. R/survcheck.R: stop("an id argument is required")
-
-msgid "an id argument is required"
-msgstr ""
-
-
 #: R/coxph.R: 0
 #. R/coxph.R: stop("an id statement is required for multi-state models")
 
@@ -2169,15 +2175,6 @@ msgstr ""
 #. R/survfitAJ.R: warning("an id value appears on more than one cluster")
 
 msgid "an id value appears on more than one cluster"
-msgstr ""
-
-
-#: R/summary.survfit.R: 0
-#: R/summary.survfitms.R: 0
-#. R/summary.survfit.R: stop("summary.survfit can only be used for survfit", " and survfit.coxph objects")
-#. R/summary.survfitms.R: stop("summary.survfit can only be used for survfit", " and survfit.coxph objects")
-
-msgid "and survfit.coxph objects"
 msgstr ""
 
 
@@ -2472,15 +2469,6 @@ msgid "cohort.size and stratum do not match"
 msgstr ""
 
 
-#: R/residuals.survfit.R: 0
-#: R/residuals.survfitcox.R: 0
-#. R/residuals.survfit.R: stop("collapse must be TRUE/FALSE")
-#. R/residuals.survfitcox.R: stop("collapse must be TRUE/FALSE")
-
-msgid "collapse must be TRUE/FALSE"
-msgstr ""
-
-
 #: R/pspline.R: 0
 #. R/pspline.R: stop("combine must be an increasing vector of positive integers")
 
@@ -2506,13 +2494,6 @@ msgstr ""
 #. R/survfitAJ.R: warning("conf.lower is ignored for multi-state data")
 
 msgid "conf.lower is ignored for multi-state data"
-msgstr ""
-
-
-#: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("conf.times must be numeric")
-
-msgid "conf.times must be numeric"
 msgstr ""
 
 
@@ -2658,15 +2639,6 @@ msgid "data set has overlapping intervals for one or more subjects"
 msgstr ""
 
 
-#: R/residuals.survfit.R: 0
-#: R/residuals.survfitcox.R: 0
-#. R/residuals.survfit.R: stop("data.frame must be TRUE/FALSE")
-#. R/residuals.survfitcox.R: stop("data.frame must be TRUE/FALSE")
-
-msgid "data.frame must be TRUE/FALSE"
-msgstr ""
-
-
 #: R/tmerge.R: 0
 #. R/tmerge.R: stop("data1 must be a data frame")
 
@@ -2695,13 +2667,6 @@ msgid "delayed entry is not yet implemented"
 msgstr ""
 
 
-#: R/survexpm.R: 0
-#. R/survexpm.R: stop("deriv function called with 1x1 matrix")
-
-msgid "deriv function called with 1x1 matrix"
-msgstr ""
-
-
 #: R/coxph.detail.R: 0
 #. R/coxph.detail.R: gettextf("detailed output is not available for the %s method",     method)
 
@@ -2713,13 +2678,6 @@ msgstr ""
 #. R/yates.R: stop("don't know how to do a linear contrast for this term")
 
 msgid "don't know how to do a linear contrast for this term"
-msgstr ""
-
-
-#: R/summary.survfit.R: 0
-#. R/summary.survfit.R: stop("dosum must be TRUE/FALSE")
-
-msgid "dosum must be TRUE/FALSE"
 msgstr ""
 
 
@@ -2757,20 +2715,6 @@ msgstr ""
 #. R/survexp.R: stop("either a times argument or a response is needed")
 
 msgid "either a times argument or a response is needed"
-msgstr ""
-
-
-#: R/survfitKM.R: 0
-#. R/survfitKM.R: stop("entry argument must be TRUE/FALSE")
-
-msgid "entry argument must be TRUE/FALSE"
-msgstr ""
-
-
-#: R/survSplit.R: 0
-#. R/survSplit.R: stop("episode must be a character string")
-
-msgid "episode must be a character string"
 msgstr ""
 
 
@@ -2971,13 +2915,6 @@ msgid "function requires a survfit object"
 msgstr ""
 
 
-#: R/plot.cox.zph.R: 0
-#. R/plot.cox.zph.R: stop("hr parameter must be TRUE/FALSE")
-
-msgid "hr parameter must be TRUE/FALSE"
-msgstr ""
-
-
 #: R/surv2data.R: 0
 #. R/surv2data.R: stop("id and time cannot be missing")
 
@@ -3058,23 +2995,9 @@ msgstr ""
 
 
 #: R/neardate.R: 0
-#. R/neardate.R: stop("id1 argument is required")
-
-msgid "id1 argument is required"
-msgstr ""
-
-
-#: R/neardate.R: 0
 #. R/neardate.R: stop("id2 and y2 have different lengths")
 
 msgid "id2 and y2 have different lengths"
-msgstr ""
-
-
-#: R/neardate.R: 0
-#. R/neardate.R: stop("id2 argument is required")
-
-msgid "id2 argument is required"
 msgstr ""
 
 
@@ -3212,6 +3135,46 @@ msgid "input must have at least 2 transitions"
 msgstr ""
 
 
+#: R/plot.survfit.R: 0
+#. R/plot.survfit.R: gettextf("invalid '%s' argument", "fun")
+
+msgid "invalid '%s' argument"
+msgstr ""
+
+
+#: R/Surv2.R: 0
+#: R/aeqSurv.R: 0
+#: R/brier.R: 0
+#: R/coxph.control.R: 0
+#: R/plot.survfit.R: 0
+#: R/pspline.R: 0
+#: R/rttright.R: 0
+#: R/survcheck.R: 0
+#: R/survdiff.R: 0
+#: R/survfit.R: 0
+#: R/survfitAJ.R: 0
+#: R/survfitKM.R: 0
+#: R/tmerge.R: 0
+#. R/Surv2.R: gettextf("invalid '%s' value", "repeated")
+#. R/aeqSurv.R: gettextf("invalid '%s' value", "tolerance")
+#. R/brier.R: gettextf("invalid '%s' value", "timefix")
+#. R/coxph.control.R: gettextf("invalid '%s' value", "toler.chol")
+#. R/coxph.control.R: gettextf("invalid '%s' value", "outer.max")
+#. R/plot.survfit.R: gettextf("invalid '%s' value", "conf.int")
+#. R/pspline.R: gettextf("invalid '%s' value", "theta")
+#. R/pspline.R: gettextf("invalid '%s' value", "Boundary.knots")
+#. R/rttright.R: gettextf("invalid '%s' value", "timefix")
+#. R/survcheck.R: gettextf("invalid '%s' value", "timefix")
+#. R/survdiff.R: gettextf("invalid '%s' value", "timefix")
+#. R/survfit.R: gettextf("invalid '%s' value", "timefix")
+#. R/survfitAJ.R: gettextf("invalid '%s' value", "type")
+#. R/survfitKM.R: gettextf("invalid '%s' value", "type")
+#. R/tmerge.R: gettextf("invalid '%s' value", "status")
+
+msgid "invalid '%s' value"
+msgstr ""
+
+
 #: R/residuals.survfit.R: 0
 #: R/residuals.survfitcox.R: 0
 #. R/residuals.survfit.R: stop("invalid combination of options: collapse=TRUE and weighted=FALSE")
@@ -3322,72 +3285,6 @@ msgstr ""
 #. R/residuals.coxph.R: stop("invalid terms component of object")
 
 msgid "invalid terms component of object"
-msgstr ""
-
-
-#: R/survfitAJ.R: 0
-#: R/survfitKM.R: 0
-#. R/survfitAJ.R: stop("invalid value for 'type'")
-#. R/survfitKM.R: stop("invalid value for 'type'")
-
-msgid "invalid value for 'type'"
-msgstr ""
-
-
-#: R/tmerge.R: 0
-#. R/tmerge.R: stop("invalid value for a status variable")
-
-msgid "invalid value for a status variable"
-msgstr ""
-
-
-#: R/plot.survfit.R: 0
-#. R/plot.survfit.R: stop("invalid value for conf.int")
-
-msgid "invalid value for conf.int"
-msgstr ""
-
-
-#: R/coxph.control.R: 0
-#. R/coxph.control.R: stop("invalid value for outer.max")
-
-msgid "invalid value for outer.max"
-msgstr ""
-
-
-#: R/Surv2.R: 0
-#. R/Surv2.R: stop("invalid value for repeated option")
-
-msgid "invalid value for repeated option"
-msgstr ""
-
-
-#: R/brier.R: 0
-#: R/rttright.R: 0
-#: R/survcheck.R: 0
-#: R/survdiff.R: 0
-#: R/survfit.R: 0
-#. R/brier.R: stop("invalid value for timefix option")
-#. R/rttright.R: stop("invalid value for timefix option")
-#. R/survcheck.R: stop("invalid value for timefix option")
-#. R/survdiff.R: stop("invalid value for timefix option")
-#. R/survfit.R: stop("invalid value for timefix option")
-
-msgid "invalid value for timefix option"
-msgstr ""
-
-
-#: R/coxph.control.R: 0
-#. R/coxph.control.R: stop("invalid value for toler.chol")
-
-msgid "invalid value for toler.chol"
-msgstr ""
-
-
-#: R/aeqSurv.R: 0
-#. R/aeqSurv.R: stop("invalid value for tolerance")
-
-msgid "invalid value for tolerance"
 msgstr ""
 
 
@@ -3733,7 +3630,9 @@ msgid "must be a coxph object"
 msgstr ""
 
 
+#: R/Surv.R: 0
 #: R/Surv2.R: 0
+#. R/Surv.R: stop("must have a time argument")
 #. R/Surv2.R: stop("must have a time argument")
 
 msgid "must have a time argument"
@@ -3751,13 +3650,6 @@ msgstr ""
 #. R/anova.coxphms.R: stop("must have more than one model")
 
 msgid "must have more than one model"
-msgstr ""
-
-
-#: R/tmerge.R: 0
-#. R/tmerge.R: stop("na.rm option must be TRUE or FALSE")
-
-msgid "na.rm option must be TRUE or FALSE"
 msgstr ""
 
 
@@ -4239,15 +4131,6 @@ msgid "response must be right censored"
 msgstr ""
 
 
-#: R/coxph.R: 0
-#: R/survfitKM.R: 0
-#. R/coxph.R: stop("robust must be TRUE/FALSE")
-#. R/survfitKM.R: stop("robust must be TRUE/FALSE")
-
-msgid "robust must be TRUE/FALSE"
-msgstr ""
-
-
 #: R/clogit.R: 0
 #. R/clogit.R: stop("robust variance plus the exact method is not supported")
 
@@ -4483,10 +4366,10 @@ msgstr ""
 
 #: R/summary.survfit.R: 0
 #: R/summary.survfitms.R: 0
-#. R/summary.survfit.R: stop("summary.survfit can only be used for survfit", " and survfit.coxph objects")
-#. R/summary.survfitms.R: stop("summary.survfit can only be used for survfit", " and survfit.coxph objects")
+#. R/summary.survfit.R: stop("summary.survfit can only be used for survfit and survfit.coxph objects")
+#. R/summary.survfitms.R: stop("summary.survfit can only be used for survfit and survfit.coxph objects")
 
-msgid "summary.survfit can only be used for survfit"
+msgid "summary.survfit can only be used for survfit and survfit.coxph objects"
 msgstr ""
 
 
@@ -4667,13 +4550,6 @@ msgid "the following arguments passed to 'anova.coxph()' are invalid and dropped
 msgstr ""
 
 
-#: R/tmerge.R: 0
-#. R/tmerge.R: stop("the id argument is required")
-
-msgid "the id argument is required"
-msgstr ""
-
-
 #: R/survfit.coxph.R: 0
 #: R/survfit.coxphms.R: 0
 #. R/survfit.coxph.R: stop("the id option only makes sense with new data")
@@ -4722,13 +4598,6 @@ msgid "the response must be a Surv object"
 msgstr ""
 
 
-#: R/concordance.R: 0
-#. R/concordance.R: stop("the reverse argument must be TRUE/FALSE")
-
-msgid "the reverse argument must be TRUE/FALSE"
-msgstr ""
-
-
 #: R/coxph.R: 0
 #. R/coxph.R: warning("the robust variance is not defined for a penalized model, option ignored")
 
@@ -4761,15 +4630,6 @@ msgstr ""
 #. R/yates.R: stop("the term must be a formula or integer")
 
 msgid "the term must be a formula or integer"
-msgstr ""
-
-
-#: R/residuals.survfit.R: 0
-#: R/residuals.survfitcox.R: 0
-#. R/residuals.survfit.R: stop("the times argument is required")
-#. R/residuals.survfitcox.R: stop("the times argument is required")
-
-msgid "the times argument is required"
 msgstr ""
 
 
@@ -4814,20 +4674,6 @@ msgstr ""
 #. R/survnew.R: stop("time dependent survival curves are not supported for multistate")
 
 msgid "time dependent survival curves are not supported for multistate"
-msgstr ""
-
-
-#: R/survfit.R: 0
-#. R/survfit.R: stop("time0 must be TRUE/FALSE")
-
-msgid "time0 must be TRUE/FALSE"
-msgstr ""
-
-
-#: R/coxph.control.R: 0
-#. R/coxph.control.R: stop("timefix must be TRUE or FALSE")
-
-msgid "timefix must be TRUE or FALSE"
 msgstr ""
 
 
@@ -5054,15 +4900,6 @@ msgid "vcov method not applicable for survfit objects"
 msgstr ""
 
 
-#: R/residuals.survfit.R: 0
-#: R/residuals.survfitcox.R: 0
-#. R/residuals.survfit.R: stop("weighted must be TRUE/FALSE")
-#. R/residuals.survfitcox.R: stop("weighted must be TRUE/FALSE")
-
-msgid "weighted must be TRUE/FALSE"
-msgstr ""
-
-
 #: R/survexp.R: 0
 #. R/survexp.R: warning("weights ignored")
 
@@ -5100,17 +4937,6 @@ msgstr ""
 #. R/survfit.R: stop("weights must be non-negative")
 
 msgid "weights must be non-negative"
-msgstr ""
-
-
-#: R/brier.R: 0
-#: R/rttright.R: 0
-#: R/survfit.R: 0
-#. R/brier.R: stop("weights must be numeric")
-#. R/rttright.R: stop("weights must be numeric")
-#. R/survfit.R: stop("weights must be numeric")
-
-msgid "weights must be numeric"
 msgstr ""
 
 
@@ -5253,20 +5079,6 @@ msgid "y1 and y2 must be sortable"
 msgstr ""
 
 
-#: R/neardate.R: 0
-#. R/neardate.R: stop("y1 argument is required")
-
-msgid "y1 argument is required"
-msgstr ""
-
-
-#: R/neardate.R: 0
-#. R/neardate.R: stop("y2 argument is required")
-
-msgid "y2 argument is required"
-msgstr ""
-
-
 #: R/yates.R: 0
 #. R/yates.R: stop("yates sgtt method can only handle contr.SAS or contr.treatment")
 
@@ -5282,23 +5094,9 @@ msgstr ""
 
 
 #: R/concordance.R: 0
-#. R/concordance.R: stop("ymax must be numeric")
-
-msgid "ymax must be numeric"
-msgstr ""
-
-
-#: R/concordance.R: 0
 #. R/concordance.R: stop("ymin must be a single number")
 
 msgid "ymin must be a single number"
-msgstr ""
-
-
-#: R/concordance.R: 0
-#. R/concordance.R: stop("ymin must be numeric")
-
-msgid "ymin must be numeric"
 msgstr ""
 
 

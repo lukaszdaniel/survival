@@ -5,7 +5,7 @@ survreg <- function(formula, data, weights, subset, na.action,
     Call <- match.call()    # save a copy of the call
 
     # make Surv(), strata() etc in a formula resolve to the survival namespace
-    if (missing(formula)) stop("a formula argument is required")
+    if (missing(formula)) stop(gettextf("'%s' argument is required", "formula"))
     newform <- removeDoubleColonSurv(formula)
     if (!is.null(newform)) {
         formula <- newform$formula

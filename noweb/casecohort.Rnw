@@ -48,7 +48,7 @@ addterm <- function(oldform, new) {
 }
 newterm <- list()
 
-if (missing(subcoh)) stop("the subcoh argument is required")
+if (missing(subcoh)) stop(gettextf("'%s' argument is required", "subcoh"))
 else {
     if (is.call(Call$subcoh) && Call$subcoh[[1]] == as.name("~")) 
         newterm$subcoh <- Call$subcoh[[2]]

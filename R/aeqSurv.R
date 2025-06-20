@@ -7,7 +7,7 @@ aeqSurv <- function(x, tolerance = sqrt(.Machine$double.eps)) {
     if (!missing(tolerance)) {
         if (!is.numeric(tolerance) || length(tolerance)!=1 ||
             !is.finite(tolerance))
-            stop("invalid value for tolerance")
+            stop(gettextf("invalid '%s' value", "tolerance"))
         if (tolerance <=0) return(x)  # do nothing
     }
 

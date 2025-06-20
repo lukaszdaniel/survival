@@ -12,7 +12,7 @@ concordance.formula <- function(object, data,
     timewt <- match.arg(timewt)
     if (missing(ymin)) ymin <- NULL
     if (missing(ymax)) ymax <- NULL
-    if (missing(object)) stop("a formula argument is required")
+    if (missing(object)) stop(gettextf("'%s' argument is required", "formula"))
     formula <- object  # clearer to read below
 
     # make Surv(), strata() etc in a formula resolve to the survival namespace
@@ -83,7 +83,7 @@ concordance.formula <- function(object, data,
     if (!is.null(ymax) & (length(ymax)> 1 || !is.numeric(ymax)))
         stop("ymax must be a single number")
     if (!is.logical(reverse)) 
-        stop("the reverse argument must be TRUE/FALSE")
+        stop(gettextf("'%s' argument must be TRUE or FALSE", "reverse"))
  
     fit <- concordancefit(Y, x, strat, wt, ymin, ymax, timewt, cluster,
                            influence, ranks, reverse, keepstrata=keepstrata)
@@ -133,8 +133,8 @@ concordancefit <- function(y, x, strata, weights, ymin=NULL, ymax=NULL,
     #  routine further below.  So check for it.
     if (any(is.na(x)) || any(is.na(y))) return(NULL)
     timewt <- match.arg(timewt)
-    if (!is.null(ymin) && !is.numeric(ymin)) stop("ymin must be numeric")
-    if (!is.null(ymax) && !is.numeric(ymax))    stop("ymax must be numeric")
+    if (!is.null(ymin) && !is.numeric(ymin)) stop(gettextf("'%s' must be numeric", "ymin"))
+    if (!is.null(ymax) && !is.numeric(ymax))    stop(gettextf("'%s' must be numeric", "ymax"))
     if (!std.err) {ranks <- FALSE; influence <- 0;}
 
     n <- length(y)

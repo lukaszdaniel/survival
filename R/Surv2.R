@@ -8,7 +8,7 @@ Surv2 <- function(time, event, repeated=FALSE) {
     if (!is.numeric(time)) stop("Time variable is not numeric")
     nn <- length(time)
     if (!is.logical(repeated) || length(repeated) != 1)
-        stop("invalid value for repeated option")
+        stop(gettextf("invalid '%s' value", "repeated"))
 
     if (missing(event)) stop("must have an event argument")
     if (length(event) != nn) stop("Time and event are different lengths")

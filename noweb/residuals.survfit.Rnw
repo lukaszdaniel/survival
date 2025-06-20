@@ -49,7 +49,7 @@ residuals.survfit <- function(object, times,
         }
     if (!is.null(object$oldstates)) 
         stop("residuals not available for a subscripted survfit object")
-    if (missing(times)) stop("the times argument is required")
+    if (missing(times)) stop(gettextf("'%s' argument is required", "times"))
     # allow a set of alias
     temp <- c("pstate", "cumhaz", "sojourn", "survival",
                               "chaz", "rmst", "rmts", "auc")
@@ -80,7 +80,7 @@ survresid.fit <- function(object, times,
 
     # check input arguments
     if (missing(times)) 
-        stop("the times argument is required")
+        stop(gettextf("'%s' argument is required", "times"))
     else {
         if (!is.numeric(times)) stop("times must be a numeric vector")
         times <- sort(unique(times))

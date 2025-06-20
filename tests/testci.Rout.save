@@ -129,7 +129,7 @@ Type 'q()' to quit R.
 > # Ensure the old-style call using "etype" works (backwards compatability)
 > fit1 <- survfit(Surv(stop, status) ~ 1, etype=event, tdata)
 Warning message:
-In Surv(Y[, 1], status, type = "mstate") :
+In 'Surv(Y[, 1], status, type = "mstate")':
   type= 'mstate' is depricated, use a factor variable as status
 > fit1b <-survfit(Surv(stop, event) ~1, tdata)
 > indx <- match("call", names(fit1)) 

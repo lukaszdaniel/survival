@@ -8,8 +8,7 @@ summary.survfitms <- function(object, times, censored=FALSE,
                             ...) {
     fit <- object  # I get tired of typing "object"
     if (!inherits(fit, 'survfit'))
-            stop("summary.survfit can only be used for survfit",
-                 " and survfit.coxph objects")
+            stop("summary.survfit can only be used for survfit and survfit.coxph objects")
     if (is.null(fit$logse)) fit$logse <- TRUE   #older style objects lack this
 
     # The print.rmean option is depreciated, it is still listened

@@ -52,14 +52,14 @@ plot.survfit<- function(x, conf.int,  mark.time=FALSE,
 
     if (missing(conf.times)) conf.times <- NULL   
     else {
-        if (!is.numeric(conf.times)) stop("conf.times must be numeric")
+        if (!is.numeric(conf.times)) stop(gettextf("'%s' must be numeric", "weights"))
         if (missing(conf.int)) conf.int <- TRUE
     }
     if (!missing(conf.int)) {
         if (is.numeric(conf.int)) {
             conf.level <- conf.int
             if (conf.level<0 || conf.level > 1)
-                stop("invalid value for conf.int")
+                stop(gettextf("invalid '%s' value", "conf.int"))
             if (conf.level ==0) conf.int <- FALSE
             else if (conf.level != x$conf.int) {
                 x$upper <- x$lower <- NULL  # force recomputation
@@ -268,7 +268,7 @@ plot.survfit<- function(x, conf.int,  mark.time=FALSE,
             }
         }
         else if (is.function(fun)) tfun <- fun
-        else stop("Invalid 'fun' argument")
+        else stop(gettextf("invalid '%s' argument", "fun"))
         
         ssurv <- tfun(ssurv )
         if (!is.null(supper)) {
@@ -566,14 +566,14 @@ lines.survfit <- function(x, type='s',
 
     if (missing(conf.times)) conf.times <- NULL   
     else {
-        if (!is.numeric(conf.times)) stop("conf.times must be numeric")
+        if (!is.numeric(conf.times)) stop(gettextf("'%s' must be numeric", "weights"))
         if (missing(conf.int)) conf.int <- TRUE
     }
     if (!missing(conf.int)) {
         if (is.numeric(conf.int)) {
             conf.level <- conf.int
             if (conf.level<0 || conf.level > 1)
-                stop("invalid value for conf.int")
+                stop(gettextf("invalid '%s' value", "conf.int"))
             if (conf.level ==0) conf.int <- FALSE
             else if (conf.level != x$conf.int) {
                 x$upper <- x$lower <- NULL  # force recomputation
@@ -782,7 +782,7 @@ lines.survfit <- function(x, type='s',
             }
         }
         else if (is.function(fun)) tfun <- fun
-        else stop("Invalid 'fun' argument")
+        else stop(gettextf("invalid '%s' argument", "fun"))
         
         ssurv <- tfun(ssurv )
         if (!is.null(supper)) {
@@ -1001,14 +1001,14 @@ points.survfit <- function(x, fun, censor=FALSE,
 
     if (missing(conf.times)) conf.times <- NULL   
     else {
-        if (!is.numeric(conf.times)) stop("conf.times must be numeric")
+        if (!is.numeric(conf.times)) stop(gettextf("'%s' must be numeric", "weights"))
         if (missing(conf.int)) conf.int <- TRUE
     }
     if (!missing(conf.int)) {
         if (is.numeric(conf.int)) {
             conf.level <- conf.int
             if (conf.level<0 || conf.level > 1)
-                stop("invalid value for conf.int")
+                stop(gettextf("invalid '%s' value", "conf.int"))
             if (conf.level ==0) conf.int <- FALSE
             else if (conf.level != x$conf.int) {
                 x$upper <- x$lower <- NULL  # force recomputation
@@ -1183,7 +1183,7 @@ points.survfit <- function(x, fun, censor=FALSE,
             }
         }
         else if (is.function(fun)) tfun <- fun
-        else stop("Invalid 'fun' argument")
+        else stop(gettextf("invalid '%s' argument", "fun"))
         
         ssurv <- tfun(ssurv )
         if (!is.null(supper)) {

@@ -6,7 +6,7 @@ survdiff <- function(formula, data, subset, na.action, rho=0, timefix=TRUE) {
     if (!inherits(formula, 'formula'))
         stop("The 'formula' argument is not a formula")
     # make Surv(), strata() etc in a formula resolve to the survival namespace
-    if (missing(formula)) stop("a formula argument is required")
+    if (missing(formula)) stop(gettextf("'%s' argument is required", "formula"))
     newform <- removeDoubleColonSurv(formula)
     if (!is.null(newform)) {
         formula <- newform$formula
@@ -33,7 +33,7 @@ survdiff <- function(formula, data, subset, na.action, rho=0, timefix=TRUE) {
 
      # Deal with the near-ties problem
     if (!is.logical(timefix) || length(timefix) > 1)
-        stop("invalid value for timefix option")
+        stop(gettextf("invalid '%s' value", "timefix"))
     if (timefix) y <- aeqSurv(y) 
  
     offset<- attr(Terms, "offset")

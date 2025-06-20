@@ -15,7 +15,7 @@ survfitKM <- function(x, y, weights=rep(1.0,length(x)),
         if (!is.character(type)) stop("type argument must be character")
         # older style argument is allowed
         temp <- charmatch(type, c("kaplan-meier", "fleming-harrington", "fh2"))
-        if (is.na(temp)) stop("invalid value for 'type'")
+        if (is.na(temp)) stop(gettextf("invalid '%s' value", "type"))
         type <- c(1,3,4)[temp]
     }
     else {
@@ -32,7 +32,7 @@ survfitKM <- function(x, y, weights=rep(1.0,length(x)),
         if (!conf.int) conf.type <- "none"
         conf.int <- .95
     }
-    if (!is.logical(entry)) stop("entry argument must be TRUE/FALSE")
+    if (!is.logical(entry)) stop(gettextf("'%s' argument must be TRUE or FALSE", "entry"))
 
     if (!is.Surv(y)) stop("y must be a Surv object")
     if (attr(y, 'type') != 'right' && attr(y, 'type') != 'counting')
@@ -91,7 +91,7 @@ survfitKM <- function(x, y, weights=rep(1.0,length(x)),
             robust <- TRUE 
         else robust <- FALSE
     }
-    if (!is.logical(robust)) stop("robust must be TRUE/FALSE")
+    if (!is.logical(robust)) stop(gettextf("'%s' argument must be TRUE or FALSE", "robust"))
 
     if (has.cluster) {
         if (!robust) {

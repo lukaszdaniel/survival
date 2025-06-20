@@ -58,7 +58,7 @@ survexpm <- function(rmat, time=1.0, setup, eps=1e-6) {
 
 expmderiv<- function(rmat, time=1.0, dR, setup, eps=1e-8) {
     if (length(rmat)==1) { # should not happen, not a multi-state model
-        stop("deriv function called with 1x1 matrix")
+        stop("'expmderiv'' function called with 1x1 matrix")
     }
     nr <- nrow(rmat)
     nonzero <- (diag(rmat) != 0)

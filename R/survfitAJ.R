@@ -17,7 +17,7 @@ survfitAJ <- function(X, Y, weights, id, cluster, robust, istate,
         if (!is.character(type)) stop("type argument must be character")
         # older style argument is allowed
         temp <- charmatch(type, c("kaplan-meier", "fleming-harrington", "fh2"))
-        if (is.na(temp)) stop("invalid value for 'type'")
+        if (is.na(temp)) stop(gettextf("invalid '%s' value", "type"))
         type <- c(1,3,4)[temp]
     }
     else {

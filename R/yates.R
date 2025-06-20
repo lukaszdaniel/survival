@@ -3,7 +3,7 @@ cmatrix <- function(fit, term,
                     test =c("global", "trend", "pairwise", "mean"),
                     levels, assign) {
     # Make sure that "fit" is present and isn't missing any parts.
-    if (missing(fit)) stop("a fit argument is required")
+    if (missing(fit)) stop(gettextf("'%s' argument is required", "fit"))
     Terms <- try(terms(fit), silent=TRUE)
 
     if (inherits(Terms, "try-error"))
@@ -14,7 +14,7 @@ cmatrix <- function(fit, term,
     Tatt$dataClasses <- Tatt$dataClasses[row.names(Tatt$factors)]
     test <- match.arg(test)
 
-    if (missing(term)) stop("a term argument is required")
+    if (missing(term)) stop(gettextf("'%s' argument is required", "term"))
     if (is.character(term)) term <- formula(paste("~", term))
     else if (is.numeric(term)) {
         if (all(term == floor(term) & term >0 & term < length(Tatt$term.labels)))
@@ -243,7 +243,7 @@ yates <- function(fit, term, population=c("data", "factorial", "sas"),
                   predict="linear", options, nsim=200,
                   method=c("direct", "sgtt")) {
     Call <- match.call()
-    if (missing(fit)) stop("a fit argument is required")
+    if (missing(fit)) stop(gettextf("'%s' argument is required", "fit"))
     Terms <- try(terms(fit), silent=TRUE)
     if (inherits(Terms, "try-error"))
         stop("the fit does not have a terms structure")

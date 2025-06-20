@@ -5,7 +5,7 @@ Surv <- function(time, time2, event,
 	      type=c('right', 'left', 'interval', 'counting', 'interval2'),
 		       origin=0) {
 
-    if (missing(time)) stop("Must have a time argument")
+    if (missing(time)) stop("must have a time argument")
     if (inherits(time ,"difftime")) time <- unclass(time)
     if (!missing(time2) && inherits(time2, "difftime")) time2 <-as.numeric(time2)
     if (!is.numeric(time)) stop("Time variable is not numeric")
@@ -103,7 +103,7 @@ Surv <- function(time, time2, event,
     else {  #interval censored data
 	if (type=='interval2') {
 	    # convert to "interval" type, infer the event code
-	    if (!is.numeric(time2)) stop("Time2 must be numeric")
+	    if (!is.numeric(time2)) stop(gettextf("'%s' must be numeric", "time2"))
 	    if (length(time2) !=nn) 
 		    stop("time and time2 are different lengths")
             backwards <- (!is.na(time) & !is.na(time2) & time > time2)
@@ -135,7 +135,7 @@ Surv <- function(time, time2, event,
                 warning("Status must be 0, 1, 2 or 3; converted to NA")
 
 	    if (any(event==3, na.rm=T)) {
-		if (!is.numeric(time2)) stop("Time2 must be numeric")
+		if (!is.numeric(time2)) stop(gettextf("'%s' must be numeric", "time2"))
 		if (length(time2) !=nn) 
 		    stop("time and time2 are different lengths")
                 temp <- (status==3 & time>time2)

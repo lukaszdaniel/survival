@@ -10,10 +10,10 @@
 # 
 neardate <- function(id1, id2, y1, y2, best=c("after", "prior"),
                      nomatch=NA_integer_) {
-    if (missing(id1)) stop("id1 argument is required")
-    if (missing(id2)) stop("id2 argument is required")
-    if (missing(y1))  stop("y1 argument is required")
-    if (missing(y2))  stop("y2 argument is required")
+    if (missing(id1)) stop(gettextf("'%s' argument is required", "id1"))
+    if (missing(id2)) stop(gettextf("'%s' argument is required", "id2"))
+    if (missing(y1))  stop(gettextf("'%s' argument is required", "y1"))
+    if (missing(y2))  stop(gettextf("'%s' argument is required", "y2"))
     if (length(id1) != length(y1))
             stop("id1 and y1 have different lengths")
     if (length(id2) != length(y2))

@@ -6,8 +6,7 @@ summary.survfit <- function(object, times, censored=FALSE,
                             ...) {
     fit <- object  # I get tired of typing "object"
     if (!inherits(fit, 'survfit'))
-            stop("summary.survfit can only be used for survfit",
-                 " and survfit.coxph objects")
+            stop("summary.survfit can only be used for survfit and survfit.coxph objects")
     if (is.null(fit$logse)) fit$logse <- TRUE   #older style objects lack this
 
     # The print.rmean option is depreciated, it is still listened
@@ -107,7 +106,7 @@ summary.survfit <- function(object, times, censored=FALSE,
         
         # if the times are not ordered, we assume the person is doing lookup
         if (missing(dosum)) dosum <- all(diff(times) > 0)
-        else if (!is.logical(dosum)) stop("dosum must be TRUE/FALSE")
+        else if (!is.logical(dosum)) stop(gettextf("'%s' argument must be TRUE or FALSE", "dosum"))
         else if (dosum && !all(diff(times) >0))
             stop("dosum=TRUE requires the times to be increasing")
 

@@ -555,7 +555,7 @@ summary.survfitms <- function(object, times, censored=FALSE,
     rmean.endtime <- temp$end.time
 
     if (!missing(times)) {
-        if (!is.numeric(times)) stop("times must be numeric")
+        if (!is.numeric(times)) stop(gettextf("'%s' must be numeric", "times"))
         times <- sort(times)
     }
 

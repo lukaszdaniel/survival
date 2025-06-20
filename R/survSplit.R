@@ -127,11 +127,11 @@ survSplit <- function(formula, data, subset, na.action=na.pass,
     }
 
     if (!missing(episode)) {
-        if (!is.character(episode)) stop("episode must be a character string")
+        if (!is.character(episode)) stop(gettextf("'%s' must be a character string", "episode"))
         newdata[[make.names(episode)]] <- index$interval +1
     }
     if (!missing(added)) {
-        if (!is.character(added)) stop("added must be a character string")
+        if (!is.character(added)) stop(gettextf("'%s' must be a character string", "added"))
         newdata[[make.names(added)]] <- index$censor
     }
     newdata

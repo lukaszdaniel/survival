@@ -21,7 +21,7 @@ yates <- function(fit, term, population=c("data", "factorial", "sas"),
                   predict="linear", options, nsim=200,
                   method=c("direct", "sgtt")) {
     Call <- match.call()
-    if (missing(fit)) stop("a fit argument is required")
+    if (missing(fit)) stop(gettextf("'%s' argument is required", "fit"))
     Terms <- try(terms(fit), silent=TRUE)
     if (inherits(Terms, "try-error"))
         stop("the fit does not have a terms structure")

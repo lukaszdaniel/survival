@@ -12,9 +12,9 @@ residuals.survfitcox <- function(object, times, type= "pstate",
     if (!inherits(object, "survfitcox"))
         stop("argument must be a survfit object based on a coxph model")
     
-    if (!is.logical(collapse)) stop("collapse must be TRUE/FALSE")
-    if (!is.logical(weighted)) stop("weighted must be TRUE/FALSE")
-    if (!is.logical(data.frame)) stop("data.frame must be TRUE/FALSE")
+    if (!is.logical(collapse)) stop(gettextf("'%s' argument must be TRUE or FALSE", "collapse"))
+    if (!is.logical(weighted)) stop(gettextf("'%s' argument must be TRUE or FALSE", "weighted"))
+    if (!is.logical(data.frame)) stop(gettextf("'%s' argument must be TRUE or FALSE", "data.frame"))
     survfitms <- FALSE  # still to be finished
     # allow a set of alias for 'type'
     temp <- c("pstate", "cumhaz", "sojourn", "survival",
@@ -26,7 +26,7 @@ residuals.survfitcox <- function(object, times, type= "pstate",
     # Skip roundoff correction for the times only if the survfit call did so
     timefix <- (is.null(object$timefix) || object$timefix)
     if (missing(times)) 
-        stop("the times argument is required")
+        stop(gettextf("'%s' argument is required", "times"))
     else {
         if (!is.numeric(times)) stop("times must be a numeric vector")
         times <- sort(unique(times))

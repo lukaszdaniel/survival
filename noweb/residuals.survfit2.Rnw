@@ -63,7 +63,7 @@ residuals.survfitcox <- function(object, times, type="pstate", collapse= TRUE,
     if (!inherits(object, "survfitcox"))
         stop("argument must be a survfit object created from a coxph model")
 
-    if (missing(times)) stop("the times argument is required")
+    if (missing(times)) stop(gettextf("'%s' argument is required", "times"))
     ntime <- length(times)
     if (is.matrix(object$surv)) nz <- ncol(object$surv)
     else nz <- 1  # number of z vectors that were used

@@ -17,7 +17,7 @@ model.frame.survfit <- function(formula, ...) {
                      nomatch=0)
         # The next error message is usually due to a typo
         #  eg survfit(wt=Surv(time, status) ~1) 
-        if (indx[1]==0) stop("a formula argument is required")
+        if (indx[1]==0) stop(gettextf("'%s' argument is required", "formula"))
         temp <- fcall[c(1, indx)]
         temp$xlev <- formula$xlevels
         if (length(nargs) > 0) 

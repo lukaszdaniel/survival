@@ -14,13 +14,13 @@ brier <- function(fit, times, newdata, ties=TRUE, detail =FALSE, timefix=TRUE,
     ny <- ncol(Y)  # 3 = time1, time2 data
 
     if (!is.logical(timefix) || length(timefix) > 1)
-        stop("invalid value for timefix option")
+        stop(gettextf("invalid '%s' value", "timefix"))
     if (timefix) Y <- aeqSurv(Y) 
 
     casewt <- model.weights(mf)
     if (is.null(casewt)) casewt <- rep(1, n)
     else {
-        if (!is.numeric(casewt)) stop("weights must be numeric")
+        if (!is.numeric(casewt)) stop(gettextf("'%s' must be numeric", "weights"))
         if (any(!is.finite(casewt))) stop("weights must be finite") 
         if (any(casewt <0)) stop("weights must be non-negative")
         casewt <- as.numeric(casewt)  # transform integer to numeric

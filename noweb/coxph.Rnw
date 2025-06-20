@@ -36,7 +36,7 @@ coxph <- function(formula, data, weights, subset, na.action,
     missing.ties <- missing(ties) & missing(method) #see later multistate sect
     ties <- match.arg(ties)
     Call <- match.call()
-    if (missing(formula)) stop("a formula argument is required")
+    if (missing(formula)) stop(gettextf("'%s' argument is required", "formula"))
     
     ## We want to pass any ... args to coxph.control, but not pass things
     ##  like "dats=mydata" where someone just made a typo.  The use of ...
@@ -238,7 +238,7 @@ coxph <- function(formula, data, weights, subset, na.action,
                  (has.id && (multi || anyDuplicated(id[Y[,ncol(Y)]==1]))))
             robust <- TRUE else robust <- FALSE
     }
-    if (!is.logical(robust)) stop("robust must be TRUE/FALSE")
+    if (!is.logical(robust)) stop(gettextf("'%s' argument must be TRUE or FALSE", "robust"))
 
     if (has.cluster) {
         if (!robust) {

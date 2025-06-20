@@ -6,7 +6,7 @@ pspline <- function(x, df=4, theta, nterm=2.5*df, degree=3, eps=0.1,
                     intercept=FALSE, penalty=TRUE, combine, ...) {
     if (!missing(theta)) {
 	method <- 'fixed'
-	if (theta <=0 || theta >=1) stop("Invalid value for theta")
+	if (theta <=0 || theta >=1) stop(gettextf("invalid '%s' value", "theta"))
 	}
     else if (df ==0 || (!missing(method) && method=='aic')) {
 	method <- 'aic'
@@ -18,7 +18,7 @@ pspline <- function(x, df=4, theta, nterm=2.5*df, degree=3, eps=0.1,
 	if (df <=1) stop("Too few degrees of freedom")
 	# The below used to say "df+1 > nterm", but we need some scope for
 	#  the smoother parameter to avoid strange conditions
-        if (df > nterm) stop("`nterm' too small for df=",df)
+        if (df > nterm) stop(gettextf("'nterm' too small for df=%s", df))
     }
 
     xname <- deparse(substitute(x))
@@ -31,7 +31,7 @@ pspline <- function(x, df=4, theta, nterm=2.5*df, degree=3, eps=0.1,
     if (!missing(Boundary.knots)) {
         if (!is.numeric(Boundary.knots) || length(Boundary.knots) !=2 ||
             Boundary.knots[1] >= Boundary.knots[2])
-            stop("Invalid values for Boundary.knots")
+            stop(gettextf("invalid '%s' value", "Boundary.knots"))
             
         # Check for data values outside the knot range
         outl <- (x < Boundary.knots[1])

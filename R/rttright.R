@@ -25,7 +25,7 @@ rttright <- function(formula, data, weights, subset, na.action, times,
                     'istate', 'id'), names(Call), nomatch=0)
     #It's very hard to get the next error message other than malice
     #  eg survfit(wt=Surv(time, status) ~1) 
-    if (indx[1]==0) stop("a formula argument is required")
+    if (indx[1]==0) stop(gettextf("'%s' argument is required", "formula"))
     temp <- Call[c(1, indx)]
     temp[[1L]] <- quote(stats::model.frame)
     mf <- eval.parent(temp)
@@ -46,7 +46,7 @@ rttright <- function(formula, data, weights, subset, na.action, times,
     casewt <- model.extract(mf, "weights")
     if (is.null(casewt)) casewt <- rep(1, n)
     else {
-        if (!is.numeric(casewt)) stop("weights must be numeric")
+        if (!is.numeric(casewt)) stop(gettextf("'%s' must be numeric", "weights"))
         if (any(!is.finite(casewt))) stop("weights must be finite") 
         if (any(casewt <0)) stop("weights must be non-negative")
         casewt <- as.numeric(casewt)  # transform integer to numeric
@@ -65,7 +65,7 @@ rttright <- function(formula, data, weights, subset, na.action, times,
 
     # Deal with the near-ties problem
     if (!is.logical(timefix) || length(timefix) > 1)
-        stop("invalid value for timefix option")
+        stop(gettextf("invalid '%s' value", "timefix"))
     if (timefix) Y <- aeqSurv(Y) 
         
     id <- model.extract(mf, "id")
@@ -225,7 +225,7 @@ rttright2 <- function(formula, data, weights, subset, na.action, times,
     indx <- match(c('formula', 'data', 'weights', 'subset','na.action',
                     'istate', 'id'), names(Call), nomatch=0)
 
-    if (indx[1]==0) stop("a formula argument is required")
+    if (indx[1]==0) stop(gettextf("'%s' argument is required", "formula"))
     temp <- Call[c(1, indx)]
     temp[[1L]] <- quote(survival::survfit)
     temp$model <- TRUE

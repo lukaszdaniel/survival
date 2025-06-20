@@ -16,7 +16,7 @@ survfit.formula <- function(formula, data, weights, subset,
                             entry=FALSE,  time0=FALSE, ...) {
 
     Call <- match.call()
-    if (missing(formula)) stop("a formula argument is required")
+    if (missing(formula)) stop(gettextf("'%s' argument is required", "formula"))
     newform <- removeDoubleColonSurv(formula)
     if (!is.null(newform)) {
         formula <- newform$formula
@@ -82,7 +82,7 @@ survfit.formula <- function(formula, data, weights, subset,
     casewt <- model.extract(mf, "weights")
     if (is.null(casewt)) casewt <- rep(1.0, n)
     else {
-        if (!is.numeric(casewt)) stop("weights must be numeric")
+        if (!is.numeric(casewt)) stop(gettextf("'%s' must be numeric", "weights"))
         if (any(!is.finite(casewt))) stop("weights must be finite") 
         if (any(casewt <0)) stop("weights must be non-negative")
         casewt <- as.numeric(casewt)  # transform integer to numeric
@@ -132,11 +132,11 @@ survfit.formula <- function(formula, data, weights, subset,
                          
     # Deal with the near-ties problem
     if (!is.logical(timefix) || length(timefix) > 1)
-        stop("invalid value for timefix option")
+        stop(gettextf("invalid '%s' value", "timefix"))
     if (timefix) newY <- aeqSurv(Y) else newY <- Y
     
     if (missing(robust)) robust <- NULL
-    if (!is.logical(time0)) stop("time0 must be TRUE/FALSE")
+    if (!is.logical(time0)) stop(gettextf("'%s' argument must be TRUE or FALSE", "time0"))
 
     # Call the appropriate helper function, which does the real work
     # Turnbull for interval censored data

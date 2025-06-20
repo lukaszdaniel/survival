@@ -41,7 +41,7 @@ tmerge <- function(data1, data2, id, ..., tstart, tstop, options) {
         if (length(delay) !=1 || !is.numeric(delay) || delay < 0)
             stop("delay option must be a number >= 0")
         if (length(na.rm) !=1 || ! is.logical(na.rm))
-            stop("na.rm option must be TRUE or FALSE")
+            stop(gettextf("'%s' argument must be TRUE or FALSE", "na.rm"))
         if (length(tdcstart) !=1) stop("tdcstart must be a single value")
         list(idname=idname, tstartname=tstartname, tstopname=tstopname, 
              delay=delay, na.rm=na.rm, tdcstart=tdcstart)
@@ -125,7 +125,7 @@ tmerge <- function(data1, data2, id, ..., tstart, tstop, options) {
     else  topt <- tmerge.control()
 
     # id, tstart, tstop are found in data2
-    if (missing(id)) stop("the id argument is required")
+    if (missing(id)) stop(gettextf("'%s' argument is required", "id"))
     if (missing(data1) || missing(data2))
         stop("two data sets are required")
     id <- eval(Call[["id"]], data2, enclos=emptyenv()) #don't find it elsewhere
@@ -483,7 +483,7 @@ tmerge <- function(data1, data2, id, ..., tstart, tstop, options) {
                                      levels(yinc))
                 else if (is.character(yinc)) newvar <- rep('', nrow(newdata))
                 else if (is.logical(yinc)) newvar <- rep(FALSE, nrow(newdata))
-                else stop("invalid value for a status variable")
+                else stop(gettextf("invalid '%s' value", "status"))
             }
          
             keep <- (subtype==1 | subtype==3) # all other events are thrown away
