@@ -58,7 +58,7 @@ survfit.coxph <-
       if (!has.strata) strata <- NULL
       else strata <- object$strata
 
-      if (!missing(individual)) warning("the `id' option supersedes `individual'")
+      if (!missing(individual)) warning("the 'id' option supersedes 'individual'")
       missid <- missing(id) # I need this later, and setting id below makes
                             # "missing(id)" always false
 
@@ -209,9 +209,9 @@ survfit.coxph <-
               y2 <- NULL  # a dummy to carry along, for the call to coxsurv.fit
           }
           if (is.vector(newdata, "numeric")) {
-              if (individual) stop("newdata must be a data frame")
+              if (individual) stop(gettextf("'%s' must be a data frame", "newdata"))
               if (is.null(names(newdata))) {
-                  stop("Newdata argument must be a data frame")
+                  stop(gettextf("'%s' must be a data frame", "newdata"))
               }
               newdata <- data.frame(as.list(newdata), stringsAsFactors=FALSE)
           }  else if (is.list(newdata)) newdata <- as.data.frame(newdata) 

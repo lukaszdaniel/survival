@@ -11,7 +11,7 @@ anova.survreg <- function(object, ..., test = c("Chisq", "none")) {
     family.obj <- object$family
     y <- model.extract(m, "response")
     if(!inherits(y, "Surv"))
-	    stop("Response must be a survival object")
+	    stop("response must be a survival object")
     loglik <- numeric(nt + 1)
     df.res <- loglik
     if(nt) {

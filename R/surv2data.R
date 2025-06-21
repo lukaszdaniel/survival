@@ -20,7 +20,7 @@ surv2data <- function(mf, check=FALSE) {
     repeated <- attr(y, "repeated")
 
     id <- model.extract(mf, "id")
-    if (length(id) != n) stop("id statement is required")
+    if (length(id) != n) stop(gettextf("invalid '%s' value", "id"))
 
     # relax this some later day (or not?)
     if (any(is.na(id)) || any(is.na(y[,1])))

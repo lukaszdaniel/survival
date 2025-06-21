@@ -5,10 +5,10 @@ Surv <- function(time, time2, event,
 	      type=c('right', 'left', 'interval', 'counting', 'interval2'),
 		       origin=0) {
 
-    if (missing(time)) stop("must have a time argument")
+    if (missing(time)) gettextf("'%s' is required", "time")
     if (inherits(time ,"difftime")) time <- unclass(time)
     if (!missing(time2) && inherits(time2, "difftime")) time2 <-as.numeric(time2)
-    if (!is.numeric(time)) stop("Time variable is not numeric")
+    if (!is.numeric(time)) stop(gettextf("'%s' is not numeric", "time"))
     nn <- length(time)
 
     # ng = number of the first 3 arguments that are present
@@ -38,17 +38,17 @@ Surv <- function(time, time2, event,
 	}
 
     if (ng==1) { # only a time variable given
-        if (!is.numeric(time)) stop("Time variable is not numeric")
+        if (!is.numeric(time)) stop(gettextf("'%s' is not numeric", "time"))
 	ss <- cbind(time=time-origin, status=1)
         type <- "right"
 	}
     else if (type=='right' || type=='left') {
-        if (!is.numeric(time)) stop("Time variable is not numeric")
+        if (!is.numeric(time)) stop(gettextf("'%s' is not numeric", "time"))
 	if (missing(event))   {
             event <- time2  # treat time2 as event
             time2 <- NULL   # force any inputAttributes to attach to "event"
         }
-        if (length(event) != nn) stop("Time and status are different lengths")
+        if (length(event) != nn) stop(gettextf("'%s' and '%s' are different lengths", "time", "event"))
         if (mtype=="mstate" || (is.factor(event))) {
             mstat <- as.factor(event)
             status <- as.numeric(mstat) -1
@@ -70,10 +70,10 @@ Surv <- function(time, time2, event,
 	ss <- cbind(time=time-origin, status=status)
     }
     else  if (type=='counting') {
-	if (length(time2) !=nn) stop("Start and stop are different lengths")
-	if (length(event)!=nn) stop("Start and event are different lengths")
-        if (!is.numeric(time))  stop("Start time is not numeric")
-	if (!is.numeric(time2)) stop("Stop time is not numeric")
+	if (length(time2) !=nn) stop(gettextf("'%s' and '%s' are different lengths", "start", "stop"))
+	if (length(event)!=nn) stop(gettextf("'%s' and '%s' are different lengths", "start", "event"))
+        if (!is.numeric(time))  stop(gettextf("'%s' is not numeric", "time"))
+	if (!is.numeric(time2)) stop(gettextf("'%s' is not numeric", "time2"))
 	temp <- (time >= time2)
 	if (any(temp & !is.na(temp))) {
 	    time[temp] <- NA
@@ -105,7 +105,7 @@ Surv <- function(time, time2, event,
 	    # convert to "interval" type, infer the event code
 	    if (!is.numeric(time2)) stop(gettextf("'%s' must be numeric", "time2"))
 	    if (length(time2) !=nn) 
-		    stop("time and time2 are different lengths")
+		    stop(gettextf("'%s' and '%s' are different lengths", "time", "time2"))
             backwards <- (!is.na(time) & !is.na(time2) & time > time2)
             # allow for infinite times (important to do the backwards check
             #  first)
@@ -126,7 +126,7 @@ Surv <- function(time, time2, event,
 	    }
 	else {  #check legality of event code
 	    if (length(event)!=nn) 
-		    stop("Time and status are different lengths")
+		    stop(gettextf("'%s' and '%s' are different lengths", "time", "event"))
             if (!is.numeric(event)) 
 		   stop("Invalid status value, must be logical or numeric")
             temp <- (event==0 | event==1| event==2 | event==3)
@@ -137,7 +137,7 @@ Surv <- function(time, time2, event,
 	    if (any(event==3, na.rm=T)) {
 		if (!is.numeric(time2)) stop(gettextf("'%s' must be numeric", "time2"))
 		if (length(time2) !=nn) 
-		    stop("time and time2 are different lengths")
+		    stop(gettextf("'%s' and '%s' are different lengths", "time", "time2"))
                 temp <- (status==3 & time>time2)
                 if (any(temp & !is.na(temp))) {
                     status[temp] <- NA

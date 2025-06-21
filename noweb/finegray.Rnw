@@ -44,7 +44,7 @@ finegray <- function(formula, data, weights, subset, na.action= na.pass,
     Terms <- terms(mf)
 
     Y <- model.extract(mf, "response")
-    if (!inherits(Y, "Surv")) stop("Response must be a survival object")
+    if (!inherits(Y, "Surv")) stop("response must be a survival object")
     type <- attr(Y, "type")
     if (type!='mright' && type!='mcounting')
 	stop("Fine-Gray model requires a multi-state survival")

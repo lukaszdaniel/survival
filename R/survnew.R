@@ -181,7 +181,7 @@ function(formula, newdata, se.fit=FALSE, conf.int=.95,
         # frame
         browser()
         tdvar <- eval(tdvar, mf)
-        if (!is.list(tdvar)) stop("tdvar must be a list")
+        if (!is.list(tdvar)) stop(gettextf("'%s' must be a list", "tdvar"))
         }
 
     # Let the survfitAJ routine do the work of creating the
@@ -279,9 +279,9 @@ function(formula, newdata, se.fit=FALSE, conf.int=.95,
             y2 <- NULL  # a dummy to carry along, for the call to coxsurv.fit
         }
         if (is.vector(newdata, "numeric")) {
-            if (individual) stop("newdata must be a data frame")
+            if (individual) stop(gettextf("'%s' must be a data frame", "newdata"))
             if (is.null(names(newdata))) {
-                stop("Newdata argument must be a data frame")
+                stop(gettextf("'%s' must be a data frame", "newdata"))
             }
             newdata <- data.frame(as.list(newdata), stringsAsFactors=FALSE)
         }  else if (is.list(newdata)) newdata <- as.data.frame(newdata) 

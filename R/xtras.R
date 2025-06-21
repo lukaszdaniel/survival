@@ -203,7 +203,7 @@ removeDoubleColonSurv <- function(formula)
 #  not guarranteed to use my version; if a user had their own local copy of Surv
 #  it would use that!  To ensure I get the proper ones, we insert a new 
 #  environment into the call chain, and attach it to the formula.
-# Because this routine is a part of the surival package I can refer to
+# Because this routine is a part of the survival package I can refer to
 #  strata and etc below without resorting to the survival:: form.
 #  (In fact, we found out that the :: form can fail, i.e., if another
 #  package has Imports:survival in the DESCRIPTION file but does not

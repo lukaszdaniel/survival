@@ -152,7 +152,7 @@ is not.
 <<cch-setup-data>>=
 Y <-  model.extract(m, "response")
 if(!inherits(Y, "Surv"))
-    stop("Response must be a survival object")
+    stop("response must be a survival object")
 ytype <- attr(Y, "type")
 if (!ytype %in% c("right", "counting"))
     stop("Cox model doesn't support \"", type, "\" survival data")

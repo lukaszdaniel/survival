@@ -7,7 +7,7 @@ coxpenal.fit <- function(x, y, strata, offset, init, control,
     eps <- control$eps
     n <-  nrow(y)
     if (is.matrix(x)) nvar <- ncol(x)
-    else  if (length(x)==0) stop("Must have an X variable")
+    else  if (length(x)==0) stop(gettextf("'%s' is required", "x"))
     else nvar <-1
 
     if (missing(offset) || is.null(offset)) offset <- rep(0,n)

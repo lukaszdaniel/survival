@@ -25,7 +25,7 @@ survSplit <- function(formula, data, subset, na.action=na.pass,
             stop("'end' must be a variable name in the data set")
     
         if (!(is.character(start) && length(start)==1))
-            stop("'start' must be a variable name")
+            stop(gettextf("'%s' must be a variable name", "start"))
         if (start %in% names(data)) temp <- paste(start, end, event, sep=',')
         else temp <- paste(end, event, sep=',')
         
@@ -67,7 +67,7 @@ survSplit <- function(formula, data, subset, na.action=na.pass,
     n <- nrow(data)
 
     if (!missing(id)) {
-        if (!is.character(id)) stop("id must be a variable name")
+        if (!is.character(id)) stop(gettextf("'%s' must be a variable name", "id"))
         if (id %in% names(mf)) stop("the suggested id name is already present")
         id <- make.names(id)
         if (id %in% names(mf)) stop("the suggested id name is already present")

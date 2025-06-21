@@ -4,7 +4,7 @@
 aareg.taper <- function(taper, imat, nevent) {
     dd <- dim(imat)
     if (length(taper)==0 || !is.numeric(taper) || any(taper <=0)) 
-        stop("Invalid taper vector")
+        stop(gettextf("invalid '%s' argument", "taper"))
 
     ntaper <- length(taper)
     ntime <- dd[3]

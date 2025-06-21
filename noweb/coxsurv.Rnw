@@ -150,7 +150,7 @@ n <- object$n[1]
 if (!has.strata) strata <- NULL
 else strata <- object$strata
 
-if (!missing(individual)) warning("the `id' option supersedes `individual'")
+if (!missing(individual)) warning("the 'id' option supersedes 'individual'")
 missid <- missing(id) # I need this later, and setting id below makes
                       # "missing(id)" always false
 
@@ -454,9 +454,9 @@ Then turn it into a data frame, like it should have been from the beginning.
 people forget it ever existed.) 
 <<survfit.coxph-newdata2>>=
 if (is.vector(newdata, "numeric")) {
-    if (individual) stop("newdata must be a data frame")
+    if (individual) stop(gettextf("'%s' must be a data frame", "newdata"))
     if (is.null(names(newdata))) {
-        stop("Newdata argument must be a data frame")
+        stop(gettextf("'%s' must be a data frame", "newdata"))
     }
     newdata <- data.frame(as.list(newdata), stringsAsFactors=FALSE)
 }  else if (is.list(newdata)) newdata <- as.data.frame(newdata) 

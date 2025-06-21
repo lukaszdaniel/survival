@@ -22,7 +22,7 @@ summary.survfit <- function(object, times, censored=FALSE,
     }
     else {
         rmean <- match.arg(rmean, c('none', 'common', 'individual'))
-        if (length(rmean)==0) stop("Invalid value for rmean option")
+        if (length(rmean)==0) stop(gettextf("invalid '%s' value", "rmean"))
     }
 
     fit0 <- survfit0(fit)

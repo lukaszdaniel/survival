@@ -14,7 +14,7 @@ survfitAJ <- function(X, Y, weights, id, cluster, robust, istate,
     if (!missing(type)) {
         if (!missing(ctype) || !missing(stype))
             stop("cannot have both an old-style 'type' argument and the stype/ctype arguments that replaced it")
-        if (!is.character(type)) stop("type argument must be character")
+        if (!is.character(type)) stop(gettextf("'%s' argument must be character", "type"))
         # older style argument is allowed
         temp <- charmatch(type, c("kaplan-meier", "fleming-harrington", "fh2"))
         if (is.na(temp)) stop(gettextf("invalid '%s' value", "type"))

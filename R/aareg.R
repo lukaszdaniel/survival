@@ -63,7 +63,7 @@ aareg <- function(formula, data, weights, subset, na.action,
 
     # Now grab the items that we need
     Y <- model.extract(m, "response")
-    if (!inherits(Y, "Surv")) stop("Response must be a survival object")
+    if (!inherits(Y, "Surv")) stop("response must be a survival object")
     offset<- attr(Terms, "offset")
     tt <- length(offset)
     offset <- if(tt == 0)

@@ -10,7 +10,7 @@
 survcondense <- function(formula, data, subset, weights, na.action= na.pass, id, 
                          start="tstart", end="tstop", event="event") {
     Call <- match.call()
-    if (missing(id)) stop("id is required")
+    if (missing(id)) stop(gettextf("'%s' is required", "id"))
 
     ss <- c("cluster")
     Terms <- if (missing(data)) terms(formula, specials=ss) else
@@ -27,7 +27,7 @@ survcondense <- function(formula, data, subset, weights, na.action= na.pass, id,
     mf <- eval(temp, parent.frame())
 
     Y <- model.response(mf)
-    if (!is.Surv(Y)) stop("the response must be a Surv object")
+    if (!is.Surv(Y)) stop("response must be a Surv object")
     if (attr(Y, "type") != "counting" & attr(Y, "type") != "mcounting")
         stop("invalid survival type")
     if (any(is.na(Y))) stop("response cannot have missing values")

@@ -193,7 +193,7 @@ concordancefit <- function(y, x, strata, weights, ymin=NULL, ymax=NULL,
     nstrat <- length(unique(strata))
     if (!is.logical(keepstrata)) {
         if (!is.numeric(keepstrata))
-            stop("keepstrata argument must be logical or numeric")
+            stop("keepstrata argument must be numeric or logical")
         else keepstrata <- (nstrat <= keepstrata)
     }
     if (nvar>1 || nstrat ==1) keepstrata <- FALSE  #keeping both is difficult
@@ -493,7 +493,7 @@ cord.getdata <- function(object, newdata=NULL, cluster=NULL, need.wt, timefix=TR
         y <- model.response(mf)
         if (!is.Surv(y)) {
             if (is.numeric(y) && is.vector(y))  y <- Surv(y)
-            else stop("left hand side of the formula  must be a numeric vector or a survival object")
+            else stop("left hand side of the formula must be a numeric vector or a survival object")
         }
         if (timefix) y <- aeqSurv(y)
 

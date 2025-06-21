@@ -1,7 +1,7 @@
 # This is usually called from anova.coxph, not a user
 #  It's first argument must be a list of coxph models
 anova.coxphlist <- function (object, test =  'Chisq' ,...) {
-    if (!is.list(object)) stop("First argument must be a list")
+    if (!is.list(object)) stop(gettextf("'%s' must be a list", "object"))
     is.coxmodel <- sapply(object, function(x) inherits(x, "coxph"))
     if (!all(is.coxmodel))
         stop("All arguments must be Cox models")    

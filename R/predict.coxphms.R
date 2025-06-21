@@ -5,7 +5,7 @@ predict.coxphms <- function(object, newdata,
                        terms=names(object$assign), collapse, 
                        reference=c("strata", "sample", "zero"), ...) {
     if (!inherits(object, 'coxph'))
-        stop("Primary argument much be a coxph object")
+        stop("Primary argument must be a coxph object")
 
     Call <- match.call()
     type <-match.arg(type)

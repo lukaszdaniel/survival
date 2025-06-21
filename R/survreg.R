@@ -53,7 +53,7 @@ survreg <- function(formula, data, weights, subset, na.action,
     Terms <- attr(m, 'terms')
     weights <- model.extract(m, 'weights')
     Y <- model.extract(m, "response")
-    if (!inherits(Y, "Surv")) stop("Response must be a survival object")
+    if (!inherits(Y, "Surv")) stop("response must be a survival object")
     type <- attr(Y, "type")
     if (type== 'counting') 
         stop("start-stop type Surv objects are not supported")

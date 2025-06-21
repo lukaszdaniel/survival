@@ -41,7 +41,7 @@ summary.pyears <- function(object, header=TRUE, call=header,
                            scale= 1, ...) {
     # Usual checks
     if (!inherits(object, "pyears")) 
-        stop("input must be a pyears object")
+        stop(gettextf("'%s' argument is not an object of class %s", "object", dQuote("pyears")))
     temp <- c(is.logical(header), is.logical(call), is.logical(n),
               is.logical(event) , is.logical(pyears), is.logical(expected),
               is.logical(rate), is.logical(ci.r), is.logical(rr),

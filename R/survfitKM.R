@@ -12,7 +12,7 @@ survfitKM <- function(x, y, weights=rep(1.0,length(x)),
     
     # ctype and stype are preferred, 'type' is for backward compatability
     if (!missing(type)) {
-        if (!is.character(type)) stop("type argument must be character")
+        if (!is.character(type)) stop(gettextf("'%s' argument must be character", "type"))
         # older style argument is allowed
         temp <- charmatch(type, c("kaplan-meier", "fleming-harrington", "fh2"))
         if (is.na(temp)) stop(gettextf("invalid '%s' value", "type"))

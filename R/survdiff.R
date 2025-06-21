@@ -4,7 +4,7 @@ survdiff <- function(formula, data, subset, na.action, rho=0, timefix=TRUE) {
     m$rho <- NULL
 
     if (!inherits(formula, 'formula'))
-        stop("The 'formula' argument is not a formula")
+        stop("'formula' argument is not a formula")
     # make Surv(), strata() etc in a formula resolve to the survival namespace
     if (missing(formula)) stop(gettextf("'%s' argument is required", "formula"))
     newform <- removeDoubleColonSurv(formula)
@@ -21,7 +21,7 @@ survdiff <- function(formula, data, subset, na.action, rho=0, timefix=TRUE) {
     m <- eval(m, parent.frame())
     
     y <- model.extract(m, "response")
-    if (!inherits(y, "Surv")) stop("Response must be a survival object")
+    if (!inherits(y, "Surv")) stop("response must be a survival object")
     if (attr(y, "type") %in% c("mright", "mcounting"))
         stop("survdiff not defined for multi-state data")
     if (attr(y, "type") == "counting")

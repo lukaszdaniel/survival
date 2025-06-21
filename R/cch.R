@@ -32,7 +32,7 @@ cch <- function(formula, data, subcoh, id, stratum=NULL, cohort.size,
         stratum<-factor(stratum)
     if (stratified){
         if (robust)
-            warning("`robust' not implemented for stratified analysis.")
+            warning("'robust' not implemented for stratified analysis.")
         if (is.null(stratum))
             stop(gettextf("method (%s) requires 'stratum'", method))
         if (length(cohort.size)!=length(levels(stratum)))
@@ -59,7 +59,7 @@ cch <- function(formula, data, subcoh, id, stratum=NULL, cohort.size,
     Terms <- attr(m,"terms")
     Y <- model.extract(m, "response")
     if(!inherits(Y, "Surv"))
-        stop("Response must be a survival object")
+        stop("response must be a survival object")
     type <- attr(Y, "type")
     itype<-charmatch(type,c("right","counting"),nomatch=0)
     cens<-switch(itype+1,

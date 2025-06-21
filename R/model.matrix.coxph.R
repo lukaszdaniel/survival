@@ -136,7 +136,7 @@ model.frame.coxph <- function(formula, ...) {
                 
             if (is.list(tt)) {
                 if (any(!sapply(tt, is.function))) 
-                    stop("The tt argument must contain function or list of functions")
+                    stop("The tt argument must contain a function or list of functions")
                 if (length(tt) != ntrans) {
                     if (length(tt) ==1) {
                         temp <- vector("list", ntrans)

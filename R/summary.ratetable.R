@@ -3,7 +3,7 @@
 #
 summary.ratetable <- function(object, ...) {
     rtable<-object
-    if (!inherits(rtable, 'ratetable')) stop("Argument is not a rate table")
+    if (!inherits(rtable, 'ratetable')) gettextf("'%s' argument is not an object of class %s", "object", dQuote("ratetable"))
 
     att <- attributes(rtable)
     ncat <- length(dim(rtable))

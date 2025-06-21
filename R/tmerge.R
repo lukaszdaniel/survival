@@ -105,7 +105,7 @@ tmerge <- function(data1, data2, id, ..., tstart, tstop, options) {
     }
 
     if (!missing(options)) {
-        if (!is.list(options)) stop("options must be a list")
+        if (!is.list(options)) stop(gettextf("'%s' must be a list", "options"))
         if (!is.null(tname)) {
             # If an option name matches one already in tname, don't confuse
             #  the tmerge.control routine with duplicate arguments

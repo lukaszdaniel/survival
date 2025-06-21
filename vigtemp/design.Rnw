@@ -1562,7 +1562,7 @@ The wrapper calls such as as.double(var) above are critical
 as they ensure the type.
 One cannot always assume that an input vector ``x'' is stored in floating
 point: the user just might have used a set of integer predictors.  More than
-a few of the surival routines have weathered this mistake, passing
+a few of the survival routines have weathered this mistake, passing
 all my initial tests only to fail months or years later.
 <<wtest>>=
 /* 

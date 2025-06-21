@@ -48,7 +48,7 @@ survcheck <- function(formula, data, subset, na.action,  id, istate,
         n <- nrow(mf)
     }       
     else {
-        if (!is.Surv(Y)) stop("Response must be a survival object")
+        if (!is.Surv(Y)) stop("response must be a survival object")
         id <- model.extract(mf, "id")
         istate <- model.extract(mf, "istate")
         omit <- attr(mf, "na.action")

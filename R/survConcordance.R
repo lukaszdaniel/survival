@@ -15,7 +15,7 @@ survConcordance <- function(formula, data,
     Y <- model.extract(m, "response")
     if (!inherits(Y, "Surv")) {
         if (is.numeric(Y) && is.vector(Y))  Y <- Surv(Y)
-        else stop("left hand side of the formula  must be a numeric vector or a surival")
+        else stop("left hand side of the formula must be a numeric vector or a survival object")
     }
     n <- nrow(Y)
 

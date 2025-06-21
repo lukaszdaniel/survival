@@ -34,7 +34,7 @@ survobrien <- function(formula, data, subset,
     Terms <- attr(m, 'terms')
 
     y <- model.extract(m, 'response')
-    if (!inherits(y, "Surv")) stop("Response must be a survival object")
+    if (!inherits(y, "Surv")) stop("response must be a survival object")
     if (!attr(y, "type") %in% c("right", "counting"))
         stop("Response must be right censored or (start, stop] data")
 

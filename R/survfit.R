@@ -73,7 +73,7 @@ survfit.formula <- function(formula, data, weights, subset,
         n <- nrow(mf)
     }       
     else {
-        if (!is.Surv(Y)) stop("Response must be a survival object")
+        if (!is.Surv(Y)) stop("response must be a survival object")
         id <- model.extract(mf, "id")
         istate <- model.extract(mf, "istate")
     }
