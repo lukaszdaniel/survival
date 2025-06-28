@@ -535,7 +535,7 @@ a36e9119753cbdb4948cb1210b53bb94 *R/yates.R
 970047d3a2d0cb5e3d9c779158cb99b8 *R/rttright.R
 1dfd7f1969ea037fd486745a5ba320a6 *R/coxph.control.R
 7f0a427c669fdd31d7c578defab7bfe6 *R/dsurvreg.R
-acb65e72ad20cf6db8315e545efca41b *R/parsecovar.R
+87ffb53a5ffa5c1416c736c1bbfdde3a *R/parsecovar.R
 4696548963d14529a80b67935ec99dae *R/cipoisson.R
 016e8b5dd0f4dfe6fb13b4f262bec247 *R/tcut.R
 2397dbf8ca81beab3803e3ea3c88b7dc *R/firstlib.R
