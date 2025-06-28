@@ -49,7 +49,7 @@ da673e910cfb74ed0b353630657233e3 *src/survConcordance.c
 6289e7d8522b764a745322487a9c5d6b *src/twoclust.c
 be783b22d28ba908a7542653b00e9aba *src/agscore2.c
 7aa52164c4304f4a41bf00e6fcce5c3f *src/coxsurv4.c
-676ec78088d8c6bd6823e3b6bd6bd9c0 *src/agexact.c
+e0f88a46adc4fd1c764f333dcd6a2f61 *src/agexact.c
 10144d6e385a55a9e9d1c31a1e1db8c3 *src/coxsurv1.c
 c56318ee7b0b76cb676d0833b0e59adc *src/agsurv5.c
 6b02dc028fca4fe914086b2453d613f7 *src/pystep.c
@@ -100,7 +100,7 @@ d5f0665610fdea7c8a8de470fed738f8 *man/neardate.Rd
 3683c1dd8254d836e811dc0758851164 *man/ratetableDate.Rd
 b9d044889584b631221ffd1fe6b443d5 *man/heart.Rd
 ec86a3ca5ee01422f24cd89f02cfcc20 *man/pbcseq.Rd
-7cb1b2425be74f4512083e76cda6367b *man/predict.coxph.Rd
+4eb31b5d06a82c89b7e7d70c1f708a50 *man/predict.coxph.Rd
 5d5d59ec8073124d19342839e5481f39 *man/tcut.Rd
 43e37ca2aed2921a63708a6a2e9ddbbd *man/ovarian.Rd
 306aa68791189d2532ecf0b1b2cf86d2 *man/rhDNase.Rd
@@ -145,7 +145,7 @@ e8813e2e0465cbe496808de9a335191f *man/diabetic.Rd
 58f1f7257ab37c8e852604ad1e9b9e12 *man/kidney.Rd
 735f4fe4a5d43a09fb24f6fd84052ccc *man/survfit.matrix.Rd
 51202fe9ff04084b7a9e24433e282724 *man/aeqSurv.Rd
-e95a6340f677de8b4c6dc12b5f5e4f35 *man/finegray.Rd
+ee0ab444a68774437dde70abb91cd8cd *man/finegray.Rd
 c200f5eef33d393215e5052828a417b4 *man/survreg.distributions.Rd
 7ea33e0ef0740da761c655b0dc461aac *man/mgus2.Rd
 71404c1cf6a8734cbd1705be65d83c43 *man/print.summary.survfit.Rd
@@ -445,7 +445,7 @@ bdabc1e571ecbfaaf09016f05b220ba4 *po/survival.pot
 631498a5b419bf51ef70acf394617e32 *po/pl.po
 76d183dd2ea8962a44ea485ac750e10f *po/R-survival.pot
 5e57de462543ad48eb92bace94cd9e28 *.hgignore
-449968b133b2dc99ad10885061cd7f69 *README.md
+d89e8ff4a486fa719083b9ca6b34af0a *README.md
 b383170649ab37e116da2a217a009ae0 *.vscode/settings.json
 324b91c11ff6860331c36b4043c4590f *R/survfit.matrix.R
 d05f2087d34561297f314ecaa8742792 *R/quantile.survfit.R
@@ -535,7 +535,7 @@ a36e9119753cbdb4948cb1210b53bb94 *R/yates.R
 970047d3a2d0cb5e3d9c779158cb99b8 *R/rttright.R
 1dfd7f1969ea037fd486745a5ba320a6 *R/coxph.control.R
 7f0a427c669fdd31d7c578defab7bfe6 *R/dsurvreg.R
-ff409e0925bcac0be1d757b27208cc90 *R/parsecovar.R
+acb65e72ad20cf6db8315e545efca41b *R/parsecovar.R
 4696548963d14529a80b67935ec99dae *R/cipoisson.R
 016e8b5dd0f4dfe6fb13b4f262bec247 *R/tcut.R
 2397dbf8ca81beab3803e3ea3c88b7dc *R/firstlib.R
@@ -543,7 +543,7 @@ ff409e0925bcac0be1d757b27208cc90 *R/parsecovar.R
 709628cd8de5418eef8ec337632e8f9e *R/methods.R
 f68a758d49424d7934399cf5cd63d52a *R/frailty.gamma.R
 8340f98563f3e9f569befbb30155a5ca *R/Surv2.R
-66a865b70ffa53dd13b18289553b54a7 *R/finegray.R
+429d562d4f4c553736ff03bce3e19d93 *R/finegray.R
 5a28f06bc0463f5278e17e894b5bbc78 *R/ridge.R
 612d578cc5306fa3814ecdc28a9005bd *R/lines.survexp.R
 d8d9b84229ca94c2afcc7492dc94c88e *R/survexp.R
@@ -571,7 +571,7 @@ e8d8bfdf92033e7d31841bd23df82695 *R/survfitms.R
 4227591baa8a237ff83b8976b230856b *R/print.survreg.penal.R
 b2f82c369fd6c8bf4496b1fe56ddef5d *R/ratetable.R
 1f4fa28088bfac3fffabbd5beee53ea5 *R/anova.coxph.penal.R
-59552f4808154f4956bf0e717265e81e *R/stacker.R
+4886a248b6ee6414edfa2ca1fdb70336 *R/stacker.R
 009724b24c5d4d0d76bcb05af737d768 *R/lines.survfit.coxph.R
 a433af13bab47bfad69eb23fff44ad96 *R/survexp.cfit.R
 6200a22d7408bbe4bc84cbdd56558c45 *R/survfitTurnbull.R
@@ -625,10 +625,10 @@ df85e412d05563af758fae0f8123e3d4 *noweb/concordance.Rnw
 c72dae5de32c3e1468098334635d86c3 *noweb/survfitms.Rnw
 10c889211aff47d051c465c2fd2df484 *noweb/exact.nw
 76d29eb55c06a7b32c53ccdb30ebdc4b *noweb/agreg.Rnw
-68314142cbc22688183d6c85e3e300eb *noweb/parse.Rnw
+6f2bb48346dcdb33dea62345378c125d *noweb/parse.Rnw
 c7315b78224994c56c4d140e221fab3a *noweb/statefig.Rnw
 05b7a287d1262180acff2681c29f8a54 *noweb/coxsurv3.Rnw
-c3fe5c01482ce3b2a8bfd2e9de9c061d *noweb/finegray.Rnw
+5a22abd696ead0e3befd2db96cabbf5a *noweb/finegray.Rnw
 7609336443d38f08fd88c62f70bf3953 *noweb/residuals.survreg.Rnw
 0ff5739bb83d7a67ec9b6f06ce08f5e8 *noweb/survexp.Rnw
 87250d67453af7cc856e91db55e9dae0 *noweb/predict.coxph.Rnw
@@ -701,7 +701,7 @@ ba94a90dedbedfcd4858c74a6e27f8ce *fail/rdata.csv
 4006f1ce93c381c2407ddfb8f6193203 *.Rbuildignore
 646b6d4b7481e2c519579d0d83673d2f *vignettes/splines.Rnw
 9249199ef711afe0f8029fa967ae5ff3 *vignettes/concordance.Rnw
-43274fa6fc777335d4d4fd8cd8f782ce *vignettes/compete.Rnw
+76154ef572c36203f8b84c3273c8cd63 *vignettes/compete.Rnw
 f9d4a612d456ecc40aba47c00d90029d *vignettes/other.Rnw
 b3c5d628377b57bfda073a5ef461f08d *vignettes/methods.Rnw
 5a4edad16992beb5f14ee95b3cfa9fae *vignettes/validate.Rnw

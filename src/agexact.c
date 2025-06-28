@@ -48,6 +48,7 @@
 **          living within tied times.
 */
 #include <math.h>
+#include <stdbool.h>
 #include "survS.h"
 #include "survproto.h"
 
@@ -69,7 +70,7 @@ void agexact(int  *maxiter,  int  *nusedx,   int  *nvarx,   double *start,
     double  time;
     double  temp;
     double  newlk =0;
-    int     halving;    /*are we doing step halving at the moment? */
+    bool    halving;    /*are we doing step halving at the moment? */
     int     nrisk, deaths;
     int *index, *atrisk;
 
