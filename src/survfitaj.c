@@ -93,7 +93,7 @@ SEXP survfitaj(SEXP y2,       SEXP sort12,  SEXP sort22, SEXP utime2,
     SEXP setemp;
     double **pstate, **cumhaz, *usave=0; /*=0 to silence -Wall warning */
     double **nrisk, **nevent, **ncensor, **nenter=0, **ntrans;
-    double **stdp,  **stdc, **stda; 
+    double **stdp = NULL,  **stdc = NULL, **stda = NULL; 
 
     ntime= LENGTH(utime2);
     n    = nrows(y2); /* number of unique subjects */
