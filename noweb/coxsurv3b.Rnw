@@ -2,6 +2,43 @@
 Survival curves after a multi-state Cox model are more challenging,
 particularly the variance.
 
+The issue that consumes the most work and thought has been shared hazards.
+When there is a shared hazard $A$$ for a set of transitions, the common 
+baseline has standard form:
+$$
+  \lambda_A(t) = \frac{\sum_i dN_{ijk}(t)}{\sum Y_{ij}(t)exp(X_i \beta^{jk})}
+$$
+where $(jk)$ is the set of from:to hazards that are shared, $Y$ marks those
+at risk for one of those transitions at this time point, $\beta$ is the
+appropriate set of coefficients, and $dN$ are the
+observed ones.  All very simple. There is an assumption that $X\beta$ is well
+defined for subjects, whichever starting state that they are in.
+
+We have 3 cases.
+\begin{enumerate}
+  \item no shared hazards: formula\$smap[1,] has no repeat values.      %$
+  \item simple shared hazards: there are special coefficients with names
+    like ``ph(1:3)'', that will get attached to the 1:3 transtion.  No variables
+    associated with those coefficients appear in newdata.
+  \item there are shared hazards, and the user has specified which covariates
+    belong to the shared hazards by setting them to NA in newdata.
+\end{enumerate}
+
+Case 1 and 2 are dealt with using \code{baselinecoef}, a vector of 1s for case
+1 and a vector of per stratum multipliers for case 2.
+Say that baseline $A$ is associated with 5 different hazards, then the $H$
+matrix will have 5 columns associated with $A$, and what is entered into
+$H$ is $\lambda_A$ * baselinehazard * risk score from newdata.
+The last part represents the subject of interest, for whom a curve is being
+created.
+In case 3, what is entered is $\lambda_A$ * mean(z), where z is the risk
+score for a combined data set with newdata values + model data set for the NA;
+mean within the stratum.  Now, z should be a constant in all cases we've
+thought on, the mean is a failsafe.
+
+
+Case 3 is 
+
 <<survfit.coxphms>>=
 survfit.coxphms <-
 function(formula, newdata, se.fit=FALSE, conf.int=.95, individual=FALSE,
@@ -128,7 +165,8 @@ cluster <- model.extract(mf, "cluster")
 tstrata <- object$smap
 tstrata[1,] <- 1:ncol(tstrata)
 xstack <- stacker(object$cmap, tstrata, as.integer(istate), X, Y,
-                  mf=mf, states= object$states, dropzero=FALSE)
+                  as.integer(strata),
+                  states= object$states, dropzero=FALSE)
 if (length(position) >0)
     position <- position[xstack$rindex]   # id was required by coxph
 X <- xstack$X

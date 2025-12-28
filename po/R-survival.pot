@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: survival 3.8-4\n"
-"POT-Creation-Date: 2025-06-21 22:43\n"
+"Project-Id-Version: survival 3.8-5\n"
+"POT-Creation-Date: 2025-12-28 13:51\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -644,13 +644,18 @@ msgstr ""
 
 
 #: R/survfit.coxph.R: 0
-#: R/survfit.coxphms.R: 0
 #: R/survnew.R: 0
 #. R/survfit.coxph.R: stop("Failed to reconstruct the original data set")
-#. R/survfit.coxphms.R: stop("Failed to reconstruct the original data set")
 #. R/survnew.R: stop("Failed to reconstruct the original data set")
 
 msgid "Failed to reconstruct the original data set"
+msgstr ""
+
+
+#: R/survfit.coxphms.R: 0
+#. R/survfit.coxphms.R: stop("Failed to reconstruct the original data set, wrong number of rows")
+
+msgid "Failed to reconstruct the original data set, wrong number of rows"
 msgstr ""
 
 
@@ -801,8 +806,12 @@ msgid "Invalid formula for cox fitting function"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("Invalid function argument")
 #. R/plot.survfit.R: stop("Invalid function argument")
+#. R/points.survfit.R: stop("Invalid function argument")
 
 msgid "Invalid function argument"
 msgstr ""
@@ -1431,10 +1440,15 @@ msgid "Predictions not available for sparse models"
 msgstr ""
 
 
-#: R/predict.coxph.R: 0
 #: R/predict.coxphms.R: 0
+#. R/predict.coxphms.R: stop("Primary argument much be a coxphms object")
+
+msgid "Primary argument much be a coxphms object"
+msgstr ""
+
+
+#: R/predict.coxph.R: 0
 #. R/predict.coxph.R: stop("Primary argument must be a coxph object")
-#. R/predict.coxphms.R: stop("Primary argument must be a coxph object")
 
 msgid "Primary argument must be a coxph object"
 msgstr ""
@@ -1561,8 +1575,10 @@ msgid "Survreg failed."
 msgstr ""
 
 
+#: R/model.frame.coxphms.R: 0
 #: R/model.frame.survreg.R: 0
 #: R/model.matrix.coxph.R: 0
+#. R/model.frame.coxphms.R: stop("The coxph call is missing a formula!")
 #. R/model.frame.survreg.R: stop("The coxph call is missing a formula!")
 #. R/model.matrix.coxph.R: stop("The coxph call is missing a formula!")
 
@@ -1770,8 +1786,12 @@ msgid "Unrecognized distribution"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("Unrecognized function argument")
 #. R/plot.survfit.R: stop("Unrecognized function argument")
+#. R/points.survfit.R: stop("Unrecognized function argument")
 
 msgid "Unrecognized function argument"
 msgstr ""
@@ -2422,6 +2442,22 @@ msgid "cohort.size and stratum do not match"
 msgstr ""
 
 
+#: R/residuals.coxph.R: 0
+#: R/residuals.coxphms.R: 0
+#. R/residuals.coxph.R: stop("collapse and expansion of missing are mutually exclusive")
+#. R/residuals.coxphms.R: stop("collapse and expansion of missing are mutually exclusive")
+
+msgid "collapse and expansion of missing are mutually exclusive"
+msgstr ""
+
+
+#: R/residuals.coxphms.R: 0
+#. R/residuals.coxphms.R: stop("collapse vector not the same length as the model frame")
+
+msgid "collapse vector not the same length as the model frame"
+msgstr ""
+
+
 #: R/pspline.R: 0
 #. R/pspline.R: stop("combine must be an increasing vector of positive integers")
 
@@ -2450,7 +2486,23 @@ msgid "conf.lower is ignored for multi-state data"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
+#. R/lines.survfit.R: stop("conf.times must be numeric")
+
+msgid "conf.times must be numeric"
+msgstr ""
+
+
+#: R/survfit.R: 0
+#. R/survfit.R: stop("confidence intervals must be between 0 and 1")
+
+msgid "confidence intervals must be between 0 and 1"
+msgstr ""
+
+
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#. R/lines.survfit.R: stop("confidence intervals not available when cumprob=TRUE")
 #. R/plot.survfit.R: stop("confidence intervals not available when cumprob=TRUE")
 
 msgid "confidence intervals not available when cumprob=TRUE"
@@ -2500,15 +2552,23 @@ msgid "ctype must be 1 or 2"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("cumhaz argument is not integer")
 #. R/plot.survfit.R: stop("cumhaz argument is not integer")
+#. R/points.survfit.R: stop("cumhaz argument is not integer")
 
 msgid "cumhaz argument is not integer"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("cumprob contains an invalid numeric")
 #. R/plot.survfit.R: stop("cumprob contains an invalid numeric")
+#. R/points.survfit.R: stop("cumprob contains an invalid numeric")
 
 msgid "cumprob contains an invalid numeric"
 msgstr ""
@@ -2617,6 +2677,13 @@ msgstr ""
 #. R/coxph.detail.R: gettextf("detailed output is not available for the %s method",     method)
 
 msgid "detailed output is not available for the %s method"
+msgstr ""
+
+
+#: R/residuals.coxphms.R: 0
+#. R/residuals.coxphms.R: stop("deviance residuals not supported for multi-state")
+
+msgid "deviance residuals not supported for multi-state"
 msgstr ""
 
 
@@ -3054,9 +3121,17 @@ msgstr ""
 
 
 #: R/aareg.taper.R: 0
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#: R/residuals.coxph.R: 0
+#: R/residuals.coxphms.R: 0
 #. R/aareg.taper.R: gettextf("invalid '%s' argument", "taper")
+#. R/lines.survfit.R: gettextf("invalid '%s' argument", "fun")
 #. R/plot.survfit.R: gettextf("invalid '%s' argument", "fun")
+#. R/points.survfit.R: gettextf("invalid '%s' argument", "fun")
+#. R/residuals.coxph.R: gettextf("invalid '%s' argument", "na.action")
+#. R/residuals.coxphms.R: gettextf("invalid '%s' argument", "na.action")
 
 msgid "invalid '%s' argument"
 msgstr ""
@@ -3066,6 +3141,7 @@ msgstr ""
 #: R/aeqSurv.R: 0
 #: R/brier.R: 0
 #: R/coxph.control.R: 0
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
 #: R/pspline.R: 0
 #: R/rttright.R: 0
@@ -3082,6 +3158,7 @@ msgstr ""
 #. R/brier.R: gettextf("invalid '%s' value", "timefix")
 #. R/coxph.control.R: gettextf("invalid '%s' value", "toler.chol")
 #. R/coxph.control.R: gettextf("invalid '%s' value", "outer.max")
+#. R/lines.survfit.R: gettextf("invalid '%s' value", "conf.int")
 #. R/plot.survfit.R: gettextf("invalid '%s' value", "conf.int")
 #. R/pspline.R: gettextf("invalid '%s' value", "theta")
 #. R/pspline.R: gettextf("invalid '%s' value", "Boundary.knots")
@@ -3209,6 +3286,13 @@ msgstr ""
 #. R/residuals.coxph.R: stop("invalid terms component of object")
 
 msgid "invalid terms component of object"
+msgstr ""
+
+
+#: R/cox.zph.R: 0
+#. R/cox.zph.R: stop("invalid variable requested")
+
+msgid "invalid variable requested"
 msgstr ""
 
 
@@ -3732,8 +3816,12 @@ msgid "number of boxes != number of states"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("numeric cumhaz argument only applies to multi-state")
 #. R/plot.survfit.R: stop("numeric cumhaz argument only applies to multi-state")
+#. R/points.survfit.R: stop("numeric cumhaz argument only applies to multi-state")
 
 msgid "numeric cumhaz argument only applies to multi-state"
 msgstr ""
@@ -3746,7 +3834,9 @@ msgid "numeric state is out of range"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#. R/lines.survfit.R: stop("object does not have standard errors, CI not possible")
 #. R/plot.survfit.R: stop("object does not have standard errors, CI not possible")
 
 msgid "object does not have standard errors, CI not possible"
@@ -3945,6 +4035,13 @@ msgid "requested time points are beyond the end of one or more curves"
 msgstr ""
 
 
+#: R/residuals.coxphms.R: 0
+#. R/residuals.coxphms.R: paste(otype, "residuals are not available for the exact method")
+
+msgid "residuals are not available for the exact method"
+msgstr ""
+
+
 #: R/residuals.survfit.R: 0
 #. R/residuals.survfit.R: stop("residuals for interval-censored data are not available")
 
@@ -3963,13 +4060,6 @@ msgstr ""
 #. R/residuals.survfit.R: stop("residuals method for coxph survival curve not found")
 
 msgid "residuals method for coxph survival curve not found"
-msgstr ""
-
-
-#: R/residuals.coxph.R: 0
-#. R/residuals.coxph.R: stop("residuals method for multistate coxph objects is incomplete")
-
-msgid "residuals method for multistate coxph objects is incomplete"
 msgstr ""
 
 
@@ -4226,6 +4316,13 @@ msgid "strata %s not matched"
 msgstr ""
 
 
+#: R/predict.coxphms.R: 0
+#. R/predict.coxphms.R: stop("strata reference unfinished")
+
+msgid "strata reference unfinished"
+msgstr ""
+
+
 #: R/yates.R: 0
 #. R/yates.R: stop("stratified models not yet supported")
 
@@ -4269,8 +4366,12 @@ msgid "subscript out of bounds"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("subscript out of range")
 #. R/plot.survfit.R: stop("subscript out of range")
+#. R/points.survfit.R: stop("subscript out of range")
 
 msgid "subscript out of range"
 msgstr ""
@@ -4313,8 +4414,12 @@ msgid "survexp not defined for multi-state coxph models"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("survfit object does not contain a cumulative hazard")
 #. R/plot.survfit.R: stop("survfit object does not contain a cumulative hazard")
+#. R/points.survfit.R: stop("survfit object does not contain a cumulative hazard")
 
 msgid "survfit object does not contain a cumulative hazard"
 msgstr ""
@@ -4348,10 +4453,21 @@ msgid "survfitms object has no states dimension"
 msgstr ""
 
 
+#: R/lines.survfit.R: 0
 #: R/plot.survfit.R: 0
+#: R/points.survfit.R: 0
+#. R/lines.survfit.R: stop("survfitms object with no states dimension")
 #. R/plot.survfit.R: stop("survfitms object with no states dimension")
+#. R/points.survfit.R: stop("survfitms object with no states dimension")
 
 msgid "survfitms object with no states dimension"
+msgstr ""
+
+
+#: R/finegray.R: 0
+#. R/finegray.R: stop("survival time has only a single state")
+
+msgid "survival time has only a single state"
 msgstr ""
 
 
@@ -4461,6 +4577,13 @@ msgstr ""
 #. R/survfit.coxphms.R: stop("the id option only makes sense with new data")
 
 msgid "the id option only makes sense with new data"
+msgstr ""
+
+
+#: R/plot.survfit.R: 0
+#. R/plot.survfit.R: warning("the mark option is deprecated, use mark.time=TRUE along with pch for the character")
+
+msgid "the mark option is deprecated, use mark.time=TRUE along with pch for the character"
 msgstr ""
 
 

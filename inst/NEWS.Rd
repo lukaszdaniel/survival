@@ -3,7 +3,7 @@
 \section{Changes in version 3.8-4}{
   \itemize{
     \item The rmean option for print.survfit for a single and multi
-    state model were not in harmony with start.time was present. The
+    state model were not in harmony when start.time was present. The
     former added start.time to the result, the second not.  Make them
     agree (don't add it).
     \item Fix error in stacker (called by coxph) that only arose if
@@ -12,12 +12,24 @@
     \item Add the lvcf and nostutter functions, both useful when
     creating certain multistate data sets.
     \item Depricate the type="mstate" option of Surv; a factor variable
-    is the better option.
+    for 'status' is the better option.
     \item Add code to ignore the robust option to coxph for a penalized
-    model; this combination makes no sense and does not appear in any
-    examples. However, to my dismay I have just discovered that in the
-    prior code this does not outright fail as it should, and produces
-    *something* that is returned as a purported variance.
+    model; this combination makes no sense (to me) and does not appear in
+    any examples. However, to my dismay a user pointed that in the
+    current code this did not outright fail, and instead produces
+    *something* that is returned as a purported variance.  (Is is a
+    sensible idea? I'm curious, but someone else will need to
+    answer the question.)
+    \item Fix error in survfit_confint that would sometime produce
+    spurious NA.  Export the survfit_confint function due to a request.
+    \item Allow character indices for [.cox.zph, per github issue 299
+    \item Major update of residuals.coxphms, i.e., residuals from a
+    multistate hazards model (MSH), i.e., create the necessary test
+    suites to verify results. The Schoenfeld residuals, which have one
+    row per observed event, gain a "transition" attribute.
+    \item Add "mark.col" and "cumprob" options to plot.survfit. The
+    latter is used for stacked plots of multistate data.
+    \item Address github issue 328.
 }}
 \section{Changes in version 3.8-2}{
   \itemize{
@@ -25,7 +37,7 @@
     3.8-1 I had made a silly copy-paste mistake in the update to
     survfit, and also added a new test for my changes (doublecolon.R).
     Of course, the only check that I forgot to include in the
-    doublecolon file was for ... survfit (coxph, survdiff, survreg,
+    doublecolon file was for the survfit function (coxph, survdiff, survreg,
     survcheck, and concordance were all there).
 }}
 \section{Changes in version 3.8-1}{

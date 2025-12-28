@@ -225,16 +225,31 @@ addSurvFun <- function(formula, found) {
 #  Better known as "last value carried forward"
 #
 lvcf <- function(id, x, time) {
+    # the input will normally already be sorted by time, and users will
+    #  then omit that argument
     if (!missing(time)) indx <- order(id, time)
     else indx <- order(id)   
 
-    for (i in seq(along=x)) {
-        j <- indx[i]
-        if (!is.na(x[j]) || i==1 || id[j]!= id[jlag]) current <- x[j]
-        else x[j] <- current
-        jlag <- j
+    # factors are really slow in replacement, convert to integer
+    if (is.factor(x)) {
+        xlev <- levels(x)
+        x <- as.integer(x)
+        for (i in seq(along=x)) {
+            j <- indx[i]
+            if (i==1 || !is.na(x[j]) || id[j]!= id[jlag]) current <- x[j]
+            else x[j] <- current
+            jlag <- j
+        }
+        factor(x, seq(along.with= xlev), xlev) # return to factor form
+    } else {
+        for (i in seq(along=x)) {
+            j <- indx[i]
+            if (i==1 || !is.na(x[j]) || id[j]!= id[jlag]) current <- x[j]
+            else x[j] <- current
+            jlag <- j
+        }
+        x
     }
-    x
 }
 
 # A function useful for timeline data.  Turn repeated instances of an
@@ -243,7 +258,7 @@ lvcf <- function(id, x, time) {
 #  curve it actually doesn't matter, since p(state) doesn't change if someone
 #  "transitions" from state xyz to state xyz; leaving as is just makes the 
 #  output object a bit longer (it may add another time point).
-nostutter <- function(id, x, censor=0) {
+nostutter <- function(id, x, censor=0, single=FALSE) {
     # censor is the code to use for censoring, 
     # the output will have censor as the first code
     if (is.character(x) | is.numeric(x)) x <- as.factor(x)
@@ -256,14 +271,31 @@ nostutter <- function(id, x, censor=0) {
     
     n <- length(id)
     if (length(x) != n) stop("wrong length for x or id")
-    for (i in 1:n) {
-        if (i==1 || id[i] != id[i-1]) {
-            if (is.na(x[i])) current <- 0 else current <- x[i]
-        } else if (!is.na(x[i])) {
-            if (x[i]== current) x[i] <- 0
-            else if (x[i] >0) current <- x[i]
+    if (single) {
+        used <- logical(1L+ length(levels(x)))
+        for (i in 1:n) {
+            if (i==1 || (id[i] != id[i-1] && !used[x[i]])) {
+                if (is.na(x[i])) current <- 0 
+                else {
+                    current <- x[i]
+                    uses[x[i]] <- TRUE
+                }
+            } else if (!is.na(x[i])) {
+                if (x[i]== current) x[i] <- 0
+                else if (x[i] >0) current <- x[i]
+            }
+        }
+    } else{
+        for (i in 1:n) {
+            if (i==1 || id[i] != id[i-1]) {
+                if (is.na(x[i])) current <- 0 else current <- x[i]
+            } else if (!is.na(x[i])) {
+                if (x[i]== current) x[i] <- 0
+                else if (x[i] >0) current <- x[i]
+            }
         }
     }
+
     # if censor were level 3 of 5 in input, then the unique x at
     #  this point would be 0, 1, 2, 4, 5
     factor(x, sort(unique(x)), newlev)  

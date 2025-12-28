@@ -8,13 +8,14 @@ For a subject with repeated follow-up visits, do not count the second,
 third, etc. visit in a row with the same state as a repeated event.
 }
 \usage{
-nostutter(id, x, censor = 0)
+nostutter(id, x, censor = 0, single=FALSE)
 }
 \arguments{
   \item{id}{subject identifier}
   \item{x}{covariate of interest}
   \item{censor}{censoring code to be used as the "no event at this time"
     value}
+  \item{single}{if TRUE, a given level can appear only once}
 }
 \details{
   When an covariate is recorded multiple times during follow-up, and that
@@ -25,8 +26,11 @@ nostutter(id, x, censor = 0)
   An example of the second is the \code{nafld} data when we treat the
   number of co-morbidities as a state; multiple visits with the same
   total do not count as entry into a new state.
+
+  This routine will often be called on a current state variable before
+  using that variable as an event variable in \code{tmerge}.
 }
-\value{an updated vector with repeated values marked as "censor"}
+\value{an updated vector with repeated values marked as \code{censor}}
 \seealso{\code{\link{lvcf}}, \code{\link{tmerge}}
 }
 \keyword{ survival }
