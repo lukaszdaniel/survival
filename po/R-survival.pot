@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: survival 3.8-5\n"
-"POT-Creation-Date: 2025-12-28 13:51\n"
+"Project-Id-Version: survival 3.8-6\n"
+"POT-Creation-Date: 2026-03-07 17:02\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2612,9 +2612,7 @@ msgstr ""
 
 
 #: R/summary.survfit.R: 0
-#: R/summary.survfitms.R: 0
 #. R/summary.survfit.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
-#. R/summary.survfitms.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
 
 msgid "data error (?) or consider using the extend argument"
 msgstr ""
@@ -3690,9 +3688,7 @@ msgstr ""
 
 
 #: R/summary.survfit.R: 0
-#: R/summary.survfitms.R: 0
 #. R/summary.survfit.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
-#. R/summary.survfitms.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
 
 msgid "no points selected for one or more curves,"
 msgstr ""
@@ -4807,9 +4803,9 @@ msgstr ""
 
 
 #: R/Surv.R: 0
-#. R/Surv.R: warning("type= 'mstate' is depricated, use a factor variable as status")
+#. R/Surv.R: warning("type= 'mstate' is deprecated, use a factor variable as status")
 
-msgid "type= 'mstate' is depricated, use a factor variable as status"
+msgid "type= 'mstate' is deprecated, use a factor variable as status"
 msgstr ""
 
 

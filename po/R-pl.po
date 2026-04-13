@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: survival\n"
-"POT-Creation-Date: 2025-12-28 13:51\n"
+"POT-Creation-Date: 2026-03-07 17:02\n"
 "PO-Revision-Date: 2025-12-28 13:45+0100\n"
 "Last-Translator: Łukasz Daniel <lukasz.daniel@gmail.com>\n"
 "Language-Team: Łukasz Daniel <lukasz.daniel@gmail.com>\n"
@@ -1867,8 +1867,7 @@ msgid "data contains an infinite predictor"
 msgstr ""
 
 #. R/summary.survfit.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
-#. R/summary.survfitms.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
-#: R/summary.survfit.R:0 R/summary.survfitms.R:0
+#: R/summary.survfit.R:0
 msgid "data error (?) or consider using the extend argument"
 msgstr ""
 
@@ -2648,8 +2647,7 @@ msgid "no one at risk for one of the curves, at the default time 0; specify a st
 msgstr ""
 
 #. R/summary.survfit.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
-#. R/summary.survfitms.R: stop("no points selected for one or more curves,", " data error (?) or consider using the extend argument")
-#: R/summary.survfit.R:0 R/summary.survfitms.R:0
+#: R/summary.survfit.R:0
 msgid "no points selected for one or more curves,"
 msgstr ""
 
@@ -3481,9 +3479,9 @@ msgstr "zgrubna wariancja wraz ze ścisłym modelem nie jest wspierana"
 msgid "type terms not yet supported"
 msgstr "człony typu jeszcze nie są wspierane"
 
-#. R/Surv.R: warning("type= 'mstate' is depricated, use a factor variable as status")
+#. R/Surv.R: warning("type= 'mstate' is deprecated, use a factor variable as status")
 #: R/Surv.R:0
-msgid "type= 'mstate' is depricated, use a factor variable as status"
+msgid "type= 'mstate' is deprecated, use a factor variable as status"
 msgstr ""
 
 #. R/cox.zph.R: stop("unexpected assign component")

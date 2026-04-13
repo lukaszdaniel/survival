@@ -266,7 +266,7 @@ cddab299dbe5d27b62297335fd99c593 *man/strata.Rd
 033ee961990ee412cf9ba50630110434 *man/udca.Rd
 f7ad3e1700d98048b288ed73d7cf11b9 *man/is.ratetable.Rd
 bdccea6a769366627703f9ec81bff188 *NAMESPACE
-bc6b934a6a03d7b9b0d038fc8cf6f61a *DESCRIPTION
+7c3f8750be91e1220269f69d76cdc9f5 *DESCRIPTION
 94e49b45d947935252dac8935c85b14f *R/coxpenal.df.R
 6200a22d7408bbe4bc84cbdd56558c45 *R/survfitTurnbull.R
 55a5daef469f6dfc4390fcac4e0284be *R/frailty.brent.R
@@ -304,7 +304,7 @@ f66973ad73fd670dd51247ce87d076ba *R/coxph.detail.R
 b2f82c369fd6c8bf4496b1fe56ddef5d *R/ratetable.R
 c3911153a8286db275f743af23ce830d *R/cch.R
 698310d1669dc83ec7704313fcefeb35 *R/survexp.fit.R
-84fcc2c0e2a650ae6e3a8e4803a65e27 *R/clogit.R
+abbf8f4c7cb72c6b5df7efecca5fadcb *R/clogit.R
 e710be5ac09f86f3c01f14a87649116e *R/print.summary.survfit.R
 75fb30f0c3d673d489ac5aaad463e792 *R/survreg.fit.R
 5c340d79d336b2033f2287b104bfffd8 *R/summary.survexp.R
@@ -328,7 +328,7 @@ f668c5939ed705a05d4ae2dc2d696f70 *R/pseudo.R
 7c797d7ee0fcfd0a92dd654a7e5aa03d *R/survregDtest.R
 26c14de580bb774f8d69c95bad1f4c8b *R/aareg.taper.R
 76d1772bbc26ca1b3fff1abf8ae92cf8 *R/stacker.R
-91aae93ba43fd59c134ea63bd179d1b4 *R/survfit.R
+5b252a3c407252d49e972088496d5f4f *R/survfit.R
 22b9111f6eaec0d35200a201669761a5 *R/basehaz.R
 2c9f1894713f0c635b30e6f30c9fb5c1 *R/frailty.controlgauss.R
 a433af13bab47bfad69eb23fff44ad96 *R/survexp.cfit.R
@@ -409,7 +409,7 @@ a923848447afbf6ca1db39ebcd763eff *R/pyears.R
 d9e503ad91694a2093718fb5393e522c *R/blogit.R
 ded57e3681627f16c3c3a2816c1ed3c9 *R/frailty.gaussian.R
 ab222d970b26ee908f2acc250b04e0fe *R/predict.survreg.R
-e8d8bfdf92033e7d31841bd23df82695 *R/survfitms.R
+9547a71c3ce0e2cde3b2484415653d57 *R/survfitms.R
 cca1dd7da95d370e4f366fca71e9b3ba *R/survfit.coxphms.R
 e3282492486d91a3b177c2a26472e97b *R/nsk.R
 4221b1be93fc5c9becaa05874295f1e5 *R/survfit.coxph.R
@@ -429,9 +429,9 @@ d1271b20eb72f9216e29ef2468eb587a *R/surv2data.R
 ff6245013c8f8455136a12e15fc405cb *R/survConcordance.R
 71bb8b32a975d5add7bff7d5963c8ea2 *R/residuals.coxph.penal.R
 3e8ebae349953a3b7a665eecce562802 *inst/COPYRIGHTS
-4fb430eba7471c2e6092ec8d306b60e6 *inst/NEWS.Rd
-509a5fd84d06c9e7c4d5e414a9690569 *inst/po/en@quot/LC_MESSAGES/survival.mo
-7c6623958658af3ee209c0d2170d6864 *inst/po/en@quot/LC_MESSAGES/R-survival.mo
+e411f1d4e2868180f829b62996ac0169 *inst/NEWS.Rd
+786de265fa78904d07d81b906cdb908f *inst/po/en@quot/LC_MESSAGES/survival.mo
+96777c4477b2cde2ac9cc387725c6aaf *inst/po/en@quot/LC_MESSAGES/R-survival.mo
 f3a88658ab80add5c4c3419b81c23127 *inst/po/pl/LC_MESSAGES/survival.mo
 57bd18c14f7823e8366b169b0042bf54 *inst/po/pl/LC_MESSAGES/R-survival.mo
 ba01ac7a9482cc481afa2bcfd8126e99 *inst/CITATION
@@ -501,7 +501,7 @@ fa1e3f14d925abdb8958e79958b02dd7 *tests/multistate.Rout.save
 3ca5bc625aad58d1f453939b21a2f29f *tests/testci.Rout.save
 1f42efa1bfc2374f79ba2bc55ef9cfdb *tests/ratetable.R
 37c3e490fd13b64cda286d1aa10f48ea *tests/fr_cancer.Rout.save
-ee199cce6de0e529bc0fdb04b5742421 *tests/clogit.R
+6e1c6834db376f290974dfffae0a2b97 *tests/clogit.R
 367594a433bd6a9a9c319bd5a257aa20 *tests/book3.R
 c9d4101e02f341005323c85cfca2fe16 *tests/multistrata.R
 3a893b1ed2457350aed62c2cd17ab441 *tests/singtest.Rout.save
@@ -526,7 +526,7 @@ c536966cbbac1020d7193a644aee4d8e *tests/overlap.Rout.save
 3b5bdb63f459497a25843938065daf4c *tests/gray1.rda
 f077a61c3a27ce733bab0a197e0043d1 *tests/summary_survfit.Rout.save
 390bf3f1cd83d17cf552aca49d66bb09 *tests/expected2.Rout.save
-7bd6a179fe5281d3dd84a3ad7972b0a1 *tests/clogit.Rout.save
+d5e69db0b70e8cee174bc4caacd9edea *tests/clogit.Rout.save
 714c0d3571c7fa78db7e1231f9d1ae9d *tests/r_user.R
 7e7aaabd473be3b98aca3076e2746061 *tests/coxsurv4.Rout.save
 bcee0332ea4069d156be595524baf0c8 *tests/book7.Rout.save
@@ -603,6 +603,7 @@ f2f448291562d08a075c975b52c38480 *tests/pyear.Rout.save
 8526e029c7f2608ded5acb850407990a *tests/book4.R
 0dd9f4defb830283b67257b59696ef51 *tests/concordance.Rout.save
 c211e1396a2d625d524e2e613adca1f4 *tests/concordance.R
+4a1b1b6d7bd7d404251bb5251ee38604 *tests/badname.Rout.save
 d7a791e5d9067c97aa6189bfc5007be8 *tests/neardate.Rout.save
 c5da54a4d59d6824dae9ff849a705124 *tests/factor.Rout.save
 924ae745bd19a265ab81d7e69795e0b4 *tests/tmerge3.R
@@ -625,6 +626,7 @@ ee70db58511dd754017108c1d7d7a63e *tests/coxsurv2.R
 5e1d60241bace400ed866de4caeee483 *tests/survtest.Rout.save
 86e9a8a7eab332410a8ba7aae0535896 *tests/book1.Rout.save
 ae46c18e94f628885a5f747196495c9a *tests/zph.R
+7abcc795d0a9a568ba6846a1c0dc6544 *tests/badname.R
 18d246eb6fd8cee60ae0ad8bb08742b3 *tests/survfit2.Rout.save
 bc1d3c4d688e6bfb339a71e0a360cd20 *tests/fr_resid.Rout.save
 a3fc34918fd144b11c076de92f21959b *tests/multistate.R
@@ -657,6 +659,7 @@ e9822677fa45579561c2c0329b834915 *tests/frank.Rout.save
 f5f8c9bfbfbbe871a4c80bdd150445ae *tests/surv.R
 d6ae9ab76a85835e803dbabb586fb646 *tests/survfit1.Rout.save
 7042dae8249ef1d43c5d55ff4c71c16d *tests/book7.R
+8bd1018479006512dfd44501d9b4037f *tests/summarydf.Rout.save
 26f0160331f530006b4788b429fff2b6 *tests/expected.R
 87b17c16622514ba0b750035681ae835 *tests/aareg.Rout.save
 ad42cc2df70a8719e7627dd1b96b0a74 *tests/r_strata.R
@@ -680,9 +683,9 @@ cf59ffdb59431c802aaae301052e9516 *tests/concordance2.R
 141f021965349738153925b32b223978 *tests/coxsurv3.Rout.save
 6a2a25754a6c6e37ed8ae5af3f6b5e34 *tests/testnull.Rout.save
 631498a5b419bf51ef70acf394617e32 *po/pl.po
-a1ced5fad310d1314119995b060eeb68 *po/R-pl.po
-a8c83a17d5ec07722f80bb4f1b4f9a89 *po/R-survival.pot
-d22a23f5d1dcfd8aa607b46e34db5090 *po/survival.pot
+3b1151220438e3b6a16cb879d723d7d3 *po/R-pl.po
+55e6cacd59fb715b9b20eea14093d348 *po/R-survival.pot
+6dc0fda8bee3f52ba5f599424c9a4e31 *po/survival.pot
 24d53e3037dc40c31e3825757010d330 *fail/data.donnell
 a7f75523f3fb96c43a4663a0c54b82f7 *fail/young.rda
 3bca8d78e05f681a42d8c6bf17e9fe12 *fail/tsagris.R
