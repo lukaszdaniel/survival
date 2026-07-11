@@ -248,7 +248,7 @@ a5c5d529d3f760f342e988e96b40b004 *man/survreg.object.Rd
 04f1ff49e57eec99da7fb2afea5cf810 *man/cgd.Rd
 6f46e28182d84457d0c841087d958f1d *man/survfit.coxph.Rd
 c0b649367fcfb97f684919887036e635 *man/agreg.fit.Rd
-e530008a059ba9866085fddb9f0cc786 *man/survSplit.Rd
+166e8fad7d2c5ac70254617a0f6f5508 *man/survSplit.Rd
 b9d044889584b631221ffd1fe6b443d5 *man/heart.Rd
 dc1d1ad151e58946f62e78a5abeb208f *man/ridge.Rd
 7b7aa6dfadf26af09c7d7fa7ab41b42c *man/aggregate.survfit.Rd
@@ -265,7 +265,7 @@ cddab299dbe5d27b62297335fd99c593 *man/strata.Rd
 033ee961990ee412cf9ba50630110434 *man/udca.Rd
 f7ad3e1700d98048b288ed73d7cf11b9 *man/is.ratetable.Rd
 a80521a540e8a822203113512b4fa9fe *NAMESPACE
-674ed744a7e61eae57eda43040e56283 *DESCRIPTION
+8849e87bd237840cefe887d89f528017 *DESCRIPTION
 94e49b45d947935252dac8935c85b14f *R/coxpenal.df.R
 6200a22d7408bbe4bc84cbdd56558c45 *R/survfitTurnbull.R
 55a5daef469f6dfc4390fcac4e0284be *R/frailty.brent.R
@@ -283,7 +283,7 @@ e55e5fee02374bf1c554773466758c24 *R/model.frame.survfit.R
 5bd109e83e16ef7659f0a81709694ec2 *R/untangle.specials.R
 4e794cd106b6225d687ed58acfe3c112 *R/print.ratetable.R
 af77e54f7a46f67944305c020ac45e4e *R/summary.survfit.R
-bf82d7894d02c1bedb869732e1a25c25 *R/model.matrix.coxph.R
+0283e76ed21ce47c7b992ad929823d19 *R/model.matrix.coxph.R
 862617952c3eeb48fdced75784984862 *R/print.summary.coxph.penal.R
 4227591baa8a237ff83b8976b230856b *R/print.survreg.penal.R
 69cfc284bb126050a4adbb0f2aeddd50 *R/print.summary.survreg.R
@@ -339,7 +339,7 @@ f3450249646dcef66f5915a3af0b5184 *R/pade.R
 7484bafad74f9a2fc74c84a642db2f74 *R/residuals.coxph.null.R
 0a8e305ca047126a046d9d0a506b0320 *R/residuals.survfit.R
 04071d2525cf2495b5ecb32d24486123 *R/print.summary.survfitms.R
-5d26d56e2ab9cea460f3c583e1db090a *R/survSplit.R
+1ac793eb14977aab7e76e150aec9d660 *R/survSplit.R
 70b0368d4f31821d40913eebb147600c *R/parsecovar.R
 b5b108a32207699de74ca5eea0ea8d38 *R/aeqSurv.R
 343b45187b3261473aa646524c7081ab *R/anova.survreg.R
@@ -427,7 +427,7 @@ a5fbce4916ba3ac805bf29e434eedf06 *R/print.summary.survexp.R
 ff6245013c8f8455136a12e15fc405cb *R/survConcordance.R
 71bb8b32a975d5add7bff7d5963c8ea2 *R/residuals.coxph.penal.R
 3e8ebae349953a3b7a665eecce562802 *inst/COPYRIGHTS
-cfb170acef444a1a3d51588dceaa3f9d *inst/NEWS.Rd
+6beddcb6afb3cd8eddf24f04ada77889 *inst/NEWS.Rd
 786de265fa78904d07d81b906cdb908f *inst/po/en@quot/LC_MESSAGES/survival.mo
 96777c4477b2cde2ac9cc387725c6aaf *inst/po/en@quot/LC_MESSAGES/R-survival.mo
 f3a88658ab80add5c4c3419b81c23127 *inst/po/pl/LC_MESSAGES/survival.mo
@@ -549,7 +549,7 @@ b11de7240223c5f41c2ed16d77279373 *tests/quantile.Rout.save
 a5bffbc7d01867067a2ccd8bffd3c099 *tests/dropspecial.R
 958595d34e717cb2191db69bc9bf509f *tests/prednew.Rout.save
 f8f405206c7c8434a6460f4e187fe959 *tests/testreg.R
-96d5861a60eb1a994362f45cfc358e05 *tests/survSplit.R
+e0d5be6ef630273742ad4e303d560b3f *tests/survSplit.R
 48803952549155a77a63ff890463f58d *tests/fr_rat1.Rout.save
 94b0cc35e093808bb0db5001244f9609 *tests/Examples/survival-Ex.Rout.save
 ad56241e8136d97f4c732eb444fdb46b *tests/factor.R
@@ -573,7 +573,7 @@ b7b3f5d71f15320638bf2b2adaa2ad05 *tests/rttright.R
 34bed076504872ca5b71d7da78e2251d *tests/survfit1.R
 e7ee235a4b5055f2f73fcc46ee2c4074 *tests/finegray.R
 9c44d08c1462edc432d1162f6353a785 *tests/r_scale.Rout.save
-336f94dc29046fd7a6ea10c5bef3d177 *tests/survSplit.Rout.save
+d55566a867a844f55ec6cec5e3d94c58 *tests/survSplit.Rout.save
 2a51a6501f14380ab4580b4d69cfec2f *tests/bladder.R
 423070ecf495be02b5ec725c15ee44c6 *tests/timeline.R
 7e169995b0a084cb0c3de63a63daa82c *tests/book6.R
@@ -676,6 +676,7 @@ dd94f070c04d95afecc6e64d74e7d761 *tests/multi3.Rout.save
 3616630f3bff4cb63e4d22c335154682 *tests/book2.Rout.save
 f7a452292c0f25593b8cbc15bdd572d5 *tests/strata2.R
 1894c8762b40cbeaed74bb706952ce06 *tests/jasa.R
+4663e93ab664d693cceb14cb96402633 *tests/survexpm.Rout.save
 452e1e18e7b5732aa827a26bcd3a6b7e *tests/ekm.Rout.save
 b1143e1acf2e0718fb17ce077e75f1f7 *tests/doublecolon.R
 19c260e66551efc503cfbe918408dbac *tests/yates1.Rout.save
