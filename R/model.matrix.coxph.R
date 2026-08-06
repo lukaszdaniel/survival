@@ -116,8 +116,7 @@ model.frame.coxph <- function(formula, ...) {
         # But we do need to deal with timeline data
         Y <- model.response(mf)
         id <- model.extract(mf, "id")
-        if (inherits(Y, "Surv2") || (!is.null(id) && any(duplicated(id)) && 
-                                 attr(Y, 'type') %in% c("right", "mright"))) {
+        if (inherits(Y, "Surv2")) {
             # timeline data, convert to regular
             mf <- surv2counting(mf)
             Y <- model.response(mf)
@@ -133,7 +132,8 @@ model.frame.coxph <- function(formula, ...) {
             }
         }        
         # should I also do aeqSurv here? I think yes
-        if (formula$timefix) mf[[1]] <- aeqSurv(mf[[1]])
+        timefix <- formula$timefix  #if timefix was a variable we want to eval
+        if (is.null(timefix) || timefix) mf[[1]] <- aeqSurv(mf[[1]])
         mf
     }
 }
