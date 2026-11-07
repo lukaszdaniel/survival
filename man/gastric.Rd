@@ -30,7 +30,7 @@ statistic for the  proportional hazards model,
 
 }
 \examples{
-gfit <- coxph(Surv(time, status) ~ treat, gastric)
-cox.zph(gfit)
+#gfit <- coxph(Surv(time, status) ~ treat, gastric)
+#cox.zph(gfit)
 }
 \keyword{datasets}
