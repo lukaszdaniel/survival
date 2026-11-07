@@ -1,5 +1,49 @@
 \name{NEWS}
 \title{NEWS file for the survival package}
+\section{Changes in version 3.8.13}{
+  \itemize{
+    \item Remove a duplicate example in the coxph.Rd file
+    \item The clabel attribute of a Surv object was not always
+    preserved; correct that
+    \item Address an odd error in plot.survfit, which saves the xmax
+    argument (if present) to be used in a later lines.survfit call.
+    If there was another plot command between the plot.survfit and
+    lines.survfit the xmax value was retained, but should not have been.
+    \item github issue 345, wrong variable name in pbcseq.Rd file
+    \item The test/dropspecial.R file verified an error in [.terms, an
+    error that is now fixed in base R. Update the file to drop that
+    check.
+    \item Fix error in survfitAJ, github issue 348
+}}
+\section{Changes in version 3.8-12}{
+  \itemize{
+  \item Update Surv2 so that a 0/1 or TRUE/FALSE status is not turned
+  into a factor, in agreement with Surv
+  \item Add the clabel attribute to Surv and Surv2 objects, i.e., retain
+  the label that was used for "censoring" when status is a factor.
+  Begin to use that label in printout.  Some code used (censor) and some
+  (censored) as a default label for non-factor status, standardize on
+  the first.
+  \item Minor error in survfit: if a subject had data of (0,10+), (10,24)
+  the "censor" at time 10 really isn't a censoring, and 10 should not
+  appear in the time component.  But sometimes it did, depending on the
+  path through the code.  The curve was always correct, just with extra
+  time points.  Fix, and add tests/survfit3.R to verify.
+  \item Fix subscripting errors in yates() for a coxph model with an NA
+  coefficient, and add a test case. Git pull request 343 found the error
+  but the code change needed more documentation/comments.  A similar
+  length error is now fixed in survpenal.fit.
+  \item Post to CRAN
+}}
+\section{Changes in version 3.8-11}{
+  \itemize{
+    \item Change the .Rd files to remove \code{data()} from the usage
+    section, making them more in line with base R and lazy loaded data
+    (suggestion from CRAN). Add a note section to each to show usage when
+    survival has not been loaded, either directly or via another package
+    that includes survival in the DEPENDS field.
+    \item Submit to CRAN
+}}
 \section{Changes in version 3.8-10}{
   \itemize{
     \item Fix github issues 339 (incorrect weighted Schoenfeld
@@ -11,6 +55,7 @@
     \item Change my address from mayo.edu to proton.me (I retired July1)
     \item Fix incorrect names in summary.surfit and aggregate.survfit found
     by M Scholtz (git pull 340).
+    \item Fix github issue 341 (model.frame.coxph)
 }}
 \section{Changes in version 3.8-9}{
   \itemize{

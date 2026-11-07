@@ -494,8 +494,11 @@ survpenal.fit<- function(x, y, weights, offset, init, controlvals, dist,
 	    df <- dftemp$df
 	    var  <- dftemp$var
 	    var2 <- dftemp$var2
-	    pdf <- df[pterms>0]	          # df's for penalized terms
-	    trH <- dftemp$trH[pterms>0]   # trace H 
+            # pterms does not have entries for the scale coefficients, but
+            #   df and dftemp do; which() is a way to address the
+            #   difference in lengths
+	    pdf <- df[which(pterms>0)]	         # df's for penalized terms
+	    trH <- dftemp$trH[which(pterms>0)]   # trace H 
 	    }
 
 	#
@@ -526,8 +529,8 @@ survpenal.fit<- function(x, y, weights, offset, init, controlvals, dist,
 	    # *save = prior thetas and the resultant fits
 	    # choose as initial values the result for the closest old theta
 	    howclose <- apply((thetasave-temp)^2,2, sum)
-	    which <- min((1:iter)[howclose==min(howclose)])
-	    init <- coefsave[,which]
+	    indx <- min((1:iter)[howclose==min(howclose)])
+	    init <- coefsave[,indx]
 	    thetasave <- cbind(thetasave, temp)
 	    }
         }   #end of the iteration loop
@@ -558,8 +561,9 @@ survpenal.fit<- function(x, y, weights, offset, init, controlvals, dist,
     if (iter.max >1 && length(iterfail)>0)
 	    warning(gettextf("Inner loop failed to coverge for iterations %s", 
 			  paste(iterfail, collapse=' ')))
-    which.sing <- (hdiag[nfrail + 1:nvar] ==0)
-    coef[which.sing] <- NA
+    which.sing <- which(hdiag[nfrail + 1:nvar] ==0)
+    coef[which.sing] <- NA  # coef includes the scale factors, hdiag doesn't
+                            # Hence which() in the line above
 
     names(iterlist) <- names(pterms[pterms>0])
     cname <- varnames
